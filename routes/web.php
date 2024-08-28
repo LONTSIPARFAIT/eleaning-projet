@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CoursController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\LessonsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -52,5 +53,13 @@ Route::resource('cours', CoursController::class)->names([
 // routes/web.php
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    // Autres routes admin
+    
+    // Routes pour les leçons
+    Route::get('/lessons', [LessonsController::class, 'index'])->name('lessons.index');
+    
 });
+
+// Routes pour les leçons
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::resource('lessons', 'LessonsController');
+// });

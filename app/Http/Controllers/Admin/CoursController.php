@@ -58,7 +58,14 @@ class CoursController extends Controller
      */
     public function show(string $id)
     {
-        $cour = Cour::find($id); // Assuming Cours is your model name
+        // $cour = Cour::find($id); // Assuming Cours is your model name
+        // $cour = Cour::with(['lessons', ])->find($id);
+        $cour = Cour::with(['lessons'])->find($id);
+
+        if (!$cour) {
+            return redirect()->route('admin.cours.index')->with('error', 'Cours non trouvé.');
+        }
+
         return view('cours.show', compact('cour'));
     }
 
@@ -110,4 +117,6 @@ class CoursController extends Controller
             return redirect()->route('cours.index')->with('error', 'Une erreur est survenue lors de la suppression du cours.');
         }
     }
+
+
 }

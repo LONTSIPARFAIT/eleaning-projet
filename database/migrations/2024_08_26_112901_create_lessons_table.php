@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-            // database/migrations/YYYY_MM_DD_HHMMSS_create_courses_table.php
-        Schema::create('cours', function (Blueprint $table) {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->integer('duration'); 
-            $table->decimal('price', 8, 2);
+            $table->integer('duration');
+            $table->foreignId('cours_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cours');
+        Schema::dropIfExists('lessons');
     }
 };

@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Cour;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cour>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lesson>
  */
-class CourFactory extends Factory
+class LessonFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,16 +17,13 @@ class CourFactory extends Factory
      */
     public function definition(): array
     {
-        // $title = $this->faker->unique()->sentence;
-        // $description = $this->faker->paragraphs(asText: true);
-        // $duration = $this->faker;
-        // $price = $this->faker;
+        $cours = Cour::all();
         $created_at = $this->faker->dateTimeBetween('-1 years');
         return [
             'title' => $this->faker->unique()->sentence,
             'description' => $this->faker->paragraphs(asText: true),
             'duration' => $this->faker->randomDigit,
-            'price' => $this->faker->randomDigit,
+            'cours_id' => $cours->random()->id,
             'created_at' => $created_at ,
             'updated_at' => $created_at ,
         ];

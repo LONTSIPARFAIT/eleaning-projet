@@ -1,6 +1,7 @@
 <!-- resources/views/admin/courses/edit.blade.php -->
 @extends('layouts.admin')
 
+@section('title', 'Editer un cours')
 @section('content')
     <h1 class="text-3xl font-bold mb-4 ml-4 text-blue-900">Editer le Cours</h1>
 
