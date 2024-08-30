@@ -3,29 +3,6 @@
 @section('title', 'Voir une leçon')
 @section('content')
 
-    {{-- <h2 class="text-xl font-bold mb-4">Leçons</h2>
-
-    <ul>
-
-        @foreach ($lessons as $lesson)
-            <li class="mb-4">
-                <h1 lass="font-bold text-xl ">Titre du cours</h1>
-                <h3 class="font-bold text-lg mb-2 ">{{ $lesson->title }}</h3>
-                
-                <h1 lass="font-bold text-xl">Contenue du cours</h1>
-                <p class="text-gray-600 mb-2 text-xl">{{ $lesson->description }}</p>
-
-                <p class="text-gray-600 mb-4">Durée : {{ $lesson->duration }} minutes</p>
-            </li>
-        @endforeach
-
-    </ul>
-
-    </div>
-
-
-
-@endsection --}}
 <div class="container mx-auto px-4 py-8">
     <h1 class="text-2xl font-bold mb-4">Liste des Leçons</h1>
     @if(session('success'))

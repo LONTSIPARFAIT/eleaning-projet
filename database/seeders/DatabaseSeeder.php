@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
             ]);
         $this->call([
             CourSeeder::class,
-            LessonSeeder::class
+            LessonSeeder::class,
+            ExerciseSeeder::class,
         ]);
 
         // \App\Models\User::factory()->create([

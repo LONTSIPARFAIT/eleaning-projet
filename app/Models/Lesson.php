@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Lesson extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'duration', 'cours_id'];
+    protected $fillable = ['title', 'description', 'duration', 'cour_id'];
 
     public function course()
     {
-        return $this->belongsTo(Cour::class, 'cours_id');
+        return $this->belongsTo(Cour::class, 'cour_id');
     }
 }

@@ -17,8 +17,8 @@ class LessonsController extends Controller
 
     public function create()
     {
-        $courses = Cour::all();
-        return view('admin.lessons.create', compact('courses'));
+        $cours = Cour::all();
+        return view('admin.lessons.create', compact('cours'));
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class LessonsController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'duration' => 'required|integer|min:1',
-            'cours_id' => 'required|exists:courses,id',
+            'cours_id' => 'required|exists:cours,id',
         ]);
 
         Lesson::create($request->all());
@@ -43,7 +43,7 @@ class LessonsController extends Controller
     public function edit(Lesson $lesson)
     {
         $courses = Cour::all();
-        return view('admin.lessons.edit', compact('lesson', 'courses'));
+        return view('admin.lessons.edit', compact('lesson', 'cours'));
     }
 
     public function update(Request $request, Lesson $lesson)
@@ -52,7 +52,7 @@ class LessonsController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'duration' => 'required|integer|min:1',
-            'cours_id' => 'required|exists:courses,id',
+            'cours_id' => 'required|exists:cours,id',
         ]);
 
         $lesson->update($request->all());

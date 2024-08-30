@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\CoursController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\LessonsController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\Admin\CoursController;
+use App\Http\Controllers\Admin\LessonsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,31 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     // Routes pour les leçons
     Route::get('/lessons', [LessonsController::class, 'index'])->name('lessons.index');
+    Route::get('/lessons', [LessonsController::class, 'create'])->name('lessons.create');
     
+});
+
+Route::prefix('admin/exercises')->name('admin.exercises.')->group(function () {
+    // Route pour afficher les exercices d'un cours spécifique
+    Route::get('{cours_id}', [ExerciseController::class, 'index'])->name('index');
+
+    // Route pour créer un nouvel exercice
+    Route::get('{cours_id}/create', [ExerciseController::class, 'create'])->name('create');
+
+    // Route pour stocker un nouvel exercice
+    Route::post('', [ExerciseController::class, 'store'])->name('store');
+
+    // Route pour afficher un exercice spécifique
+    Route::get('exercise/{exercise}', [ExerciseController::class, 'show'])->name('show');
+
+    // Route pour éditer un exercice spécifique
+    Route::get('exercise/{exercise}/edit', [ExerciseController::class, 'edit'])->name('edit');
+
+    // Route pour mettre à jour un exercice
+    Route::put('exercise/{exercise}', [ExerciseController::class, 'update'])->name('update');
+
+    // Route pour supprimer un exercice
+    Route::delete('exercise/{exercise}', [ExerciseController::class, 'destroy'])->name('destroy');
 });
 
 // Routes pour les leçons

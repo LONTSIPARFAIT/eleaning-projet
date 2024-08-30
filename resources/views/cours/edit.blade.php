@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="description" class="block font-medium mb-1">Description</label>
-            <textarea  class="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-500 @error('description') border-red-500 @enderror" id="description" name="description" rows="3" required>{{ old('description', $cour->description) }}</textarea>
+            <textarea rows="6" class="w-full px-2 py-1 border resize-none border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-500 @error('description') border-red-500 @enderror" id="description" name="description" rows="3" required>{{ old('description', $cour->description) }}</textarea>
             @error('description')
                 <div class="text-red-500 mt-1">{{ $message }}</div>
             @enderror
