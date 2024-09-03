@@ -9,7 +9,7 @@
         <h4 class="">Admin</h4>
         <ul class="mt-4 ml-6">
             {{-- <li><a href="{{ route('cours.index') }}">View Cours</a></li> --}}
-            <li  class=""><a href="{{ route('cours.create') }}" class="bg-green-500 text-white p-3 rounded">Creer un nouveau cours</a></li>
+            <li  class=""><a href="{{ route('cours.create') }}" class="bg-blue-500 hover:bg-green-500 text-white p-3 rounded">Creer un nouveau cours</a></li>
         </ul>
     </div>
 
@@ -57,6 +57,7 @@
                                         <th class="py-2 px-4 text-left">Nom</th>
                                         <th class="py-2 px-4 text-left">Email</th>
                                         <th class="py-2 px-4 text-left">Date d'inscription</th>
+                                        <th class="py-2 px-4 text-left">Role</th>
                                     </tr>
                                 </thead>
                                 <tbody>

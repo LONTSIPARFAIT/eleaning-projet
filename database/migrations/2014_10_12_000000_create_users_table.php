@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->unsignedBigInteger('role_id')->nullable();
             // $table->foreign('role_id')->references('id')->on('roles');
+            // $table->foreignId('role_id')->nullable()->constrained('roles')->after('id'); // Ajoutez la colonne
             $table->rememberToken();
             $table->timestamps();
         });

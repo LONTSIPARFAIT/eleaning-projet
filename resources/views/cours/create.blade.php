@@ -44,7 +44,7 @@
 
     <div class="mt-4">
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Creer un cours</button>
-        <a href="http://127.0.0.1:8000/cours" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-red-600">Retours</a>
+        <a href="http://127.0.0.1:8000/cours" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-green-600">Retour</a>
     </div>
 </form>
 @endsection

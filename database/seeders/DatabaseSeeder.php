@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             CourSeeder::class,
             LessonSeeder::class,
             ExerciseSeeder::class,
+            RolesSeeder::class,
         ]);
 
         // \App\Models\User::factory()->create([

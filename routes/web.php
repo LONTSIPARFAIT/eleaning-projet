@@ -54,11 +54,11 @@ Route::resource('cours', CoursController::class)->names([
 // routes/web.php
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    
+
     // Routes pour les leçons
     Route::get('/lessons', [LessonsController::class, 'index'])->name('lessons.index');
     Route::get('/lessons', [LessonsController::class, 'create'])->name('lessons.create');
-    
+
 });
 
 Route::prefix('admin/exercises')->name('admin.exercises.')->group(function () {
@@ -84,7 +84,12 @@ Route::prefix('admin/exercises')->name('admin.exercises.')->group(function () {
     Route::delete('exercise/{exercise}', [ExerciseController::class, 'destroy'])->name('destroy');
 });
 
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+
 // Routes pour les leçons
 // Route::prefix('admin')->name('admin.')->group(function () {
 //     Route::resource('lessons', 'LessonsController');
 // });
+
