@@ -27,7 +27,7 @@
         
         <div class="flex justify-end">
             <button type="submit" class="bg-green-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-green-600 transition duration-200">Créer</button>
-            <a href="http://127.0.0.1:8000/cours/1" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500 ml-2">Retour</a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded ml-2">Retour</a>
         </div>
     </form>
 </div>

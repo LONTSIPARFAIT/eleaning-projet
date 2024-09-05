@@ -31,8 +31,8 @@
             </select>
         </div>
 
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Créer la leçon</button>
-        <a href="http://127.0.0.1:8000/cours/1" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500 ml-2">Retour</a>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Créer la leçon</button>
+        <a href="" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded ml-2">Retour</a>
     </form>
 </div>
 @endsection

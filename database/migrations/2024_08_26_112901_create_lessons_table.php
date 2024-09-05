@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            // $table->text('content'); // Pour stocker le contenu détaillé de la leçon
             $table->integer('duration');
             $table->foreignId('cour_id')->constrained()->onDelete('cascade');
             $table->timestamps();

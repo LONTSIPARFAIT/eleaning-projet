@@ -17,18 +17,19 @@
             @method('DELETE')
             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" onclick="return confirm('Êtes-vous sûr?')">Supprimer</button>
         </form>
-        
+
         <a href="{{ route('admin.cours.index') }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">Retour</a>
     </div>
-    
+
 
     <div class="p-4 border mb-4 relative">
         <h2 class="text-xl font-bold">Leçons</h2>
-        
+
         <div class="absolute top-4 right-4">
             <a href="{{ route('admin.lessons.create', ['cours_id' => $cour->id]) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ajouter une leçon</a>
+            <a href="{{ route('admin.cours.lessons.index', ['cours_id' => $cour->id]) }}" class="bg-green-500 py-2 px-4 hover:bg-blue-600 text-white font-bold  rounded mb-4">Voir tous les lessons</a>
         </div>
-    
+
         @if ($cour->lessons->isEmpty())
             <p>Aucune leçon disponible pour ce cours.</p>
         @else
@@ -47,9 +48,13 @@
 
     <div class="p-4 border mb-4 relative">
         <h2 class="text-xl font-bold">Exercices</h2>
-    
-        <a href="{{ route('admin.exercises.create', ['cours_id' => $cour->id]) }}" class="absolute top-4 right-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Ajouter un exercice</a>
-    
+
+        <div class="absolute top-4 right-4">
+            <a href="{{ route('admin.exercises.create', ['cours_id' => $cour->id]) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ajouter un exercice</a>
+            <a href="{{ route('admin.cours.exercise.index', ['cours_id' => $cour->id]) }}" class="bg-green-500 py-2 px-4 hover:bg-blue-600 text-white font-bold  rounded mb-4">Voir tous les exercices</a>
+        </div>
+
+
         @if (empty($cour))
             <p>Aucun exercice disponible pour ce cours.</p>
         @else

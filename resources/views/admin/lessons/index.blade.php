@@ -8,13 +8,14 @@
     @if(session('success'))
         <div class="bg-green-500 text-white p-2 rounded mb-4">{{ session('success') }}</div>
     @endif
-    <a href="" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4">Créer une nouvelle leçon</a>
+    <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4">Créer une nouvelle leçon</a>
+    <a href="#" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4">Retour</a>
     <ul>
         @foreach ($lessons as $lesson)
         <li class="p-4 border rounded mb-4">
             <h3 class="font-bold text-lg">{{ $lesson->title }}</h3>
             <p class="text-gray-600">Durée : {{ $lesson->duration }} minutes</p>
-            <a href="" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
+            <a href="{{ route('admin.lessons.show', $lesson->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
             <a href="" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Éditer</a>
             <form action="" method="POST" class="inline">
                 @csrf

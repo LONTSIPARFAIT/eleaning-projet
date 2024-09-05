@@ -55,15 +55,35 @@ Route::resource('cours', CoursController::class)->names([
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-    // Routes pour les leçons
-    Route::get('/lessons', [LessonsController::class, 'index'])->name('lessons.index');
-    Route::get('/lessons', [LessonsController::class, 'create'])->name('lessons.create');
+    // // Routes pour les leçons
+    // Route::get('/lessons', [LessonsController::class, 'index'])->name('admin.lessons.index');
+    // Route::get('/lessons', [LessonsController::class, 'create'])->name('lessons.create');
 
+    // // Route pour afficher une leçon spécifique
+    // Route::get('/lessons/{id}', [LessonsController::class, 'show'])->name('lessons.show');
+
+});
+
+Route::prefix('admin/lessons')->group(function () {
+    // Route pour afficher toutes les leçons
+    // Route::get('/lessons', [LessonsController::class, 'index'])->name('admin.lessons.index'); 
+
+    // Route pour afficher toutes les leçons d'un cours spécifique
+    Route::get('/cours/{cours_id}/lessons', [LessonsController::class, 'index'])->name('admin.cours.lessons.index');
+
+    // Route pour créer une leçon
+    Route::get('/lessons/create', [LessonsController::class, 'create'])->name('admin.lessons.create'); 
+    
+    // Route pour afficher une leçon spécifique
+    Route::get('/lessons/{id}', [LessonsController::class, 'show'])->name('admin.lessons.show'); 
 });
 
 Route::prefix('admin/exercises')->name('admin.exercises.')->group(function () {
     // Route pour afficher les exercices d'un cours spécifique
-    Route::get('{cours_id}', [ExerciseController::class, 'index'])->name('index');
+    // Route::get('{cours_id}', [ExerciseController::class, 'index'])->name('index');
+    
+    // Route pour afficher toutes les leçons d'un cours spécifique
+    Route::get('/cours/{cours_id}/exercise', [ExerciseController::class, 'index'])->name('admin.cours.exercise.index');
 
     // Route pour créer un nouvel exercice
     Route::get('{cours_id}/create', [ExerciseController::class, 'create'])->name('create');
@@ -92,4 +112,6 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 // Route::prefix('admin')->name('admin.')->group(function () {
 //     Route::resource('lessons', 'LessonsController');
 // });
+
+
 

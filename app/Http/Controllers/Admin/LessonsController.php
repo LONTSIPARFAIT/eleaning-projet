@@ -9,9 +9,11 @@ use App\Http\Controllers\Controller;
 
 class LessonsController extends Controller
 {
-    public function index()
+    public function index($cours_id)
     {
-        $lessons = Lesson::all();
+        // Récupérer les leçons du cours spécifique
+        $lessons = Lesson::where('cour_id', $cours_id)->get(); // Assurez-vous que la colonne cours_id existe
+
         return view('admin.lessons.index', compact('lessons'));
     }
 
@@ -35,9 +37,15 @@ class LessonsController extends Controller
         return redirect()->route('admin.lessons.index')->with('success', 'Leçon créée avec succès.');
     }
 
-    public function show(Lesson $lesson)
+    // public function show(Lesson $lesson)
+    // {
+    //     return view('admin.lessons.show', compact('lesson'));
+    // }
+
+    public function show($id)
     {
-        return view('admin.lessons.show', compact('lesson'));
+        $lesson = Lesson::with('paragraphs')->findOrFail($id); // Récupère la leçon et ses paragraphes
+        return view('lessons.show', compact('lesson'));
     }
 
     public function edit(Lesson $lesson)

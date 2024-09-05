@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="mt-4 ml-6">
-        <h4 class="">Admin</h4>
+        <h4 class="text-gray-500 text-2xl">Admin</h4>
         <ul class="mt-4 ml-6">
             {{-- <li><a href="{{ route('cours.index') }}">View Cours</a></li> --}}
             <li  class=""><a href="{{ route('cours.create') }}" class="bg-blue-500 hover:bg-green-500 text-white p-3 rounded">Creer un nouveau cours</a></li>
