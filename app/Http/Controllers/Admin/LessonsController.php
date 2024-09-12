@@ -44,7 +44,7 @@ class LessonsController extends Controller
 
     public function show($id)
     {
-        $lesson = Lesson::with('paragraphs')->findOrFail($id); // Récupère la leçon et ses paragraphes
+        $lesson = Lesson::with('quizzes')->findOrFail($id);
         return view('lessons.show', compact('lesson'));
     }
 

@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use App\Models\User;
+use App\Enums\UserRole;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -21,18 +21,19 @@ class DatabaseSeeder extends Seeder
         }
         $password = '12345678';
         $passwordHash = hashPassword($password);
-        User::create([ 
+        User::factory(20)->create();
+        User::create([
             'name' => 'perfect',
             'email' => 'lontsiparfait12@gmail.com',
             'email_verified_at' => now(),
             'password' => $passwordHash, // password
             'remember_token' => Str::random(10),
+            'role' => UserRole::ADMIN->value,
             ]);
         $this->call([
             CourSeeder::class,
             LessonSeeder::class,
             ExerciseSeeder::class,
-            RolesSeeder::class,
         ]);
 
         // \App\Models\User::factory()->create([

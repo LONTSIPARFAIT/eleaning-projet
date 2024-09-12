@@ -12,7 +12,7 @@
     <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
         <table class="w-full">
             <thead>
-                <tr class="bg-gray-200 dark:bg-gray-600">
+                <tr class="bg-green-600 dark:bg-gray-600">
                     <th class="py-2 px-4 text-left">Nom</th>
                     <th class="py-2 px-4 text-left">Email</th>
                     <th class="py-2 px-4 text-left">Rôle</th>
@@ -21,7 +21,7 @@
             </thead>
             <tbody>
                 @foreach ($users as $user)
-                <tr class="border-b border-gray-200 dark:border-gray-600">
+                <tr class="border-b hover:bg-gray-200 bg-white border-gray-200 dark:border-gray-600">
                     <td class="py-2 px-4">{{ $user->name }}</td>
                     <td class="py-2 px-4">{{ $user->email }}</td>
                     <td class="py-2 px-4">{{ $user->role }}</td>

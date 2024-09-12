@@ -15,7 +15,7 @@
         <li class="p-4 border rounded mb-4">
             <h3 class="font-bold text-lg">{{ $lesson->title }}</h3>
             <p class="text-gray-600">Durée : {{ $lesson->duration }} minutes</p>
-            <a href="{{ route('admin.lessons.show', $lesson->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
+            <a href="{{ route('lessons.show', $lesson->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
             <a href="" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Éditer</a>
             <form action="" method="POST" class="inline">
                 @csrf

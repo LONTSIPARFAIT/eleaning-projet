@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -31,6 +32,13 @@
             <main>
                 {{ $slot }}
             </main>
+            <footer class="bg-teal-600 text-white p-6 text-center">
+                <p>&copy; 2024 Perfect-coding - Tous droits réservés-2024</p>
+                <div>
+                    <a href="#privacy" class="text-white hover:underline">Politique de confidentialité</a> |
+                    <a href="#terms" class="text-white hover:underline">Conditions d'utilisation</a>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

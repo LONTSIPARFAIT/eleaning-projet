@@ -15,7 +15,7 @@ class CoursController extends Controller
     public function index():View
     {
         $cours = Cour::all();
-        return view('cours.index', compact('cours'));
+        return view('admin.cours.index', compact('cours'));
     }
 
     /**
@@ -23,7 +23,7 @@ class CoursController extends Controller
      */
     public function create()
     {
-        return view('cours.create');
+        return view('admin.cours.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class CoursController extends Controller
             return redirect()->route('admin.cours.index')->with('error', 'Cours non trouvé.');
         }
 
-        return view('cours.show', compact('cour'));
+        return view('admin.cours.show', compact('cour'));
     }
 
     /**
@@ -78,7 +78,7 @@ class CoursController extends Controller
     }
 
     protected function showForm(Cour $cour = new Cour):View{
-        return view("cours.edit",[
+        return view("admin.cours.edit",[
             'cour' =>$cour,
         ]);
     }
@@ -99,7 +99,7 @@ class CoursController extends Controller
         // die;
         $cours = Cour::all();
 
-        return view('cours.index', compact('cours'));
+        return view('admin.cours.index', compact('cours'));
 
         // return redirect()->route('cours.show', $cour)->with('success', 'Le cours a été mis à jour avec succès.');
     }

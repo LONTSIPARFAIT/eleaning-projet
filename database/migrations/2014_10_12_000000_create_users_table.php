@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            // $table->unsignedBigInteger('role_id')->nullable();
+            $table->string('role')->default('student');
             $table->string('password');
-            $table->unsignedBigInteger('role_id')->nullable();
-            // $table->foreign('role_id')->references('id')->on('roles');
-            // $table->foreignId('role_id')->nullable()->constrained('roles')->after('id'); // Ajoutez la colonne
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,6 +29,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 };
