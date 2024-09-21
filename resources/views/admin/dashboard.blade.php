@@ -60,6 +60,7 @@
                                         <th class="py-2 px-4 text-left">Email</th>
                                         <th class="py-2 px-4 text-left">Date d'inscription</th>
                                         <th class="py-2 px-4 text-left">Role</th>
+                                        <th class="py-2 px-4 text-left">Gestion de role</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,10 +70,23 @@
                                             <td class="py-2 px-4">{{ $user->email }}</td>
                                             <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
                                             <td class="py-2 px-4">{{ $user->role }}</td>
+                                            <td class="py-2 px-4">
+                                                <form action="{{ route('users.updateRole', $user->id) }}" method="POST">
+                                                    {{-- {{ route('users.updateRole', $user->id) }} --}}
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <select name="role" onchange="this.form.submit()" class="bg-gray-200 rounded">
+                                                        <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Étudiant</option>
+                                                        <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Enseignant</option>
+                                                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Administrateur</option>
+                                                    </select>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>

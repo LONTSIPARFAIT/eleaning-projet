@@ -42,6 +42,6 @@
         </div>
 
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Modifier le cours</button>
-        <a href="http://127.0.0.1:8000/cours" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-red-600">Retour</button>
+        <a href="{{ route('cours.index') }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-red-600">Retour</button>
     </form>
 @endsection

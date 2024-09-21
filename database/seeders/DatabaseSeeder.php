@@ -29,6 +29,9 @@ class DatabaseSeeder extends Seeder
             'password' => $passwordHash, // password
             'remember_token' => Str::random(10),
             'role' => UserRole::ADMIN->value,
+            'date_de_naissance' => '2006-03-12',
+            'sexe' => 'femme',
+            'lieu_de_naissance' => 'Paris',
             ]);
         $this->call([
             CourSeeder::class,

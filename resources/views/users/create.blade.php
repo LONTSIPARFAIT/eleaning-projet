@@ -26,7 +26,8 @@
         <div class="mb-4">
             <label for="role" class="block text-gray-700">Rôle</label>
             <select name="role" id="role" class="border rounded w-[30rem] p-2">
-                <option value="user">Utilisateur</option>
+                <option value="student" >Étudiant</option>
+                <option value="teacher" >Enseignant</option>
                 <option value="admin">Administrateur</option>
             </select>
         </div>

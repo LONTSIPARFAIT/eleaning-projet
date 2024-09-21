@@ -87,6 +87,17 @@ Route::prefix('admin')->group(function () {
         ]);
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::resource('users', UserController::class);
+    Route::put('/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
+});
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+//     Route::resource('users', UserController::class);
+//     Route::put('/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
+// });
+
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');

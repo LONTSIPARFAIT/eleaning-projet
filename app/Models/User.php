@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Cour;
 use App\Enums\UserRole;
+use Carbon\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,7 +24,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'date_de_naissance',
+        'lieu_de_naissance',
+        'sexe',
+        'âge',
     ];
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->date_de_naissance)->age;
+    }
+
     public function hasRole(UserRole $role): bool
     {
         return $this->role === $role->value;

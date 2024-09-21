@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             // $table->unsignedBigInteger('role_id')->nullable();
             $table->string('role')->default('student');
+            $table->date('date_de_naissance')->nullable();
+            $table->string('lieu_de_naissance')->nullable();
+            $table->string('sexe')->nullable(); // 'homme', 'femme', 'autre'
+            $table->integer('age')->nullable(); // Vous pouvez le calculer plus tard
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

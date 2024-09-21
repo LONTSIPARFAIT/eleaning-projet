@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -37,5 +38,66 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('users.index')->with('success', 'Utilisateur créé avec succès.');
+    }
+
+    public function show($id){
+        $user = User::findOrFail($id);
+        return view('users.show', compact('user'));
+    }
+
+    public function edit($id){
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        // Validation des données
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'date_de_naissance' => 'nullable|date',
+            'sexe' => 'nullable|in:homme,femme,autre',
+            'lieu_de_naissance' => 'nullable|string|max:255',
+            // Ajoutez d'autres validations si nécessaire
+        ]);
+
+        // Mise à jour des informations de l'utilisateur
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->date_de_naissance = $request->date_de_naissance;
+        $user->sexe = $request->sexe;
+        $user->lieu_de_naissance = $request->lieu_de_naissance;
+
+        // Si un mot de passe est fourni, le hacher et le mettre à jour
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        // Rediriger ou retourner une réponse
+        return redirect()->route('users.index')->with('success', 'Utilisateur mis à jour avec succès.');
+    }
+
+    public function destroy($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'Utilisateur supprimé avec succès.');
+    }
+
+    // UserController.php
+
+    public function updateRole(Request $request, $id){
+        $request->validate([
+            'role' => 'required|in:student,teacher,admin', // Valider les rôles possibles
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->role = $request->role;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'Rôle mis à jour avec succès.');
     }
 }

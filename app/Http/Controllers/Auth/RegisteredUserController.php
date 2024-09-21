@@ -29,46 +29,37 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    // public function store(Request $request): RedirectResponse
-    // {
-    //     $request->validate([
-    //         'name' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-    //         'password' => ['required', 'confirmed', Rules\Password::defaults()],
-    //     ]);
+    public function store(Request $request): RedirectResponse
+    {
+        // Validation des données d'inscription
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:8',
+            // Ajout de la validation pour les nouveaux champs
+            'date_de_naissance' => 'required|date',
+            'sexe' => 'required|in:homme,femme,autre',
+        ]);
 
-    //     $user = User::create([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'password' => Hash::make($request->password),
-    //     ]);
+        // Création d'un nouvel utilisateur
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => UserRole::STUDENT->value, // Assigner le rôle par défaut
+            // Enregistrement des nouveaux champs
+            'date_de_naissance' => $request->date_de_naissance,
+            'lieu_de_naissance' => $request->lieu_de_naissance, // Enregistrement du lieu de naissance
+            'sexe' => $request->sexe,
+        ]);
 
-    //     event(new Registered($user));
+        // Événement d'enregistrement (peut être utilisé si besoin)
+        // event(new Registered($user));
 
-    //     Auth::login($user);
+        // Connecter l'utilisateur
+        Auth::login($user);
 
-    //     return redirect(RouteServiceProvider::HOME);
-    // }
-
-    public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255|unique:users',
-        'password' => 'required|string|confirmed|min:8',
-    ]);
-
-    $user = User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-        'role' => UserRole::STUDENT->value, // Assigner le rôle par défaut
-    ]);
-
-    // Connecter l'utilisateur
-    Auth::login($user);
-
-    // Rediriger vers le tableau de bord de l'étudiant
-    return redirect()->route('student.dashboard');
-}
+        // Rediriger vers le tableau de bord de l'étudiant
+        return redirect()->route('student.dashboard');
+    }
 }

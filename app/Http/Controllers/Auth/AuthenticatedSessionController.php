@@ -40,6 +40,8 @@ class AuthenticatedSessionController extends Controller
             'password' => 'required',
         ]);
 
+
+
         if (Auth::attempt($request->only('email', 'password'))) {
             // Vérification du rôle après connexion
             if (auth()->user()->hasRole(UserRole::ADMIN)) {
@@ -49,6 +51,19 @@ class AuthenticatedSessionController extends Controller
             } else {
                 return redirect()->route('student.dashboard');
             }
+
+            // $user = auth()->user();
+
+            // if ($user->role === 'admin') {
+            //     return redirect()->route('admin.dashboard'); // Assurez-vous d'avoir cette route
+            // } elseif ($user->role === 'student') {
+            //     return redirect()->route('student.dashboard'); // Assurez-vous d'avoir cette route
+            // } elseif ($user->role === 'teacher') {
+            //     return redirect()->route('teacher.dashboard'); // Assurez-vous d'avoir cette route
+            // }
+        
+            // return abort(403); 
+
         }
 
         return back()->withErrors([
