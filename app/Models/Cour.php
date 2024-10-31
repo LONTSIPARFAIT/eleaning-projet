@@ -33,6 +33,11 @@ class Cour extends Model
         return $this->belongsToMany(User::class, 'cour_user');
     }
 
+    // public function users()
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
+
     // protected $attributes = [
     //     'title' => 'Titre par défaut',
     // ];

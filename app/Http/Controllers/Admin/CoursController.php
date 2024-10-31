@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cour;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class CoursController extends Controller
 {
@@ -116,6 +117,25 @@ class CoursController extends Controller
             // Gestion de l'erreur
             return redirect()->route('cours.index')->with('error', 'Une erreur est survenue lors de la suppression du cours.');
         }
+    }
+
+    public function subscribe($id)
+    {
+        // Vérifiez si l'utilisateur est authentifié
+        if (!Auth::check()) {
+            return redirect()->route('register')->with('error', 'Vous devez être connecté pour vous abonner à un cours.');
+        }
+
+        // Trouver le cours par ID
+        $cour = Cour::findOrFail($id);
+
+        // Logique pour abonner l'utilisateur au cours
+        $user = Auth::user();
+
+        // Abonner l'utilisateur au cours
+        $cour->users()->attach($user->id);
+
+        return redirect()->back()->with('success', 'Vous êtes maintenant abonné au cours : ' . $cour->title);
     }
 
 

@@ -29,6 +29,7 @@ class User extends Authenticatable
         'lieu_de_naissance',
         'sexe',
         'âge',
+        'profile_photo', // Ajoutez ce champ
     ];
 
     public function getAgeAttribute()
@@ -63,4 +64,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function courses()
+    {
+        return $this->belongsToMany(Cour::class);
+    }
 }

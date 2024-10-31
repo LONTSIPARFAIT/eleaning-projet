@@ -16,8 +16,10 @@ class AdminController extends Controller
             // $orderCount = Order::count();
             // $revenue = Order::sum('total');
             $newUsers = User::latest()->take(5)->get();
+            $studentCount = User::where('role', 'student')->count();
+            $teacherCount = User::where('role', 'teacher')->count();
         // }
-        return view('admin.dashboard', compact('userCount','coursCount','newUsers'));
+        return view('admin.dashboard', compact('userCount','coursCount','newUsers','studentCount','teacherCount'));
         // return view('admin.dashboard'); // Créez cette vue
     }
 }

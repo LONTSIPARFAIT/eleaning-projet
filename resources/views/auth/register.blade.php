@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Nom Complet -->
@@ -50,6 +50,13 @@
                 <option value="autre">{{ __('Autre') }}</option>
             </select>
             <x-input-error :messages="$errors->get('sexe')" class="mt-2" />
+        </div>
+
+        <!-- Champ pour la photo de profil -->
+        <div class="mt-4">
+            <x-input-label for="profile_photo" :value="__('Photo de Profil')" />
+            <x-text-input id="profile_photo" class="block mt-1 w-full" type="file" name="profile_photo" accept="image/*" />
+            <x-input-error :messages="$errors->get('profile_photo')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">

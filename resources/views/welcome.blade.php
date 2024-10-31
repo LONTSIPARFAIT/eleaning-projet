@@ -22,7 +22,7 @@
             </div>
             <div class="space-x-8 text-xl">
                 <a href="#home" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
-                <a href="#courses" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
+                <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
                 <a href="#about" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
             </div>
             <div>
@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    <section id="courses" class="py-8 bg-gray-100">
+    <section id="cours" class="py-8 bg-gray-100">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold text-gray-800">Nos Cours Disponibles</h2>
 
@@ -79,12 +79,13 @@
                         <p class="mt-2">{{ $cour->description }}</p>
                         <p class="mt-2">Durée : {{ $cour->duration }} minutes</p>
                         <p class="mt-2">Prix : {{ $cour->price }} €</p>
-                        <form action="#" method="POST">
+                        <form action="{{ route('cours.subscribe', $cour->id) }}" method="POST">
 
                             {{-- {{ route('courses.subscribe', $cour->id) }} --}}
                             @csrf
                             <button type="submit" class="mt-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded">S'abonner</button>
                         </form>
+
                     </div>
                 @endforeach
             </div>

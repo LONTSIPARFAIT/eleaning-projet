@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
             'role' => UserRole::ADMIN->value,
             'date_de_naissance' => '2006-03-12',
-            'sexe' => 'femme',
+            'sexe' => 'homme',
             'lieu_de_naissance' => 'Paris',
             ]);
         $this->call([

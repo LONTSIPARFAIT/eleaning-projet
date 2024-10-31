@@ -16,6 +16,7 @@
                     <th class="py-2 px-4 text-left">Nom</th>
                     <th class="py-2 px-4 text-left">Email</th>
                     <th class="py-2 px-4 text-left">Rôle</th>
+                    <th class="py-2 px-4 text-left">Gestion de role</th>
                     <th class="py-2 px-4 text-left">Actions</th>
                 </tr>
             </thead>
@@ -25,6 +26,18 @@
                     <td class="py-2 px-4">{{ $user->name }}</td>
                     <td class="py-2 px-4">{{ $user->email }}</td>
                     <td class="py-2 px-4">{{ $user->role }}</td>
+                    <td class="py-2 px-4">
+                        <form action="{{ route('users.updateRole', $user->id) }}" method="POST">
+                            {{-- {{ route('users.updateRole', $user->id) }} --}}
+                            @csrf
+                            @method('PUT')
+                            <select name="role" onchange="this.form.submit()" class="bg-gray-200 rounded">
+                                <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Étudiant</option>
+                                <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Enseignant</option>
+                                <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Administrateur</option>
+                            </select>
+                        </form>
+                    </td>
                     <td class="py-2 px-4">
                         <a href="{{ route('users.show', $user->id) }}" class="text-blue-500 hover:text-blue-700 font-bold mr-2">Voir</a>
                         <a href="{{ route('users.edit', $user->id) }}" class="text-green-500 hover:text-green-700 font-bold mr-2">Modifier</a>

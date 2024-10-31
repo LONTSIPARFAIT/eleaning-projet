@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -99,5 +101,28 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('users.index')->with('success', 'Rôle mis à jour avec succès.');
+    }
+
+    public function updateProfilePhoto(Request $request){
+        $request->validate([
+            'profile_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        $user = Auth::user(); // Vérifiez que l'utilisateur est authentifié
+    
+        if (!$user) {
+            return redirect()->back()->withErrors(['error' => 'Utilisateur non trouvé.']);
+        }
+    
+        // Supprimer l'ancienne photo si elle existe
+        if ($user->profile_photo) {
+            Storage::disk('public')->delete($user->profile_photo);
+        }
+    
+        $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
+        $user->profile_photo = $profilePhotoPath;
+    
+        // Sauvegarder l'utilisateur
+        $user->save(); // Cela devrait fonctionner si $user est un modèle valide
     }
 }

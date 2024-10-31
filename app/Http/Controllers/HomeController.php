@@ -16,9 +16,11 @@ class HomeController extends Controller
     function dashboard() {
         $userCount = User::count();
         $coursCount = Cour::count();
+        $studentCount = User::where('role', 'student')->count();
+        $teacherCount = User::where('role', 'teacher')->count();
         // $orderCount = Order::count();
         // $revenue = Order::sum('total');
         $newUsers = User::latest()->take(5)->get();
-        return view('admin/dashboard', compact('userCount','coursCount','newUsers'));
+        return view('admin/dashboard', compact('userCount','coursCount','newUsers','studentCount','teacherCount'));
     }
 }

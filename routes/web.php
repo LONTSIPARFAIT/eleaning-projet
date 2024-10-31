@@ -85,11 +85,13 @@ Route::prefix('admin')->group(function () {
         Route::resource('cours', CoursController::class)->names([
             'update' => 'cours.update'
         ]);
+        Route::get('/student/cours', [StudentController::class, 'showCours'])->name('student.cours');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
     Route::put('/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
+    Route::put('/profile/photo', [UserController::class, 'updateProfilePhoto'])->name('profile.photo.update');
 });
 
 // Route::middleware(['auth'])->group(function () {
@@ -112,6 +114,10 @@ Route::resource('quizzes', QuizController::class);
 Route::get('quizzes/{quiz}/questions/create', [QuestionController::class, 'create'])->name('quizzes.questions.create');
 Route::post('quizzes/{quiz}/questions', [QuestionController::class, 'store'])->name('quizzes.questions.store');
 Route::post('quizzes/{quiz}/submit', [QuizController::class, 'submit'])->name('quizzes.submit');
+
+use App\Http\Controllers\CourseController;
+
+Route::post('/cours/subscribe/{id}', [CoursController::class, 'subscribe'])->name('cours.subscribe');
 
 // Route::resource('lessons', LessonsController::class);
 // Route::resource('quizzes', QuizController::class);

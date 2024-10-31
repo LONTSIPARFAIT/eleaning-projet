@@ -19,7 +19,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100 bg-green-100">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
                         <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Utilisateurs</h3>
                             <p class="text-4xl font-bold">{{ $userCount }}</p>
@@ -42,6 +42,20 @@
                             </a>
                         </div>
                         <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                            <h3 class="text-lg font-bold mb-2">Nombre d'étudiant</h3>
+                            <p class="text-4xl font-bold">{{ $studentCount }}</p>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">
+                                Voir tous les étudiants
+                            </a>
+                        </div>
+                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                            <h3 class="text-lg font-bold mb-2">Nombre d'enseignant</h3>
+                            <p class="text-4xl font-bold">{{ $teacherCount }}</p>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">
+                                Voir tous les enseignants
+                            </a>
+                        </div>
+                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Revenus</h3>
                             <p class="text-4xl font-bold">330 €</p>
                             <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">
@@ -60,7 +74,6 @@
                                         <th class="py-2 px-4 text-left">Email</th>
                                         <th class="py-2 px-4 text-left">Date d'inscription</th>
                                         <th class="py-2 px-4 text-left">Role</th>
-                                        <th class="py-2 px-4 text-left">Gestion de role</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,18 +83,6 @@
                                             <td class="py-2 px-4">{{ $user->email }}</td>
                                             <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
                                             <td class="py-2 px-4">{{ $user->role }}</td>
-                                            <td class="py-2 px-4">
-                                                <form action="{{ route('users.updateRole', $user->id) }}" method="POST">
-                                                    {{-- {{ route('users.updateRole', $user->id) }} --}}
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <select name="role" onchange="this.form.submit()" class="bg-gray-200 rounded">
-                                                        <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Étudiant</option>
-                                                        <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Enseignant</option>
-                                                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Administrateur</option>
-                                                    </select>
-                                                </form>
-                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
