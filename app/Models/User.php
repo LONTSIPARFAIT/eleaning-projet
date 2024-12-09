@@ -46,6 +46,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Cour::class);
     }
 
+    public function students()
+    {
+        return $this->hasManyThrough(Student::class, Cour::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

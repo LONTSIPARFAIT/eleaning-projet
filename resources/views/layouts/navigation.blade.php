@@ -12,9 +12,36 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    @if (Route::has('login'))
+                        @auth
+                            @if (auth()->user()->role === 'student')
+                                <x-nav-link :href="route('student.dashboard')" :active="request()->routeIs('student.dashboard')">
+                                    {{ __('Dashboard Étudiant') }}
+                                </x-nav-link>
+                            @elseif (auth()->user()->role === 'teacher')
+                                <x-nav-link :href="route('teacher.dashboard')" :active="request()->routeIs('teacher.dashboard')">
+                                    {{ __('Dashboard Enseignant') }}
+                                </x-nav-link>
+                            @elseif (auth()->user()->role === 'admin')
+                                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                    {{ __('Dashboard Admin') }}
+                                </x-nav-link>
+                            @else
+                                <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                                    {{ __('Dashboard') }}
+                                </x-nav-link>
+                            @endif
+                        @else
+                            <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                                {{ __('Connexion') }}
+                            </x-nav-link>
+                            @if (Route::has('register'))
+                                <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                                    {{ __('Inscription') }}
+                                </x-nav-link>
+                            @endif
+                        @endauth
+                    @endif
                 </div>
             </div>
 

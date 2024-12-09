@@ -26,6 +26,7 @@ class CourFactory extends Factory
             'description' => $this->faker->paragraphs(asText: true),
             'duration' => $this->faker->randomDigit,
             'price' => $this->faker->randomDigit,
+            'teacher_id' => $this->faker->randomDigit,
             'created_at' => $created_at ,
             'updated_at' => $created_at ,
         ];

@@ -29,13 +29,13 @@
                 @if (Route::has('login'))
                     @auth
                         @if (auth()->user()->role === 'student')
-                            <a href="{{ url('student.dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Étudiant</a>
+                            <a href="{{ route('student.dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Étudiant</a>
                         @elseif (auth()->user()->role === 'teacher')
-                            <a href="{{ url('teacher.dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Enseignant</a>
+                            <a href="{{ route('teacher.dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Enseignant</a>
                         @elseif (auth()->user()->role === 'admin')
-                            <a href="{{ url('dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Admin</a>
+                            <a href="{{ route('dashboard') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard Admin</a>
                         @else
-                            <a href="{{ url('home') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard</a>
+                            <a href="{{ route('home') }}" class="font-semibold text-white border-b-2 border-transparent hover:border-white transition duration-300">Dashboard</a>
                         @endif
                     @else
                         <a href="{{ route('login') }}" class="font-semibold bg-white text-teal-600 p-2 rounded border border-teal-600 hover:bg-gray-200 transition duration-300">Connexion</a>

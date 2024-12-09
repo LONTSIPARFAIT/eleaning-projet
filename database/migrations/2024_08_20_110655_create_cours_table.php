@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('duration'); 
             $table->decimal('price', 8, 2);
+            $table->unsignedBigInteger('teacher_id')->nullable(); // Ajoutez la colonne teacher_id
             $table->timestamps();
         });
     }

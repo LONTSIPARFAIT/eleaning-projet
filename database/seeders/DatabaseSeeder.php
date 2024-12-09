@@ -33,6 +33,17 @@ class DatabaseSeeder extends Seeder
             'sexe' => 'homme',
             'lieu_de_naissance' => 'Paris',
             ]);
+        User::create([
+            'name' => 'perfect',
+            'email' => 'parfait@gmail.com',
+            'email_verified_at' => now(),
+            'password' => $passwordHash, // password
+            'remember_token' => Str::random(10),
+            'role' => UserRole::TEACHER->value,
+            'date_de_naissance' => '2002-03-14',
+            'sexe' => 'homme',
+            'lieu_de_naissance' => 'Douala',
+            ]);
         $this->call([
             CourSeeder::class,
             LessonSeeder::class,
