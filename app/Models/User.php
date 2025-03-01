@@ -46,9 +46,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Cour::class);
     }
 
-    public function students()
+    public function teacher()
     {
-        return $this->hasManyThrough(Student::class, Cour::class);
+        return $this->belongsTo(User::class, 'teacher_id');
     }
 
     /**

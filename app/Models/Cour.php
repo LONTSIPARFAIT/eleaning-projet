@@ -33,6 +33,16 @@ class Cour extends Model
         return $this->belongsToMany(User::class, 'cour_user');
     }
 
+    public function teacher()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // public function students()
+    // {
+    //     return $this->belongsToMany(Student::class);
+    // }
+
     // public function users()
     // {
     //     return $this->belongsToMany(User::class);
