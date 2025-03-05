@@ -11,7 +11,7 @@
 <body>
     @include('layouts.navigation')
     @yield('content')
-    <footer class="bg-teal-600 text-white p-4 text-center">
+    <footer class="bg-red-600 text-white p-4 text-center">
         <p>&copy; 2024 Perfect-coding - Tous droits réservés-2024</p>
         <div>
             <a href="#privacy" class="text-white hover:underline">Politique de confidentialité</a> |
