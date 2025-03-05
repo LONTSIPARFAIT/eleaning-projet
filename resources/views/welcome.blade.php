@@ -64,7 +64,7 @@
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold">Découvrez Nos Cours</h2>
             <p class="mt-2">Apprenez à votre rythme avec une variété de cours adaptés à tous les niveaux.</p>
-            <a href="#courses" class="mt-4 inline-block bg-white hover:bg-red-600 text-red-400 font-semibold py-2 px-4 rounded">Voir les Cours</a>
+            <a href="#courses" class="mt-4 inline-block bg-white hover:bg-red-600 text-red-500 font-semibold py-2 px-4 rounded">Voir les Cours</a>
         </div>
     </section>
 
