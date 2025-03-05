@@ -20,45 +20,45 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100 bg-green-100">
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Utilisateurs</h3>
                             <p class="text-4xl font-bold">{{ $userCount }}</p>
                             <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir tous les utilisateurs
                             </a>
                         </div>
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Cours</h3>
                             <p class="text-4xl font-bold">{{ $coursCount }}</p>
-                            <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-r700 font-bold">
+                            <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir tous les cours
                             </a>
                         </div>
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Commandes</h3>
                             <p class="text-4xl font-bold">4</p>
                             <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir toutes les commandes
                             </a>
                         </div>
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Nombre d'étudiant</h3>
                             <p class="text-4xl font-bold">{{ $studentCount }}</p>
                             <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir tous les étudiants
                             </a>
                         </div>
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Nombre d'enseignant</h3>
                             <p class="text-4xl font-bold">{{ $teacherCount }}</p>
                             <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir tous les enseignants
                             </a>
                         </div>
-                        <div class="hover:bg-gray-100 bg-yellow-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
+                        <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <h3 class="text-lg font-bold mb-2">Revenus</h3>
                             <p class="text-4xl font-bold">330 €</p>
-                            <a href="#" class="text-blue-500 hover:text-red-700 font-bold">
+                            <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                                 Voir les rapports
                             </a>
                         </div>
@@ -69,7 +69,7 @@
                         <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
                             <table class="w-full">
                                 <thead>
-                                    <tr class="bg-green-600 font-bold dark:bg-gray-600">
+                                    <tr class="bg-red-600 font-bold dark:bg-gray-600">
                                         <th class="py-2 px-4 text-left">Nom</th>
                                         <th class="py-2 px-4 text-left">Email</th>
                                         <th class="py-2 px-4 text-left">Date d'inscription</th>

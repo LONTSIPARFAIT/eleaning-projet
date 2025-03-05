@@ -6,13 +6,13 @@
     <h1 class="text-3xl font-bold ml-4 text-blue-900">Tous les utilisateurs</h1>
 
     <div class="flex justify-end items-end mx-10 pb-2">
-        <a href="{{ route('users.create') }}"  class="bg-blue-500 text-white p-3 rounded">Ajouter un User</a>
+        <a href="{{ route('users.create') }}"  class="bg-red-500 hover: text-white p-3 rounded">Ajouter un User</a>
     </div>
 
     <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
         <table class="w-full">
             <thead>
-                <tr class="bg-green-600 dark:bg-gray-600">
+                <tr class="bg-red-600 dark:bg-gray-600">
                     <th class="py-2 px-4 text-left">Nom</th>
                     <th class="py-2 px-4 text-left">Email</th>
                     <th class="py-2 px-4 text-left">Rôle</th>

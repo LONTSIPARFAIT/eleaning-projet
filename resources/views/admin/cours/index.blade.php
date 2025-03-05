@@ -30,7 +30,7 @@
                             <td class="border px-4 py-2">
                                 <div class="flex space-x-2">
                                     <a href="{{ route('cours.show', $cour) }}"
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md text-sm">View</a>
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md text-sm">View</a>
                                     <a href="{{ route('cours.edit', $cour) }}"
                                         class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-md text-sm">Edit</a>
                                     <form action="{{ route('cours.destroy', $cour) }}" method="POST"
