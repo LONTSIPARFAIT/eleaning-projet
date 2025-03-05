@@ -12,7 +12,7 @@
     <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
         <table class="w-full">
             <thead>
-                <tr class="bg-red-600 bg-red-600 dark:bg-gray-600">
+                <tr class="bg-red-600 hover:bg-red-600 dark:bg-gray-600">
                     <th class="py-2 px-4 text-left">Nom</th>
                     <th class="py-2 px-4 text-left">Email</th>
                     <th class="py-2 px-4 text-left">Rôle</th>
