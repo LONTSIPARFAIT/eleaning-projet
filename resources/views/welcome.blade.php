@@ -140,7 +140,7 @@
     <section class="py-16 bg-gray-100 text-center">
         <h2 class="text-3xl font-bold text-gray-800">Prêt à commencer votre apprentissage ?</h2>
         <p class="mt-4">Rejoignez notre communauté d'apprenants dès aujourd'hui.</p>
-        <a href="{{ route('register') }}" class="mt-6 inline-block bg-red-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded">S'inscrire Maintenant</a>
+        <a href="{{ route('register') }}" class="mt-6 inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">S'inscrire Maintenant</a>
     </section>
 
     <footer class="bg-red-600 text-white p-6 text-center">
