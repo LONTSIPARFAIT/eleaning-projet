@@ -10,22 +10,33 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #mobile-menu {
+            background-color: rgba(255, 0, 0, 0.9); /* Couleur de fond du menu mobile */
+            position: absolute;
+            top: 100%; /* Juste en dessous de la barre de navigation */
+            left: 0;
+            right: 0;
+            z-index: 20;
+        }
+    </style>
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 mx-2">
 
-    <nav class="bg-gradient-to-r from-red-400 to-red-600 p-4 shadow-lg fixed w-full z-10 min-h-5">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
+    <nav class="bg-gradient-to-r from-red-400 to-red-600 p-4 shadow-lg fixed w-full z-10">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <div class="flex items-center">
                 <a href="#" class="text-white font-bold text-2xl transition duration-300 hover:scale-105">
-                    <img src="/img/logo.png" class="h-[4rem] w-[6rem] rounded" alt="Logo-Elearning App"/>
+                    <img src="/img/logo.png" class="h-16 w-auto rounded" alt="Logo-Elearning App"/>
                 </a>
             </div>
-            <div class="space-x-8 text-xl">
+            <div class="hidden md:flex space-x-4 text-xl mt-2 md:mt-0">
                 <a href="#home" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
                 <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
                 <a href="#about" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
             </div>
-            <div>
+            <div class="flex items-center mt-2 md:mt-0">
                 @if (Route::has('login'))
                     @auth
                         @if (auth()->user()->role === 'student')
@@ -45,17 +56,30 @@
                     @endauth
                 @endif
             </div>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
     </nav>
 
-    <div class="relative my-5 mx-2 bg-dots-darker bg-center bg-cover selection:bg-red-500 selection:text-white p-8" style="background-image: url('img/photo.png'); min-height: 80vh; height: 60vh;">
-        <div class="flex flex-col justify-center items-center h-full ">
+    <div id="mobile-menu" class="md:hidden hidden">
+        <div class="flex flex-col space-y-2 mt-2">
+            <a href="#home" class="block text-white hover:bg-red-500 p-2 rounded">Accueil</a>
+            <a href="#cours" class="block text-white hover:bg-red-500 p-2 rounded">Cours</a>
+            <a href="#about" class="block text-white hover:bg-red-500 p-2 rounded">À propos</a>
+        </div>
+    </div>
+
+    <div class="relative my-5 mx-2 bg-dots-darker bg-center bg-cover selection:bg-red-500 selection:text-white p-8" style="background-image: url('img/photo.png'); min-height: 60vh;">
+        <div class="flex flex-col justify-center items-center h-full">
             <h1 class="text-3xl md:text-4xl font-bold text-white">Bienvenue sur Perfect-Learning</h1>
             <p class="mt-4 text-base md:text-lg text-gray-300 text-center px-4 max-w-lg">Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !</p>
 
-            <div class="mt-8">
+            <div class="mt-8 flex flex-col md:flex-row">
                 <a href="#courses" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded transition duration-300">Voir les Cours</a>
-                <a href="#about" class="inline-block ml-4 bg-white text-red-600 font-semibold py-3 px-6 rounded border border-red-600 hover:bg-gray-200 transition duration-300">À propos</a>
+                <a href="#about" class="inline-block mt-4 md:mt-0 md:ml-4 bg-white text-red-600 font-semibold py-3 px-6 rounded border border-red-600 hover:bg-gray-200 transition duration-300">À propos</a>
             </div>
         </div>
     </div>
@@ -71,28 +95,11 @@
     <section id="cours" class="py-8 bg-gray-100">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold text-gray-800">Nos Cours Disponibles</h2>
-
-            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                @foreach ($cours->take(4) as $cour) <!-- Afficher seulement les 4 premiers cours -->
-                    <div class="bg-white shadow-lg rounded-lg p-6">
-                        <h3 class="text-xl font-semibold">{{ $cour->title }}</h3>
-                        <p class="mt-2">{{ $cour->description }}</p>
-                        <p class="mt-2">Durée : {{ $cour->duration }} minutes</p>
-                        <p class="mt-2">Prix : {{ $cour->price }} €</p>
-                        <form action="{{ route('cours.subscribe', $cour->id) }}" method="POST">
-
-                            {{-- {{ route('courses.subscribe', $cour->id) }} --}}
-                            @csrf
-                            <button type="submit" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">S'abonner</button>
-                        </form>
-
-                    </div>
-                @endforeach
+            <div id="courses-container" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @include('courses.partials.courses', ['cours' => $cours]) <!-- Include partial for courses -->
             </div>
-
-            <!-- Pagination pour le reste des cours -->
-            <div class="mt-8">
-                {{ $cours->links() }} <!-- Affiche les liens de pagination -->
+            <div id="pagination" class="mt-8">
+                {{ $cours->links() }}
             </div>
         </div>
     </section>
@@ -151,6 +158,13 @@
         </div>
     </footer>
 
+    <script>
+    $(document).ready(function() {
+        $('#menu-toggle').click(function() {
+            $('#mobile-menu').toggle(); // Montre ou cache le menu
+        });
+    });
+    </script>
 
 </body>
 </html>
