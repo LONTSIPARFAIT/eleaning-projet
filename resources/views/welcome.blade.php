@@ -54,8 +54,8 @@
             <p class="mt-4 text-base md:text-lg text-gray-300 text-center px-4 max-w-lg">Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !</p>
 
             <div class="mt-8">
-                <a href="#courses" class="inline-block bg-red-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded transition duration-300">Voir les Cours</a>
-                <a href="#about" class="inline-block ml-4 bg-white text-teal-600 font-semibold py-3 px-6 rounded border border-teal-600 hover:bg-gray-200 transition duration-300">À propos</a>
+                <a href="#courses" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded transition duration-300">Voir les Cours</a>
+                <a href="#about" class="inline-block ml-4 bg-white text-red-600 font-semibold py-3 px-6 rounded border border-red-600 hover:bg-gray-200 transition duration-300">À propos</a>
             </div>
         </div>
     </div>
