@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <section class="py-4 bg-teal-600 text-white">
+    <section class="py-4 bg-red-600 text-white">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold">Découvrez Nos Cours</h2>
             <p class="mt-2">Apprenez à votre rythme avec une variété de cours adaptés à tous les niveaux.</p>
@@ -83,7 +83,7 @@
 
                             {{-- {{ route('courses.subscribe', $cour->id) }} --}}
                             @csrf
-                            <button type="submit" class="mt-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded">S'abonner</button>
+                            <button type="submit" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">S'abonner</button>
                         </form>
 
                     </div>
@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    <section id="testimonials" class="py-8 bg-teal-100">
+    <section id="testimonials" class="py-8 bg-red-100">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold text-gray-800">Ce que disent nos utilisateurs</h2>
             <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
