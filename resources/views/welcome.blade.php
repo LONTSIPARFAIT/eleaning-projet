@@ -40,7 +40,7 @@
                     @else
                         <a href="{{ route('login') }}" class="font-semibold bg-white text-teal-600 p-2 rounded border border-teal-600 hover:bg-gray-200 transition duration-300">Connexion</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold bg-white text-red-600 p-2 rounded border border-teal-600 hover:bg-gray-200 transition duration-300">Inscription</a>
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold bg-white text-red-600 p-2 rounded border border-red-600 hover:bg-gray-200 transition duration-300">Inscription</a>
                         @endif
                     @endauth
                 @endif
