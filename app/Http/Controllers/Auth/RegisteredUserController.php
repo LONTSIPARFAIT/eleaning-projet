@@ -46,8 +46,8 @@ class RegisteredUserController extends Controller
         $today = new \DateTime();
         $age = $today->diff($dob)->y;
 
-        if ($age < 15) {
-            throw ValidationException::withMessages(['date_de_naissance' => 'Vous devez avoir au moins 15 ans pour vous inscrire.']);
+        if ($age < 14) {
+            throw ValidationException::withMessages(['date_de_naissance' => 'Vous devez avoir au moins 14 ans pour vous inscrire.']);
         }
 
         // Création d'un nouvel utilisateur

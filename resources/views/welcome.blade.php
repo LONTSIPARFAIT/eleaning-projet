@@ -17,7 +17,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div>
                 <a href="#" class="text-white font-bold text-2xl transition duration-300 hover:scale-105">
-                    <img src="/img/logo.png" class="h-[4rem] w-[6rem] rounded" alt="Logo-Elearning App"/>
+                    <img src="/img/logo-cfpc.jpg" class="h-[4rem] w-[6rem] rounded" alt="Logo-Elearning App"/>
                 </a>
             </div>
             <div class="space-x-8 text-xl">
