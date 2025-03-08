@@ -5,13 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Enums\UserRole;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -29,7 +28,8 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse{
+    public function store(Request $request): RedirectResponse
+    {
         // Validation des données d'inscription
         $request->validate([
             'name' => 'required|string|max:255',
@@ -37,21 +37,27 @@ class RegisteredUserController extends Controller
             'password' => 'required|string|confirmed|min:8',
             'date_de_naissance' => 'required|date',
             'sexe' => 'required|in:homme,femme,autre',
-            'lieu_de_naissance' => 'required|string|max:255', // Validation pour le lieu de naissance
-            'profile_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation pour l'image
+            'lieu_de_naissance' => 'required|string|max:255',
+            'profile_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Traitement de l'image
-        // $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
+        // Vérification de l'âge (doit être supérieur à 15 ans)
+        $dob = new \DateTime($request->date_de_naissance);
+        $today = new \DateTime();
+        $age = $today->diff($dob)->y;
+
+        if ($age < 15) {
+            throw ValidationException::withMessages(['date_de_naissance' => 'Vous devez avoir au moins 15 ans pour vous inscrire.']);
+        }
 
         // Création d'un nouvel utilisateur
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => UserRole::STUDENT->value, // Assigner le rôle par défaut
+            'role' => UserRole::STUDENT->value,
             'date_de_naissance' => $request->date_de_naissance,
-            'lieu_de_naissance' => $request->lieu_de_naissance, // Enregistrement du lieu de naissance
+            'lieu_de_naissance' => $request->lieu_de_naissance,
             'sexe' => $request->sexe,
         ]);
 
