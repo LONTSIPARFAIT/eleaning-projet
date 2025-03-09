@@ -13,7 +13,7 @@
 </head>
 <body class="antialiased bg-gray-100 p-6 dark:bg-gray-900 mx-2">
 
-    <nav class="bg-gradient-to-r from-red-400 to-red-600 p-4 shadow-lg fixed w-full z-10 min-h-5">
+    <nav class="bg-gradient-to-r from-red-400 to-red-600 p-6 shadow-lg fixed w-full z-10 min-h-5">
         <div class="container mx-auto flex justify-between items-center">
             <div>
                 <a href="#" class="text-white font-bold text-2xl transition duration-300 hover:scale-105">
