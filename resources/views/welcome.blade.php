@@ -88,7 +88,7 @@
         x-init="animate()">
 
         <!-- Élément invisible servant à fixer la hauteur -->
-        <span class="opacity-0">Bienvenue sur Perfect-Learning</span>
+        <span class="opacity-0">Apprenez, progressez, réussissez !</span>
 
         <!-- Texte animé positionné en absolu pour éviter le reflow -->
         <span class="absolute top-0 left-0" x-text="displayed"></span>
