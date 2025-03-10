@@ -12,9 +12,8 @@
         </a>
     </div>
 
-    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
-        
-        <table class="min-w-full divide-y divide-gray-300">
+    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md overflow-x-auto">
+        <table class="min-w-full table-auto divide-y divide-gray-300">
             <thead class="bg-red-600 text-white">
                 <tr>
                     <th class="py-3 px-4 text-left text-sm font-medium">Nom</th>
@@ -42,7 +41,7 @@
                         </form>
                     </td>
                     <td class="py-3 px-4 text-sm">
-                        <div class="flex space-x-2">
+                        <div class="flex flex-wrap space-x-2">
                             <a href="{{ route('users.show', $user->id) }}" class="text-blue-500 hover:text-blue-700 font-bold">Voir</a>
                             <a href="{{ route('users.edit', $user->id) }}" class="text-green-500 hover:text-green-700 font-bold">Modifier</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="inline">
@@ -54,7 +53,7 @@
                     </td>
                 </tr>
                 @endforeach
-            </tbody>d
+            </tbody>
         </table>
 
         <div class="mt-4">
