@@ -25,17 +25,17 @@
       <!-- Conteneur principal avec une légère bordure rouge pour le rappel de la charte -->
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border border-red-300">
         <div class="p-6 text-gray-800">
-          
+
           <!-- Cards de statistiques -->
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Utilisateurs</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-600">Utilisateurs</h3>
               <p class="text-4xl font-bold">{{ $userCount }}</p>
               <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-700 font-bold">
                 Voir tous les utilisateurs
               </a>
             </div>
-            
+
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
               <h3 class="text-lg font-bold mb-2 text-red-600">Cours</h3>
               <p class="text-4xl font-bold">{{ $coursCount }}</p>
@@ -43,7 +43,7 @@
                 Voir tous les cours
               </a>
             </div>
-            
+
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
               <h3 class="text-lg font-bold mb-2 text-red-600">Commandes</h3>
               <p class="text-4xl font-bold">4</p>
@@ -51,7 +51,7 @@
                 Voir toutes les commandes
               </a>
             </div>
-            
+
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
               <h3 class="text-lg font-bold mb-2 text-red-600">Nombre d'étudiants</h3>
               <p class="text-4xl font-bold">{{ $studentCount }}</p>
@@ -59,7 +59,7 @@
                 Voir tous les étudiants
               </a>
             </div>
-            
+
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
               <h3 class="text-lg font-bold mb-2 text-red-600">Nombre d'enseignants</h3>
               <p class="text-4xl font-bold">{{ $teacherCount }}</p>
@@ -67,7 +67,7 @@
                 Voir tous les enseignants
               </a>
             </div>
-            
+
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
               <h3 class="text-lg font-bold mb-2 text-red-600">Revenus</h3>
               <p class="text-4xl font-bold">330 €</p>
@@ -107,7 +107,7 @@
             </div>
           </div>
           <!-- Fin du tableau -->
-          
+
         </div>
       </div>
     </div>
