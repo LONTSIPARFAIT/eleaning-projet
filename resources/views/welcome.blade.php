@@ -71,7 +71,7 @@
       <div class="container mx-auto px-4 py-2 space-y-2">
         <a href="#home" class="block text-white border-b-2 border-transparent hover:border-white transition">Accueil</a>
         <a href="#cours" class="block text-white border-b-2 border-transparent hover:border-white transition">Cours</a>
-        <a href="./about" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
+        <a href="./about.html" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
       </div>
     </div>
   </nav>
