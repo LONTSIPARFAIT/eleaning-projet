@@ -1,110 +1,155 @@
-<x-app-layout>
-  <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-          {{ __('Gestion des cours') }}
-      </h2>
-  </x-slot>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{{ config('app.name', 'Laravel') }}</title>
 
-  <div class="mt-4 ml-6">
-      <h4 class="text-gray-500 text-2xl">Admin</h4>
-      <ul class="mt-4 ml-6">
-          <li>
-              <a href="{{ route('cours.create') }}" class="bg-red-500 hover:bg-red-700 text-white p-3 rounded">Créer un nouveau cours</a>
-          </li>
-      </ul>
-  </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}">
 
-  <div class="py-12 bg-red-100">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-              <div class="p-6 text-gray-900 dark:text-gray-100 bg-green-100">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Utilisateurs</h3>
-                          <p class="text-4xl font-bold">{{ $userCount }}</p>
-                          <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-700 font-bold">Voir tous les utilisateurs</a>
-                      </div>
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Cours</h3>
-                          <p class="text-4xl font-bold">{{ $coursCount }}</p>
-                          <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-700 font-bold">Voir tous les cours</a>
-                      </div>
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Commandes</h3>
-                          <p class="text-4xl font-bold">4</p>
-                          <a href="#" class="text-red-500 hover:text-red-700 font-bold">Voir toutes les commandes</a>
-                      </div>
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Nombre d'étudiants</h3>
-                          <p class="text-4xl font-bold">{{ $studentCount }}</p>
-                          <a href="#" class="text-red-500 hover:text-red-700 font-bold">Voir tous les étudiants</a>
-                      </div>
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Nombre d'enseignants</h3>
-                          <p class="text-4xl font-bold">{{ $teacherCount }}</p>
-                          <a href="#" class="text-red-500 hover:text-red-700 font-bold">Voir tous les enseignants</a>
-                      </div>
-                      <div class="hover:bg-gray-100 bg-red-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                          <h3 class="text-lg font-bold mb-2">Revenus</h3>
-                          <p class="text-4xl font-bold">330 €</p>
-                          <a href="#" class="text-red-500 hover:text-red-700 font-bold">Voir les rapports</a>
-                      </div>
-                  </div>
+  <!-- Styles & Scripts -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="font-sans antialiased bg-white">
+  <div class="min-h-screen">
+    
+    <!-- (Optionnel) En-tête secondaire -->
+    @if (isset($header))
+      <header class="bg-white border-b border-red-600 shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          {{ $header }}
+        </div>
+      </header>
+    @endif
 
-                  <div class="mt-8">
-                    <h2 class="text-lg font-bold mb-4">Derniers utilisateurs inscrits</h2>
-                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4">
-                        <div class="overflow-x-auto sm:hidden"> <!-- Défilement horizontal uniquement sur mobile -->
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-red-600 font-bold dark:bg-gray-600">
-                                    <tr>
-                                        <th class="py-2 px-4 text-left">Nom</th>
-                                        <th class="py-2 px-4 text-left">Email</th>
-                                        <th class="py-2 px-4 text-left">Date d'inscription</th>
-                                        <th class="py-2 px-4 text-left">Rôle</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-600">
-                                    @foreach ($newUsers as $user)
-                                        <tr>
-                                            <td class="py-2 px-4">{{ $user->name }}</td>
-                                            <td class="py-2 px-4">{{ $user->email }}</td>
-                                            <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
-                                            <td class="py-2 px-4">{{ $user->role }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div class="hidden sm:block"> <!-- Afficher le tableau complet sur les écrans plus grands -->
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-red-600 font-bold dark:bg-gray-600">
-                                    <tr>
-                                        <th class="py-2 px-4 text-left">Nom</th>
-                                        <th class="py-2 px-4 text-left">Email</th>
-                                        <th class="py-2 px-4 text-left">Date d'inscription</th>
-                                        <th class="py-2 px-4 text-left">Rôle</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-600">
-                                    @foreach ($newUsers as $user)
-                                        <tr>
-                                            <td class="py-2 px-4">{{ $user->name }}</td>
-                                            <td class="py-2 px-4">{{ $user->email }}</td>
-                                            <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
-                                            <td class="py-2 px-4">{{ $user->role }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-
+    <!-- Contenu Principal : Sidebar et zone de contenu -->
+    <main class="py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
+        
+        <!-- Sidebar de Navigation -->
+        <aside class="w-full md:w-1/4 p-4" x-data="{ open: false }">
+          <div class="bg-white shadow rounded-lg p-6 border border-red-600">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <!-- Logo -->
+                <a href="{{ route('welcome') }}">
+                  <x-application-logo class="block h-9 w-auto fill-current text-red-600" />
+                </a>
+                <span class="ml-2 text-xl font-bold text-red-600">Navigation</span>
               </div>
+              <!-- Bouton Toggle pour mobile -->
+              <button @click="open = !open" class="md:hidden text-red-600 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <!-- Icône hamburger (affiché quand le menu est fermé) -->
+                  <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                  <!-- Icône croix (affiché quand le menu est ouvert) -->
+                  <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Liens de Navigation et Dropdown (visible par défaut sur md, repliable sur mobile) -->
+            <div :class="{'block': open, 'hidden': !open}" class="mt-4 md:block">
+              <div class="flex flex-col space-y-4 text-red-600">
+                @if (Route::has('login'))
+                  @auth
+                    @if (auth()->user()->role === 'student')
+                      <x-nav-link :href="route('student.dashboard')" :active="request()->routeIs('student.dashboard')">
+                        {{ __('Dashboard Étudiant') }}
+                      </x-nav-link>
+                    @elseif (auth()->user()->role === 'teacher')
+                      <x-nav-link :href="route('teacher.dashboard')" :active="request()->routeIs('teacher.dashboard')">
+                        {{ __('Dashboard Enseignant') }}
+                      </x-nav-link>
+                    @elseif (auth()->user()->role === 'admin')
+                      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard Admin') }}
+                      </x-nav-link>
+                    @else
+                      <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Dashboard') }}
+                      </x-nav-link>
+                    @endif
+                  @else
+                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                      {{ __('Connexion') }}
+                    </x-nav-link>
+                    @if (Route::has('register'))
+                      <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                        {{ __('Inscription') }}
+                      </x-nav-link>
+                    @endif
+                  @endauth
+                @endif
+              </div>
+
+              <!-- Dropdown Réglages / Profil -->
+              <div class="mt-6">
+                <x-dropdown align="right" width="48">
+                  <x-slot name="trigger">
+                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md 
+                          text-red-600 bg-white hover:bg-red-600 hover:text-white focus:outline-none transition ease-in-out duration-150">
+                      @if (Auth::user()->profile_photo)
+                        <img src="{{ asset('storage/' . Auth::user()->profile_photo) }}" alt="Photo de Profil" class="h-10 w-10 rounded-full mr-2">
+                      @else
+                        <svg class="h-10 w-10 rounded-full mr-2 text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14.5c-3.5 0-6.5-2.5-6.5-6s3-6 6.5-6 6.5 2.5 6.5 6-3 6-6.5 6zm0 0c3.5 0 6.5 1.5 6.5 4.5v1H5v-1c0-3 3-4.5 6.5-4.5z" />
+                        </svg>
+                      @endif
+                      <div>{{ Auth::user()->name }}</div>
+                      <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </x-slot>
+                  
+                  <x-slot name="content">
+                    <x-dropdown-link :href="route('profile.edit')">
+                      {{ __('Profile') }}
+                    </x-dropdown-link>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault(); this.closest('form').submit();">
+                        {{ __('Se Déconnecter') }}
+                      </x-dropdown-link>
+                    </form>
+                  </x-slot>
+                </x-dropdown>
+              </div>
+            </div>
           </div>
+        </aside>
+
+        <!-- Zone de contenu principal -->
+        <div class="w-full md:w-3/4 p-4">
+          <div class="bg-white shadow rounded-lg p-6 border border-red-600">
+            {{ $slot }}
+          </div>
+        </div>
       </div>
+    </main>
+
+    <!-- Footer en rouge avec texte blanc -->
+    <footer class="bg-red-600 text-white p-6 text-center">
+      <p>&copy; 2024 Perfect-coding - Tous droits réservés - 2024</p>
+      <div>
+        <a href="#privacy" class="text-white hover:underline">Politique de confidentialité</a> |
+        <a href="#terms" class="text-white hover:underline">Conditions d'utilisation</a>
+      </div>
+    </footer>
   </div>
-</x-app-layout>
+  
+  <!-- AlpineJS pour le comportement interactif -->
+  <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+</html>
