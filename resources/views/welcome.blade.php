@@ -26,7 +26,7 @@
        :class="{ 'translate-y-0': visible, '-translate-y-full': !visible }">
     <div class="container mx-auto flex justify-between items-center px-4">
       <a href="#" class="transition transform hover:scale-105">
-        <img src="/img/logo1.jpg" alt="Logo-Elearning App" class="h-16 w-24 rounded shadow-md">
+        <img src="/img/logo.jpg" alt="Logo-Elearning App" class="h-16 w-24 rounded shadow-md">
       </a>
       <div class="hidden md:flex space-x-8 text-xl">
         <a href="#home" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
