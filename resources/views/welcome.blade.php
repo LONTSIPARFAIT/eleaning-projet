@@ -16,8 +16,14 @@
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 px-4">
 
-  <!-- Navbar fixée en haut -->
-  <nav class="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-700 p-6 shadow-lg z-50">
+  <!-- Navbar avec gestion de visibilité via Alpine.js -->
+  <nav x-data="{ visible: false }" 
+       x-init="visible = window.scrollY > 0" 
+       x-show="visible" 
+       x-cloak
+       @scroll.window="visible = window.scrollY > 0"
+       class="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-700 p-6 shadow-lg z-50 transition duration-300 transform"
+       :class="{ 'translate-y-0': visible, '-translate-y-full': !visible }">
     <div class="container mx-auto flex justify-between items-center px-4">
       <a href="#" class="transition transform hover:scale-105">
         <img src="/img/logo-cfpc.jpg" alt="Logo-Elearning App" class="h-16 w-24 rounded shadow-md">
@@ -50,33 +56,33 @@
     </div>
   </nav>
 
-<!-- Section Héros : texte aligné à gauche et animation Alpine.js -->
-<div class="relative h-screen mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home1.jpg');">
+  <!-- Section Héros -->
+  <div class="relative h-screen mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home1.jpg');">
     <div class="absolute inset-0 bg-slate-100 opacity-10 rounded-lg"></div>
     <div class="relative flex flex-col justify-center items-start h-full text-left px-8">
       <h1 class="relative text-4xl md:text-6xl font-bold text-white mb-6"
-        x-data="{
-          texts: ['Bienvenue sur Perfect-Learning', 'Apprenez, progressez, réussissez !'],
-          currentTextIndex: 0,
-          displayed: '',
-          async animate() {
-            while (true) {
-              let currentText = this.texts[this.currentTextIndex];
-              for (let i = 1; i <= currentText.length; i++) {
-                this.displayed = currentText.slice(0, i);
-                await new Promise(resolve => setTimeout(resolve, 100));
+          x-data="{
+            texts: ['Bienvenue sur Perfect-Learning', 'Apprenez, progressez, réussissez !'],
+            currentTextIndex: 0,
+            displayed: '',
+            async animate() {
+              while (true) {
+                let currentText = this.texts[this.currentTextIndex];
+                for (let i = 1; i <= currentText.length; i++) {
+                  this.displayed = currentText.slice(0, i);
+                  await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                for (let i = currentText.length; i >= 0; i--) {
+                  this.displayed = currentText.slice(0, i);
+                  await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
               }
-              await new Promise(resolve => setTimeout(resolve, 1000));
-              for (let i = currentText.length; i >= 0; i--) {
-                this.displayed = currentText.slice(0, i);
-                await new Promise(resolve => setTimeout(resolve, 100));
-              }
-              await new Promise(resolve => setTimeout(resolve, 1500));
-              this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
             }
-          }
-        }"
-        x-init="animate()">
+          }"
+          x-init="animate()">
         <span class="opacity-0">Apprenez, progressez, réussissez !</span>
         <span class="absolute top-0 left-0" x-text="displayed"></span>
       </h1>
@@ -93,7 +99,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Section des cours -->
   <section id="cours" class="py-12 mx-auto max-w-7xl">
@@ -176,4 +181,3 @@
   </footer>
 </body>
 </html>
-
