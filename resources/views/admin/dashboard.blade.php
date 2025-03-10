@@ -78,35 +78,37 @@
           </div>
           <!-- Fin des cards -->
 
-          <!-- Tableau des derniers utilisateurs inscrits -->
-          <div class="mt-8">
-            <h2 class="text-lg font-bold mb-4 text-red-600">Derniers utilisateurs inscrits</h2>
-            <div class="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-300">
-                  <thead class="bg-red-600 text-white">
-                    <tr>
-                      <th class="py-2 px-4 text-left">Nom</th>
-                      <th class="py-2 px-4 text-left">Email</th>
-                      <th class="py-2 px-4 text-left">Date d'inscription</th>
-                      <th class="py-2 px-4 text-left">Rôle</th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ($newUsers as $user)
-                      <tr>
-                        <td class="py-2 px-4">{{ $user->name }}</td>
-                        <td class="py-2 px-4">{{ $user->email }}</td>
-                        <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
-                        <td class="py-2 px-4">{{ $user->role }}</td>
-                      </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <!-- Fin du tableau -->
+<!-- Tableau des derniers utilisateurs inscrits -->
+<div class="mt-8">
+  <h2 class="text-lg font-bold mb-4 text-slate-700">Derniers utilisateurs inscrits</h2>
+  <div class="bg-white rounded-lg shadow-md p-4 border border-gray-200">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-300">
+        <thead class="bg-red-600 text-white">
+          <tr>
+            <th class="py-2 px-4 text-left">Nom</th>
+            <th class="py-2 px-4 text-left">Email</th>
+            <th class="py-2 px-4 text-left">Date d'inscription</th>
+            <th class="py-2 px-4 text-left">Rôle</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          @foreach ($newUsers as $index => $user)
+            <tr class="{{ $index % 2 == 0 ? 'bg-blue-100' : 'bg-green-100' }} hover:bg-red-50">
+              <td class="py-2 px-4">{{ $user->name }}</td>
+              <td class="py-2 px-4">{{ $user->email }}</td>
+              <td class="py-2 px-4">{{ $user->created_at->format('d/m/Y H:i') }}</td>
+              <td class="py-2 px-4">{{ $user->role }}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Fin du tableau -->
+
+
 
         </div>
       </div>
