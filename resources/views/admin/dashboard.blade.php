@@ -8,7 +8,7 @@
 
   <!-- Bloc Admin : liens d'action -->
   <div class="mt-4 ml-6">
-    <h4 class="text-red-600 text-2xl font-bold">Admin</h4>
+    <h4 class="text-slate-700 text-2xl font-bold">Admin</h4>
     <ul class="mt-4 ml-6">
       <li>
         <a href="{{ route('cours.create') }}"
@@ -29,7 +29,7 @@
           <!-- Cards de statistiques -->
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-slate-600">Utilisateurs</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Utilisateurs</h3>
               <p class="text-4xl font-bold">{{ $userCount }}</p>
               <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-700 font-bold">
                 Voir tous les utilisateurs
@@ -37,7 +37,7 @@
             </div>
 
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Cours</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Cours</h3>
               <p class="text-4xl font-bold">{{ $coursCount }}</p>
               <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-700 font-bold">
                 Voir tous les cours
@@ -45,7 +45,7 @@
             </div>
 
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Commandes</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Commandes</h3>
               <p class="text-4xl font-bold">4</p>
               <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                 Voir toutes les commandes
@@ -53,7 +53,7 @@
             </div>
 
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Nombre d'étudiants</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Nombre d'étudiants</h3>
               <p class="text-4xl font-bold">{{ $studentCount }}</p>
               <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                 Voir tous les étudiants
@@ -61,7 +61,7 @@
             </div>
 
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Nombre d'enseignants</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Nombre d'enseignants</h3>
               <p class="text-4xl font-bold">{{ $teacherCount }}</p>
               <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                 Voir tous les enseignants
@@ -69,7 +69,7 @@
             </div>
 
             <div class="hover:bg-red-50 bg-white rounded-lg shadow-md p-4 border border-gray-200">
-              <h3 class="text-lg font-bold mb-2 text-red-600">Revenus</h3>
+              <h3 class="text-lg font-bold mb-2 text-slate-700">Revenus</h3>
               <p class="text-4xl font-bold">330 €</p>
               <a href="#" class="text-red-500 hover:text-red-700 font-bold">
                 Voir les rapports
