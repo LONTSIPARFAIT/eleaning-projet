@@ -15,11 +15,10 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 px-4">
-
-  <!-- Navbar avec gestion de visibilité via Alpine.js -->
-  <nav x-data="{ visible: false }" 
+  
+  <!-- Navbar - avec menu mobile géré par Alpine.js -->
+  <nav x-data="{ visible: false, mobileOpen: false }" 
        x-init="visible = window.scrollY > 0" 
-       x-show="visible" 
        x-cloak
        @scroll.window="visible = window.scrollY > 0"
        class="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-700 p-6 shadow-lg z-50 transition duration-300 transform"
@@ -28,11 +27,13 @@
       <a href="#" class="transition transform hover:scale-105">
         <img src="/img/logo1.jpg" alt="Logo-Elearning App" class="h-16 w-24 rounded shadow-md">
       </a>
+      <!-- Navigation pour écran moyen et larges -->
       <div class="hidden md:flex space-x-8 text-xl">
         <a href="#home" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
         <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
         <a href="#about" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
       </div>
+      <!-- Liens d'authentification -->
       <div class="flex items-center space-x-4">
         @if (Route::has('login'))
           @auth
@@ -52,6 +53,25 @@
             @endif
           @endauth
         @endif
+      </div>
+      <!-- Bouton hamburger pour mobile -->
+      <div class="md:hidden">
+        <button @click="mobileOpen = !mobileOpen" class="text-white focus:outline-none">
+          <svg x-show="!mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menu mobile -->
+    <div x-show="mobileOpen" x-transition class="md:hidden bg-gradient-to-r from-red-500 to-red-700">
+      <div class="container mx-auto px-4 py-2 space-y-2">
+        <a href="#home" class="block text-white border-b-2 border-transparent hover:border-white transition">Accueil</a>
+        <a href="#cours" class="block text-white border-b-2 border-transparent hover:border-white transition">Cours</a>
+        <a href="#about" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
       </div>
     </div>
   </nav>
@@ -179,5 +199,6 @@
       <a href="#terms" class="hover:underline">Conditions d'utilisation</a>
     </div>
   </footer>
+
 </body>
 </html>
