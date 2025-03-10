@@ -12,10 +12,11 @@
         </a>
     </div>
 
-    <!-- Conteneur avec scroll horizontal -->
+    <!-- Conteneur avec scroll horizontal pour tout le tableau -->
     <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md overflow-x-auto">
-        <table class="w-full table-auto divide-y divide-gray-300">
-            <thead class="bg-red-600 text-white">
+        <table class="min-w-full table-auto divide-y divide-gray-300">
+            <!-- L'en-tête devient scrollable horizontalement aussi -->
+            <thead class="bg-red-600 text-white sticky top-0">
                 <tr>
                     <th class="py-3 px-4 text-left text-sm font-medium">Nom</th>
                     <th class="py-3 px-4 text-left text-sm font-medium">Email</th>
