@@ -50,8 +50,8 @@
     </div>
   </nav>
 
-  <!-- Section Héros : texte aligné à gauche et animation Alpine.js -->
-  <div class="relative pt-24 my-20 mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home1.jpg'); min-height: 80vh; height: 60vh;">
+<!-- Section Héros : texte aligné à gauche et animation Alpine.js -->
+<div class="relative h-screen mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home1.jpg');">
     <div class="absolute inset-0 bg-slate-100 opacity-10 rounded-lg"></div>
     <div class="relative flex flex-col justify-center items-start h-full text-left px-8">
       <h1 class="relative text-4xl md:text-6xl font-bold text-white mb-6"
@@ -61,39 +61,26 @@
           displayed: '',
           async animate() {
             while (true) {
-              // Sélection du texte courant
               let currentText = this.texts[this.currentTextIndex];
-
-              // Affichage lettre par lettre
               for (let i = 1; i <= currentText.length; i++) {
                 this.displayed = currentText.slice(0, i);
                 await new Promise(resolve => setTimeout(resolve, 100));
               }
-
               await new Promise(resolve => setTimeout(resolve, 1000));
-
-              // Effacement lettre par lettre
               for (let i = currentText.length; i >= 0; i--) {
                 this.displayed = currentText.slice(0, i);
                 await new Promise(resolve => setTimeout(resolve, 100));
               }
-
               await new Promise(resolve => setTimeout(resolve, 1500));
-
-              // Passage au texte suivant
               this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
             }
           }
         }"
         x-init="animate()">
-
-        <!-- Élément invisible servant à fixer la hauteur -->
         <span class="opacity-0">Apprenez, progressez, réussissez !</span>
-
-        <!-- Texte animé positionné en absolu pour éviter le reflow -->
         <span class="absolute top-0 left-0" x-text="displayed"></span>
       </h1>
-      <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
+      <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
         Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -106,6 +93,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Section des cours -->
   <section id="cours" class="py-12 mx-auto max-w-7xl">
