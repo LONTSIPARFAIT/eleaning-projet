@@ -51,17 +51,39 @@
   </nav>
 
   <!-- Section Héros : texte aligné à gauche et animation Alpine.js -->
-  <div class="relative pt-24 my-20 mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home.jpg'); min-height: 80vh; height: 60vh;">
+  <div class="relative pt-24 my-20 mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('img/home1.jpg'); min-height: 80vh; height: 60vh;">
     <div class="absolute inset-0 bg-slate-100 opacity-10 rounded-lg"></div>
     <div class="relative flex flex-col justify-center items-start h-full text-left px-8">
-      <h1 class="relative text-4xl md:text-5xl font-bold text-white drop-shadow-lg"
-          x-data="textAnimation()"
-          x-init="startAnimation()">
-        <!-- Ce span invisible réserve l'espace -->
-        <span class="invisible">Bienvenue sur Perfect-Learning</span>
-        <!-- Le span animé est positionné en absolu -->
-        <span class="absolute top-0 left-0" x-text="displayText"></span>
-      </h1>
+        <h1 class="relative text-4xl md:text-6xl font-bold text-white mb-6"
+        x-data="{
+          fullText: 'Bienvenue sur Perfect-Learning',
+          displayed: '',
+          async animate() {
+            while (true) {
+              // Affichage lettre par lettre
+              for (let i = 1; i <= this.fullText.length; i++) {
+                this.displayed = this.fullText.slice(0, i);
+                await new Promise(resolve => setTimeout(resolve, 100));
+              }
+              await new Promise(resolve => setTimeout(resolve, 1000));
+
+              // Effacement lettre par lettre
+              for (let i = this.fullText.length; i >= 0; i--) {
+                this.displayed = this.fullText.slice(0, i);
+                await new Promise(resolve => setTimeout(resolve, 100));
+              }
+              await new Promise(resolve => setTimeout(resolve, 1500));
+            }
+          }
+        }"
+        x-init="animate()">
+
+      <!-- Élément invisible servant à fixer la hauteur -->
+      <span class="opacity-0">Bienvenue sur Perfect-Learning</span>
+
+      <!-- Texte animé positionné en absolu pour éviter le reflow -->
+      <span class="absolute top-0 left-0" x-text="displayed"></span>
+    </h1>
       <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
         Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !
       </p>
@@ -155,35 +177,5 @@
       <a href="#terms" class="hover:underline">Conditions d'utilisation</a>
     </div>
   </footer>
-
-  <!-- Script Alpine.js pour l'animation du titre -->
-  <script>
-    function textAnimation() {
-      return {
-        text: 'Bienvenue sur Perfect-Learning',
-        displayText: '',
-        forward: true,
-        index: 0,
-        startAnimation() {
-          setInterval(() => {
-            if (this.forward) {
-              if (this.index < this.text.length) {
-                this.index++;
-              } else {
-                this.forward = false;
-              }
-            } else {
-              if (this.index > 0) {
-                this.index--;
-              } else {
-                this.forward = true;
-              }
-            }
-            this.displayText = this.text.substring(0, this.index);
-          }, 150);
-        }
-      }
-    }
-  </script>
 </body>
 </html>
