@@ -80,7 +80,7 @@
         <span class="opacity-0">Apprenez, progressez, réussissez !</span>
         <span class="absolute top-0 left-0" x-text="displayed"></span>
       </h1>
-      <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
+      <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
         Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
