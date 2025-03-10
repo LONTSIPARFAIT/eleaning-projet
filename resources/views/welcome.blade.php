@@ -71,7 +71,7 @@
       <div class="container mx-auto px-4 py-2 space-y-2">
         <a href="#home" class="block text-white border-b-2 border-transparent hover:border-white transition">Accueil</a>
         <a href="#cours" class="block text-white border-b-2 border-transparent hover:border-white transition">Cours</a>
-        <a href="#about" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
+        <a href="./about" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
       </div>
     </div>
   </nav>
@@ -113,7 +113,7 @@
         <a href="#cours" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
           Voir les Cours
         </a>
-        <a href="/about" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
+        <a href="/" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
           À propos
         </a>
       </div>
