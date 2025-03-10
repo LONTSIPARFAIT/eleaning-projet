@@ -110,10 +110,10 @@
         Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="#courses" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
+        <a href="#cours" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
           Voir les Cours
         </a>
-        <a href="#about" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
+        <a href="/about" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
           À propos
         </a>
       </div>
