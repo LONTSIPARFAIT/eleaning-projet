@@ -107,7 +107,7 @@
         <span class="absolute top-0 left-0" x-text="displayed"></span>
       </h1>
       <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
-        Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux.Rejoignez notre communauté d'apprenants dès aujourd'hui !
+        Découvrez nos cours et apprenez à votre rythme avec des ressources adaptées à tous les niveaux. Rejoignez notre communauté d'apprenants dès aujourd'hui !
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="#cours" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
