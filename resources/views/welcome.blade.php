@@ -15,10 +15,10 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 px-4">
-  
+
   <!-- Navbar - avec menu mobile géré par Alpine.js -->
-  <nav x-data="{ visible: false, mobileOpen: false }" 
-       x-init="visible = window.scrollY > 0" 
+  <nav x-data="{ visible: false, mobileOpen: false }"
+       x-init="visible = window.scrollY > 0"
        x-cloak
        @scroll.window="visible = window.scrollY > 0"
        class="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-700 p-6 shadow-lg z-50 transition duration-300 transform"
@@ -113,7 +113,7 @@
         <a href="#cours" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
           Voir les Cours
         </a>
-        <a href="./about.html" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
+        <a href="#" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
           À propos
         </a>
       </div>
