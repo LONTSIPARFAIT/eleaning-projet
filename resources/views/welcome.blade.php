@@ -31,7 +31,7 @@
       <div class="hidden md:flex space-x-8 text-xl">
         <a href="/" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
         <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
-        <a href="./about" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
+        <a href="./about.html" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
       </div>
       <!-- Liens d'authentification -->
       <div class="flex items-center space-x-4">
