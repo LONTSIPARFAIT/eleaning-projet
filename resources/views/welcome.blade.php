@@ -29,7 +29,7 @@
       </a>
       <!-- Navigation pour écran moyen et larges -->
       <div class="hidden md:flex space-x-8 text-xl">
-        <a href="/" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
+        <a href="#" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
         <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
         <a href="#" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
       </div>
@@ -69,9 +69,9 @@
     <!-- Menu mobile -->
     <div x-show="mobileOpen" x-transition class="md:hidden bg-gradient-to-r from-red-500 to-red-700">
       <div class="container mx-auto px-4 py-2 space-y-2">
-        <a href="/" class="block text-white border-b-2 border-transparent hover:border-white transition">Accueil</a>
+        <a href="#" class="block text-white border-b-2 border-transparent hover:border-white transition">Accueil</a>
         <a href="#cours" class="block text-white border-b-2 border-transparent hover:border-white transition">Cours</a>
-        <a href="./about.html" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
+        <a href="#" class="block text-white border-b-2 border-transparent hover:border-white transition">À propos</a>
       </div>
     </div>
   </nav>
@@ -113,7 +113,7 @@
         <a href="#cours" class="inline-block bg-red-600 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded shadow transition transform hover:-translate-y-1 duration-300">
           Voir les Cours
         </a>
-        <a href="/" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
+        <a href="./about.html" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded border border-red-600 hover:bg-gray-100 transition transform hover:-translate-y-1 duration-300">
           À propos
         </a>
       </div>
