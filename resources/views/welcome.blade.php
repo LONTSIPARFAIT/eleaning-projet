@@ -31,7 +31,7 @@
       <div class="hidden md:flex space-x-8 text-xl">
         <a href="/" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Accueil</a>
         <a href="#cours" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">Cours</a>
-        <a href="./ab" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
+        <a href="./about" class="text-white border-b-2 border-transparent hover:border-white transition duration-300">À propos</a>
       </div>
       <!-- Liens d'authentification -->
       <div class="flex items-center space-x-4">
@@ -53,7 +53,7 @@
             @endif
           @endauth
         @endif
-      </div>o
+      </div>
       <!-- Bouton hamburger pour mobile -->
       <div class="md:hidden">
         <button @click="mobileOpen = !mobileOpen" class="text-white focus:outline-none">
