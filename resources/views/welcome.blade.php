@@ -53,7 +53,7 @@
             @endif
           @endauth
         @endif
-      </div>
+      </div>o
       <!-- Bouton hamburger pour mobile -->
       <div class="md:hidden">
         <button @click="mobileOpen = !mobileOpen" class="text-white focus:outline-none">
