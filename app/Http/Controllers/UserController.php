@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $users = User::paginate(30);
 
-        return view('users.index', [
+        return view('users.index' , [
             'users' => $users,
         ]);
     }
@@ -107,21 +107,21 @@ class UserController extends Controller
         $request->validate([
             'profile_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
         $user = Auth::user(); // Vérifiez que l'utilisateur est authentifié
-    
+
         if (!$user) {
             return redirect()->back()->withErrors(['error' => 'Utilisateur non trouvé.']);
         }
-    
+
         // Supprimer l'ancienne photo si elle existe
         if ($user->profile_photo) {
             Storage::disk('public')->delete($user->profile_photo);
         }
-    
+
         $profilePhotoPath = $request->file('profile_photo')->store('profile_photos', 'public');
         $user->profile_photo = $profilePhotoPath;
-    
+
         // Sauvegarder l'utilisateur
         $user->save(); // Cela devrait fonctionner si $user est un modèle valide
     }
