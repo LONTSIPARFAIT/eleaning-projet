@@ -44,7 +44,7 @@
             <td class="py-3 px-4 text-sm">
               <div class="flex space-x-2">
                 <a href="{{ route('users.show', $user->id) }}" class="text-blue-500 hover:text-blue-700 font-bold">Voir</a>
-                <a href="{{ route('users.edit', $user->id) }}" class="text-green-500 hover:text-green-700 font-bold">Modifier</a>
+                <a href="{{ route('users.edit', $user->id) }}" class="text--500 hover:text-green-700 font-bold">Modifier</a>
                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="inline">
                   @csrf
                   @method('DELETE')
