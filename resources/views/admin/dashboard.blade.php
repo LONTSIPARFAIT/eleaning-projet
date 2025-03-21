@@ -7,40 +7,20 @@
         </h2>
     </x-slot>
 
-    <!-- Conteneur principal avec deux colonnes -->
-    <div class="py-12 bg-gray-50 min-h-screen">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-6">
-                <!-- Colonne gauche : Navigation -->
-                <div class="lg:w-1/4 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                    <h4 class="text-slate-700 text-xl font-bold mb-4">Admin</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="{{ route('cours.create') }}" class="block bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
-                                Créer un nouveau cours
-                            </a>
-                        </li>
-                        <!-- Ajout d'autres liens pour la navigation (exemples) -->
-                        <li>
-                            <a href="{{ route('users.index') }}" class="block bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition duration-300 ease-in-out">
-                                Gérer les utilisateurs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('cours.index') }}" class="block bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition duration-300 ease-in-out">
-                                Gérer les cours
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="block bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition duration-300 ease-in-out">
-                                Rapports
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Bloc Admin : liens d'action -->
+    <div class="mt-6 ml-6 flex items-center space-x-4">
+        <h4 class="text-slate-700 text-2xl font-bold">Admin</h4>
+        <a href="{{ route('cours.create') }}" class="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
+            Créer un nouveau cours
+        </a>
+    </div>
 
-                <!-- Colonne droite : Contenu principal -->
-                <div class="lg:w-3/4 bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+    <!-- Contenu principal avec fond neutre -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-lg sm:rounded-xl border border-gray-200">
+                <div class="p-8 text-gray-800">
+
                     <!-- Cards de statistiques -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         <!-- Utilisateurs -->
@@ -146,6 +126,7 @@
                         </div>
                     </div>
                     <!-- Fin du tableau -->
+
                 </div>
             </div>
         </div>
