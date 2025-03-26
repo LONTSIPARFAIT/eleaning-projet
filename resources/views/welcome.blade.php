@@ -124,11 +124,11 @@
     </div>
 
     <!-- Section Cours Populaires -->
-    <section id="cours" class="py-16 mx-auto max-w-7xl">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12 scroll-reveal slide-in-up">Cours Populaires</h2>
+    <section id="cours" class="py-16 mx-auto max-w-7xl scroll-reveal">
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Cours Populaires</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($cours->take(6) as $cour)
-                <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-orange-200 scroll-reveal slide-in-up">
+                <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-orange-200">
                     <h3 class="text-xl font-semibold text-red-600">{{ $cour->title }}</h3>
                     <p class="mt-2 text-gray-700 line-clamp-2">{{ $cour->description }}</p>
                     <p class="mt-2 text-gray-600">Durée : {{ $cour->duration }} min</p>
@@ -139,67 +139,99 @@
                     </form>
                 </div>
             @empty
-                <p class="text-center text-gray-600 col-span-full scroll-reveal fade-in">Aucun cours disponible pour le moment.</p>
+                <p class="text-center text-gray-600 col-span-full">Aucun cours disponible pour le moment.</p>
             @endforelse
         </div>
-        <div class="mt-8 text-center scroll-reveal fade-in">
+        <div class="mt-8 text-center">
             {{ $cours->links() }}
         </div>
     </section>
 
     <!-- Section Fonctionnalités -->
-    <section id="features" class="py-16 mx-auto max-w-7xl bg-orange-50">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12 scroll-reveal fade-in">Pourquoi choisir CFPC-Learning ?</h2>
+    <section id="features" class="py-16 mx-auto max-w-7xl bg-orange-50 scroll-reveal">
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Pourquoi choisir CFPC-Learning ?</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-xl font-semibold text-red-600">Flexibilité</h3>
                 <p class="mt-2 text-gray-700">Apprenez à votre rythme, où et quand vous voulez.</p>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-xl font-semibold text-red-600">Interactivité</h3>
                 <p class="mt-2 text-gray-700">Échangez avec des enseignants et d'autres apprenants.</p>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-xl font-semibold text-red-600">Certifications</h3>
                 <p class="mt-2 text-gray-700">Obtenez des certificats reconnus à la fin des cours.</p>
             </div>
-            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-xl font-semibold text-red-600">Support</h3>
                 <p class="mt-2 text-gray-700">Bénéficiez d’un accompagnement personnalisé.</p>
             </div>
         </div>
     </section>
 
+    <!-- Section À propos -->
+    <section id="about" class="py-16 mx-auto max-w-7xl scroll-reveal">
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">À propos de nous</h2>
+        <div class="bg-white shadow-lg rounded-xl p-6 max-w-4xl mx-auto">
+            <p class="text-gray-700 text-lg">CFPC-Learning est une plateforme dédiée à l’éducation en ligne, conçue pour offrir des cours de qualité à tous, quel que soit leur niveau ou leur emploi du temps. Notre mission est de rendre l’apprentissage accessible, interactif et efficace grâce à une équipe d’enseignants passionnés et des outils modernes.</p>
+            <p class="mt-4 text-gray-700 text-lg">Rejoignez-nous pour développer vos compétences et atteindre vos objectifs avec une expérience d’apprentissage personnalisée.</p>
+        </div>
+    </section>
+
     <!-- Section Témoignages -->
-    <section id="testimonials" class="py-16 mx-auto max-w-7xl">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12 scroll-reveal fade-in">Témoignages</h2>
+    <section id="testimonials" class="py-16 mx-auto max-w-7xl scroll-reveal">
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Témoignages</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <p class="italic text-gray-700">"Une plateforme intuitive et motivante !"</p>
                 <p class="mt-4 font-semibold text-red-600">- Marie, Étudiante</p>
             </div>
-            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <p class="italic text-gray-700">"Les cours sont clairs et bien structurés."</p>
                 <p class="mt-4 font-semibold text-red-600">- Paul, Apprenant</p>
             </div>
-            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl scroll-reveal slide-in-up">
+            <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <p class="italic text-gray-700">"Un excellent outil pour enseigner."</p>
                 <p class="mt-4 font-semibold text-red-600">- Sophie, Enseignante</p>
             </div>
         </div>
     </section>
 
+    <!-- Section Contact -->
+    <section id="contact" class="py-16 mx-auto max-w-7xl scroll-reveal">
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Contactez-nous</h2>
+        <div class="bg-white shadow-lg rounded-xl p-6 max-w-2xl mx-auto">
+            <form action="#" method="POST" class="space-y-6">
+                @csrf
+                <div>
+                    <label for="name" class="block text-gray-700 font-semibold">Nom</label>
+                    <input type="text" id="name" name="name" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                    <input type="email" id="email" name="email" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-700 font-semibold">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg shadow-lg transition duration-300">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Section Appel à l'Action -->
-    <section class="py-16 bg-gradient-to-r from-red-500 to-red-700 text-center mx-auto max-w-7xl">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 scroll-reveal fade-in">Commencez votre aventure d’apprentissage</h2>
-        <p class="text-lg text-gray-200 mb-8 scroll-reveal fade-in">Inscrivez-vous dès maintenant et accédez à des cours de qualité.</p>
-        <a href="{{ route('register') }}" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 scroll-reveal fade-in">S'inscrire Maintenant</a>
+    <section class="py-16 bg-gradient-to-r from-red-500 to-red-700 text-center mx-auto max-w-7xl scroll-reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Commencez votre aventure d’apprentissage</h2>
+        <p class="text-lg text-gray-200 mb-8">Inscrivez-vous dès maintenant et accédez à des cours de qualité.</p>
+        <a href="{{ route('register') }}" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">S'inscrire Maintenant</a>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white p-6 text-center">
-        <p class="text-gray-200 scroll-reveal slide-in-up">© {{ date('Y') }} CFPC-Learning - Tous droits réservés</p>
-        <div class="mt-2 space-x-4 scroll-reveal slide-in-up">
+    <footer class="bg-blue-900 text-white p-6 text-center scroll-reveal">
+        <p class="text-gray-200">© {{ date('Y') }} CFPC-Learning - Tous droits réservés</p>
+        <div class="mt-2 space-x-4">
             <a href="#privacy" class="hover:text-orange-300 transition">Politique de confidentialité</a>
             <a href="#terms" class="hover:text-orange-300 transition">Conditions d'utilisation</a>
         </div>
@@ -207,37 +239,32 @@
 
     <style>
         /* Animations personnalisées */
-        @keyframes slideInUp {
-            0% { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
         .scroll-reveal {
             opacity: 0;
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .scroll-reveal.slide-in-up.visible {
-            animation: slideInUp 0.6s ease-out forwards;
-        }
-        .scroll-reveal.fade-in.visible {
-            animation: fadeIn 0.6s ease-out forwards;
+        .scroll-reveal.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 
     <script>
-        // Animation au scroll simplifiée
+        // Animation au scroll avec répétition
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.scroll-reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible'); // Retire la classe pour réanimer au retour
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.2 });
 
             elements.forEach(element => observer.observe(element));
         });
