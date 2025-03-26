@@ -47,7 +47,8 @@
                                     Commandes
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">4</p>
-                                <a href="#" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir toutes les commandes</a>
+                                {{-- {{ route('admin.orders.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir toutes les commandes</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -55,7 +56,8 @@
                                     Étudiants
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $studentCount }}</p>
-                                <a href="#" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les étudiants</a>
+                                {{-- {{ route('admin.students.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les étudiants</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -63,7 +65,8 @@
                                     Enseignants
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $teacherCount }}</p>
-                                <a href="#" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les enseignants</a>
+                                {{-- {{ route('admin.teachers.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les enseignants</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -71,7 +74,8 @@
                                     Revenus
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">330 €</p>
-                                <a href="#" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir les rapports</a>
+                                {{-- {{ route('admin.reports') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir les rapports</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +108,8 @@
                     <div class="bg-white shadow-lg rounded-xl p-6 border border-orange-200 scroll-reveal">
                         <h2 class="text-xl font-semibold text-blue-800 mb-4">Paramètres</h2>
                         <p class="text-gray-700 mb-4">Options de configuration globale.</p>
-                        <a href="#" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">Modifier les Paramètres</a>
+                        {{-- {{ route('admin.settings') }} --}}
+                        <a href="" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">Modifier les Paramètres</a>
                     </div>
                 </div>
             </div>
