@@ -18,9 +18,11 @@ class HomeController extends Controller
         $coursCount = Cour::count();
         $studentCount = User::where('role', 'student')->count();
         $teacherCount = User::where('role', 'teacher')->count();
+        $recentRegistrations = User::where('created_at', '>=', now()->subDays(30))->count();
+        $monthlyCourses = Cour::where('created_at', '>=', now()->startOfMonth())->count();
         // $orderCount = Order::count();
         // $revenue = Order::sum('total');
         $newUsers = User::latest()->take(5)->get();
-        return view('admin/dashboard', compact('userCount','coursCount','newUsers','studentCount','teacherCount'));
+        return view('admin/dashboard', compact('userCount','coursCount','newUsers','studentCount','teacherCount', 'recentRegistrations', 'monthlyCourses'));
     }
 }
