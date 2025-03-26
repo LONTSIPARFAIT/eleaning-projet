@@ -43,7 +43,8 @@
                             <p class="text-sm text-gray-600">Prix : {{ $course->price }} €</p>
                         </div>
                         <a
-                            href="{{ route('course.show', $course->id) }}"
+                        {{-- {{ route('course.show', $course->id) }} --}}
+                            href=""
                             class="mt-4 inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:shadow-lg"
                         >
                             Voir le Cours
