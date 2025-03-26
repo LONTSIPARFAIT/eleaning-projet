@@ -82,7 +82,7 @@
     <div class="relative flex flex-col justify-center items-start h-full text-left px-8">
       <h1 class="relative text-4xl md:text-6xl font-bold text-white mb-6"
           x-data="{
-            texts: ['Bienvenue sur Perfect-Learning', 'Apprenez, progressez, réussissez !'],
+            texts: ['Bienvenue sur CFPC-Learning', 'Apprenez, progressez, réussissez !'],
             currentTextIndex: 0,
             displayed: '',
             async animate() {
