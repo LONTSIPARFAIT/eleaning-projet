@@ -77,7 +77,7 @@
                         {{-- {{ $resource->link }} --}}
                         <a
                             href=""
-                            class="text-teal-600 hover:text-teal-800 hover:underline"
+                            class="text-teal-600 hover:text-teal-800 hover:underline transition-colors duration-200"
                         >
                             {{-- {{ $resource->title }} --}}qsqs
                         </a>
