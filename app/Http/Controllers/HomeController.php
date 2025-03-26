@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        $cours = Cour::paginate(2);// Récupérer tous les cours
+        $cours = Cour::paginate(3);// Récupérer tous les cours
         // $cours = Cour::all();// Récupérer tous les cours
         return view('welcome', compact('cours'));
     }
