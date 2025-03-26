@@ -4,6 +4,17 @@
 
 @section('content')
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-gradient-to-br from-blue-50 to-orange-100" x-data="{ openCourse: null }">
+    
+    <!-- Header avec animation d'entrée -->
+    <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-6 border-l-4 border-red-500 scroll-reveal">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">Tableau de Bord de l'Étudiant</h1>
+        <p class="text-lg sm:text-xl text-blue-700">
+            Bienvenue,
+            <span class="font-bold text-orange-600">{{ Auth::user()->name ?? 'Étudiant' }}</span> !
+            Voici vos cours et ressources.
+        </p>
+    </div>
+
     <!-- Bloc Étudiant : Lien pour s'abonner à un cours -->
     <div class="bg-orange-50 shadow-lg rounded-xl p-6 mb-6 border border-blue-200 scroll-reveal flex justify-between items-center">
         <h4 class="text-blue-900 text-2xl font-bold">Étudiant</h4>
@@ -11,7 +22,6 @@
             S’abonner à un cours
         </a>
     </div>
-
 
     <!-- Section Cours -->
     <section class="mt-6 scroll-reveal">
