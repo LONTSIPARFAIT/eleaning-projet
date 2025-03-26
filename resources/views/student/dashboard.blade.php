@@ -50,8 +50,8 @@
         <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-gray-700 animate-fade-in">Devoirs à Rendre</h2>
         <div class="bg-white shadow-lg rounded-lg p-4 sm:p-6 animate-fade-in-up">
             {{-- @if($assignments->isEmpty()) --}}
-                <p class="mt-4 text-gray-500">Aucun devoir à rendre pour le moment.</p>
-            @else
+                {{-- <p class="mt-4 text-gray-500">Aucun devoir à rendre pour le moment.</p> --}}
+            {{-- @else --}}
                 <ul class="space-y-3">
                     {{-- @foreach ($assignments as $assignment) --}}
                         <li class="border-b py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between transition-all duration-300 hover:bg-gray-50">
@@ -62,7 +62,7 @@
                         </li>
                     {{-- @endforeach --}}
                 </ul>
-            @endif
+            {{-- @endif --}}
         </div>
     </section>
 
