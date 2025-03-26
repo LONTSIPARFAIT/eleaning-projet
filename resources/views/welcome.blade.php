@@ -233,12 +233,7 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .animate-slide-in-up {
-            animation: slideInUp 0.8s ease-out;
-        }
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out;
-        }
+
         /* Classes initiales pour cacher avant le scroll */
         .section {
             opacity: 0;
