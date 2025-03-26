@@ -5,6 +5,15 @@
 @section('content')
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-gradient-to-br from-blue-50 to-orange-100"
         x-data="{ activeSection: 'cours' }">
+
+                <!-- Header -->
+                <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-8 border-l-4 border-red-500 scroll-reveal">
+                    <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">Tableau de Bord de l'Enseignant</h1>
+                    <p class="text-lg sm:text-xl text-blue-700">
+                        Bienvenue, <span class="font-bold text-orange-600">{{ Auth::user()->name ?? 'Enseignant' }}</span> !
+                        Gérez vos cours et vos étudiants ici.
+                    </p>
+                </div>
         
         <!-- Bloc Enseignant : Lien pour créer un cours -->
         <div class="bg-orange-50 shadow-lg rounded-xl p-6 mb-6 border border-blue-200 scroll-reveal flex justify-between items-center">
@@ -12,15 +21,6 @@
             <a href="{{ route('cours.create') }}" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
                 Créer un nouveau cours
             </a>
-        </div>
-
-        <!-- Header -->
-        <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-8 border-l-4 border-red-500 scroll-reveal">
-            <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">Tableau de Bord de l'Enseignant</h1>
-            <p class="text-lg sm:text-xl text-blue-700">
-                Bienvenue, <span class="font-bold text-orange-600">{{ Auth::user()->name ?? 'Enseignant' }}</span> !
-                Gérez vos cours et vos étudiants ici.
-            </p>
         </div>
 
         <!-- Statistiques -->
