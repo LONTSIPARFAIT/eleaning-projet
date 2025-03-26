@@ -30,7 +30,7 @@ class Cour extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'cour_user');
+        return $this->belongsToMany(User::class, 'cour_user')->withTimestamps();
     }
 
     public function teacher()

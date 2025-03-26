@@ -12,15 +12,6 @@
         </a>
     </div>
 
-    <!-- Header avec animation d'entrée -->
-    <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-6 border-l-4 border-red-500 scroll-reveal">
-        <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">Tableau de Bord de l'Étudiant</h1>
-        <p class="text-lg sm:text-xl text-blue-700">
-            Bienvenue,
-            <span class="font-bold text-orange-600">{{ Auth::user()->name ?? 'Étudiant' }}</span> !
-            Voici vos cours et ressources.
-        </p>
-    </div>
 
     <!-- Section Cours -->
     <section class="mt-6 scroll-reveal">
@@ -65,8 +56,8 @@
                         <li class="border-b border-red-300 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between transition-all duration-300 hover:bg-red-100">
                             <strong class="text-blue-900">{{ $studentAssignments->title ?? 'Devoir Exemple' }}</strong>
                             <span class="text-sm text-gray-600 mt-1 sm:mt-0">
-                                {{-- Échéance : {{ $assignment->due_date->format('d/m/Y') }} --}}
-                                Échéance : {{ $studentAssignments->due_date->format('d/m/Y') ?? '12-06-2023' }}
+                                {{-- Échéance : {{ $studentAssignments->due_date->format('d/m/Y') ?? '12-06-2023' }} --}}
+                                Échéance : {{  '12-06-2023' }}
                             </span>
                         </li>
                     {{-- @endforeach --}}
