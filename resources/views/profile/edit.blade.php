@@ -25,13 +25,13 @@
 
             <div class="mt-4 animate-fade-in-up">
                 <x-input-label for="profile_photo" class="text-lg text-blue-900 font-semibold" :value="__('Photo de Profil')" />
-                <x-text-input 
-                    id="profile_photo" 
-                    class="block mt-1 w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm transition duration-200 hover:border-blue-400 cursor-pointer" 
-                    type="file" 
-                    name="profile_photo" 
-                    accept="image/*" 
-                    x-on:change="preview = URL.createObjectURL($event.target.files[0])" 
+                <x-text-input
+                    id="profile_photo"
+                    class="block mt-1 w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm transition duration-200 hover:border-blue-400 cursor-pointer"
+                    type="file"
+                    name="profile_photo"
+                    accept="image/*"
+                    x-on:change="preview = URL.createObjectURL($event.target.files[0])"
                 />
                 <x-input-error :messages="$errors->get('profile_photo')" class="mt-2 text-red-600" />
 
@@ -70,8 +70,6 @@
             animation: fadeInUp 0.6s ease-out;
         }
     </style>
-</div>
-
 
 <script>
     // Animation au scroll avec répétition
@@ -90,6 +88,8 @@
         elements.forEach(element => observer.observe(element));
     });
 </script>
+</div>
+
 
             <!-- Mise à jour du mot de passe -->
             <div class="p-4 sm:p-8 bg-white shadow-lg sm:rounded-xl border border-blue-200 scroll-reveal">
