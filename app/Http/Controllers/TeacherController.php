@@ -37,4 +37,24 @@ class TeacherController extends Controller
         // Retourner la vue avec les données nécessaires
         return view('teacher.dashboard', compact('courses','studentsCount', 'newCourses', 'cours'));
     }
+
+    // public function index()
+    // {
+    //     $teacher = Auth::user();
+    //     $teacherCoursesCount = Course::where('teacher_id', $teacher->id)->count();
+    //     $enrolledStudentsCount = User::whereHas('courses', function ($query) use ($teacher) {
+    //         $query->where('teacher_id', $teacher->id);
+    //     })->count();
+    //     $teacherAssignmentsCount = Assignment::where('teacher_id', $teacher->id)->count();
+    //     $teacherRevenue = Course::where('teacher_id', $teacher->id)->sum('price') ?? '250 €'; // À ajuster
+    //     $newCourses = Course::where('teacher_id', $teacher->id)->orderBy('created_at', 'desc')->take(5)->get();
+    //     $teacherAssignments = Assignment::where('teacher_id', $teacher->id)->orderBy('due_date', 'asc')->take(5)->get();
+    //     $newMessagesCount = 3; // À remplacer par une vraie logique
+
+    //     return view('teacher.dashboard', compact(
+    //         'teacherCoursesCount', 'enrolledStudentsCount', 'teacherAssignmentsCount', 'teacherRevenue',
+    //         'newCourses', 'teacherAssignments', 'newMessagesCount'
+    //     ));
+    // }
 }
+
