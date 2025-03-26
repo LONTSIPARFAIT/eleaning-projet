@@ -1,56 +1,136 @@
 @extends('layouts.admin')
 
-@section('title', 'Creer un user')
-@section('content')
-<div class="container py-8 mx-7 ml-7 bg-green-50 ">
-    <h1 class="text-3xl font-bold text-blue-900 text-center">Ajouter un Utilisateur</h1>
+@section('title', 'Créer un utilisateur')
 
-    <form action="{{ route('users.store') }}" method="POST" class="flex items-center justify-center">
-        @csrf
-        <div class="mt-4">
-            <div class="mb-4">
-                <label for="name" class="block text-start text-gray-700">Nom</label>
-                <input type="text" name="name" id="name" class="border rounded w-[30rem] p-2" required>
+@section('content')
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-orange-100 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 max-w-lg w-full scroll-reveal border border-blue-200">
+        <h1 class="text-3xl font-bold text-blue-800 text-center mb-6 animate-fade-in-down">Ajouter un Utilisateur</h1>
+
+        <form action="{{ route('users.store') }}" method="POST" class="space-y-6">
+            @csrf
+
+            <div class="animate-fade-in-up">
+                <label for="name" class="block text-blue-900 font-semibold">Nom</label>
+                <input type="text" name="name" id="name" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required>
+                @error('name')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="email" class="block text-gray-700">Email</label>
-                <input type="email" name="email" id="email" class="border rounded w-[30rem] p-2" required>
+
+            <div class="animate-fade-in-up">
+                <label for="email" class="block text-blue-900 font-semibold">Email</label>
+                <input type="email" name="email" id="email" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required>
+                @error('email')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="password" class="block text-gray-700">Mot de passe</label>
-                <input type="password" name="password" id="password" class="border rounded w-[30rem] p-2" required>
+
+            <div class="animate-fade-in-up">
+                <label for="password" class="block text-blue-900 font-semibold">Mot de passe</label>
+                <input type="password" name="password" id="password" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required>
+                @error('password')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="password_confirmation" class="block text-gray-700">Confirmer le mot de passe</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="border rounded w-[30rem] p-2" required>
+
+            <div class="animate-fade-in-up">
+                <label for="password_confirmation" class="block text-blue-900 font-semibold">Confirmer le mot de passe</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required>
             </div>
-            <div class="mb-4">
-                <label for="role" class="block text-gray-700">Rôle</label>
-                <select name="role" id="role" class="border rounded w-[30rem] p-2">
-                    <option value="student" >Étudiant</option>
-                    <option value="teacher" >Enseignant</option>
+
+            <div class="animate-fade-in-up">
+                <label for="role" class="block text-blue-900 font-semibold">Rôle</label>
+                <select name="role" id="role" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200 bg-orange-50">
+                    <option value="student">Étudiant</option>
+                    <option value="teacher">Enseignant</option>
                     <option value="admin">Administrateur</option>
                 </select>
+                @error('role')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="date_de_naissance" class="block text-gray-700">Date de Naissance</label>
-                <input id="date_de_naissance" class="border rounded w-[30rem] p-2" type="date" name="date_de_naissance" required />
+
+            <div class="animate-fade-in-up">
+                <label for="date_de_naissance" class="block text-blue-900 font-semibold">Date de Naissance</label>
+                <input id="date_de_naissance" type="date" name="date_de_naissance" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required />
+                @error('date_de_naissance')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="date_de_naissance" class="block text-gray-700">Lieu de Naissance</label>
-                <input id="lieu_de_naissance" class="border rounded w-[30rem] p-2" type="text" name="lieu_de_naissance" placeholder="ex: Bafoussam" required />
+
+            <div class="animate-fade-in-up">
+                <label for="lieu_de_naissance" class="block text-blue-900 font-semibold">Lieu de Naissance</label>
+                <input id="lieu_de_naissance" type="text" name="lieu_de_naissance" placeholder="ex: Bafoussam" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200" required />
+                @error('lieu_de_naissance')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="mb-4">
-                <label for="sexe" class="block text-gray-700">Sexe</label>
-                <select id="sexe" name="sexe" class="border rounded w-[30rem] p-2" required>
+
+            <div class="animate-fade-in-up">
+                <label for="sexe" class="block text-blue-900 font-semibold">Sexe</label>
+                <select id="sexe" name="sexe" class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200 bg-orange-50" required>
                     <option value="homme">Homme</option>
                     <option value="femme">Femme</option>
                     <option value="autre">Autre</option>
                 </select>
+                @error('sexe')
+                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
-            <button type="submit" class="bg-blue-500 text-white p-3 rounded">Créer Utilisateur</button>
-            <a href="{{ route('users.index') }}" class="mt-4 text-blue-500 hover:underline text-center block">Retour à la liste</a>
-        </div>
-    </form>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up">
+                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white p-3 rounded-lg shadow-md transition duration-300 ease-in-out w-full sm:w-auto">
+                    Créer Utilisateur
+                </button>
+                <a href="{{ route('users.index') }}" class="text-blue-500 hover:text-blue-700 underline text-center w-full sm:w-auto">
+                    Retour à la liste
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
+
+<style>
+    /* Animations personnalisées */
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .scroll-reveal {
+        opacity: 0;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-reveal.visible {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .animate-fade-in-down {
+        animation: fadeInDown 0.6s ease-out;
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out;
+    }
+</style>
+
+<script>
+    // Animation au scroll avec répétition
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elements.forEach(element => observer.observe(element));
+    });
+</script>
 @endsection
