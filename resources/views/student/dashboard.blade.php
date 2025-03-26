@@ -18,6 +18,7 @@
     <!-- Bloc Étudiant : Lien pour s'abonner à un cours -->
     <div class="bg-orange-50 shadow-lg rounded-xl p-6 mb-6 border border-blue-200 scroll-reveal flex justify-between items-center">
         <h4 class="text-blue-900 text-2xl font-bold">Étudiant</h4>
+
         <a href="{{ route('cours.index') }}" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
             S’abonner à un cours
         </a>
