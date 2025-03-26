@@ -1,6 +1,6 @@
 <section class="scroll-reveal">
     <header>
-        <h2 class="text-xl font-bold text-blue-800 animate-fade-in-down">
+        <h2 class="text-xl font-bold text-blue-500 animate-fade-in-down">
             {{ __('Information du Profil') }}
         </h2>
         <p class="mt-2 text-sm text-gray-600">
