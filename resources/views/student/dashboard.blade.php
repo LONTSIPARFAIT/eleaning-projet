@@ -55,7 +55,8 @@
                 <ul class="space-y-3">
                     {{-- @foreach ($assignments as $assignment) --}}
                         <li class="border-b py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between transition-all duration-300 hover:bg-gray-50">
-                            <strong class="text-gray-800">{{ $assignment->title }}</strong>
+                            {{-- {{ $assignment->title }} --}}
+                            <strong class="text-gray-800">sds</strong>
                             <span class="text-sm text-gray-600 mt-1 sm:mt-0">
                                 {{-- Échéance : {{ $assignment->due_date->format('d/m/Y') }} --}}
                             </span>
