@@ -94,7 +94,7 @@
                 class="text-teal-600 hover:text-teal-800 hover:underline transition-colors duration-200"
             > --}}
             <a
-                href="{{ route('calendar') }}"
+                href=""
                 class="text-teal-600 hover:text-teal-800 hover:underline transition-colors duration-200"
             >
                 Voir le Calendrier Scolaire
