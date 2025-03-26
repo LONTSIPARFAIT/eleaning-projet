@@ -9,6 +9,11 @@ class StudentController extends Controller
 {
     public function index()
     {
+        $student = Auth::user();
+        $studentCourses = $student->cour; // Suppose une relation many-to-many entre User et Course
+        // $studentAssignments = Assignment::whereHas('course', function ($query) use ($student) {
+        //     $query->whereIn('id', $student->courses->pluck('id'));
+        // })->orderBy('due_date', 'asc')->take(5)->get();
         $cours = auth()->user()->cours; // Assurez-vous que la relation est définie
         return view('student.dashboard', compact('cours'));
     }
