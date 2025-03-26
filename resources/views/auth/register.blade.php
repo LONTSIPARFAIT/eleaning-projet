@@ -56,7 +56,7 @@
         <div class="mt-4">
             <x-input-label for="profile_photo" :value="__('Photo de Profil')" />
             <x-text-input id="profile_photo" class="block mt-1 w-full " type="file" name="profile_photo" accept="image/*" />
-            <x-input-error :messages="$errors->get('profile_photo')" class="mt-2" />
+            <x-input-error :messages="$errors->get('profile_photo')" class="mt-2 bg-red-500" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
