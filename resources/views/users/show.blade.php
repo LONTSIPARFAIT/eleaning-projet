@@ -3,16 +3,16 @@
 @section('title', 'Info utilisateur')
 
 @section('content')
-<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-orange-100 px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-orange-100 px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
     <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 max-w-md w-full text-gray-600 scroll-reveal border border-blue-200">
-        <h1 class="text-3xl font-bold mb-6 text-center text-blue-900 animate-fade-in-down">Information de l'Utilisateur</h1>
+        <h1 class="text-3xl font-bold mb-6 text-center text-blue-800 animate-fade-in-down">Information de l'Utilisateur</h1>
 
         <!-- Photo de profil ou icône par défaut -->
         <div class="mb-6 flex justify-center animate-fade-in-up">
             @if ($user->profile_photo_path)
                 <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Photo de Profil" class="rounded-full w-32 h-32 object-cover shadow-md transition duration-300 hover:scale-105" />
             @else
-                <svg class="h-16 w-16 rounded-full text-gray-400 bg-gray-200 p-2 shadow-md" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-16 w-16 rounded-full text-gray-400 bg-orange-100 p-2 shadow-md" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14.5c-3.5 0-6.5-2.5-6.5-6s3-6 6.5-6 6.5 2.5 6.5 6-3 6-6.5 6zm0 0c3.5 0 6.5 1.5 6.5 4.5v1H5v-1c0-3 3-4.5 6.5-4.5z" />
                 </svg>
             @endif
@@ -20,13 +20,13 @@
 
         <!-- Informations utilisateur -->
         <div class="space-y-4 animate-fade-in-up">
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Nom :</strong> {{ $user->name }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Email :</strong> {{ $user->email }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Rôle :</strong> {{ ucfirst($user->role) }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Date de Naissance :</strong> {{ $user->date_de_naissance ? $user->date_de_naissance : 'Non renseignée' }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Lieu de Naissance :</strong> {{ $user->lieu_de_naissance ?? 'Non renseigné' }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Sexe :</strong> {{ ucfirst($user->sexe ?? 'Non renseigné') }}</p>
-            <p class="text-lg"><strong class="text-blue-800 font-semibold">Âge :</strong> {{ $user->age ?? 'Non renseigné' }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Nom :</strong> {{ $user->name }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Email :</strong> {{ $user->email }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Rôle :</strong> {{ ucfirst($user->role) }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Date de Naissance :</strong> {{ $user->date_de_naissance ? $user->date_de_naissance : 'Non renseignée' }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Lieu de Naissance :</strong> {{ $user->lieu_de_naissance ?? 'Non renseigné' }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Sexe :</strong> {{ ucfirst($user->sexe ?? 'Non renseigné') }}</p>
+            <p class="text-lg"><strong class="text-blue-900 font-semibold">Âge :</strong> {{ $user->age ?? 'Non renseigné' }}</p>
         </div>
 
         <!-- Lien de retour -->
