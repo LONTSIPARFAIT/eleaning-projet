@@ -1,6 +1,6 @@
 <section class="space-y-6 scroll-reveal">
     <header>
-        <h2 class="text-xl font-bold text-blue-800 animate-fade-in-down">
+        <h2 class="text-xl font-bold text-blue-500 animate-fade-in-down">
             {{ __('Supprimer Votre Compte') }}
         </h2>
         <p class="mt-2 text-sm text-gray-600">
