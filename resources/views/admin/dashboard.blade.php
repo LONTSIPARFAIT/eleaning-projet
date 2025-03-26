@@ -53,7 +53,8 @@
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900">Commandes</h3>
                                 <p class="text-3xl font-bold text-red-600">4</p>
-                                <a href="{{ route('admin.orders.index') }}" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir toutes les commandes</a>
+                                {{-- {{ route('admin.orders.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir toutes les commandes</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +148,8 @@
                     <h2 class="text-xl font-semibold mb-4 text-blue-800">Paramètres Système</h2>
                     <div class="bg-orange-50 shadow-lg rounded-xl p-6 border border-blue-200">
                         <p class="text-gray-700 mb-4">Accédez aux options de configuration globale.</p>
-                        <a href="{{ route('admin.settings') }}" class="text-red-500 hover:text-red-600 hover:underline font-semibold transition duration-300">Modifier les Paramètres</a>
+                        {{-- {{ route('admin.settings') }} --}}
+                        <a href="" class="text-red-500 hover:text-red-600 hover:underline font-semibold transition duration-300">Modifier les Paramètres</a>
                     </div>
                 </div>
 
