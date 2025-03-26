@@ -16,7 +16,7 @@ class EnsureUserIsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->check() && auth()->user()->role->name !== 'admin') {
-            return redirect('/'); // Redirige si l'utilisateur n'est pas admin
+            return redirect('/')->with('error', 'Accès réservé aux administrateurs.'); // Redirige si l'utilisateur n'est pas admin
         }
         return $next($request);
     }
