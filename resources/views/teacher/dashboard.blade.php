@@ -102,6 +102,7 @@
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Calendrier Scolaire</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <a href=""
+                {{-- {{ route('teacher.calendar') }} --}}
                     class="text-red-500 hover:text-red-600 hover:underline transition-colors duration-200">Voir le Calendrier</a>
             </div>
         </div>
