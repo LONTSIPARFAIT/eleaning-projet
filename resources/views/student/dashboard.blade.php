@@ -53,14 +53,14 @@
                 <p class="mt-4 text-gray-500">Aucun devoir à rendre pour le moment.</p>
             @else
                 <ul class="space-y-3">
-                    @foreach ($assignments as $assignment)
+                    {{-- @foreach ($assignments as $assignment) --}}
                         <li class="border-b py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between transition-all duration-300 hover:bg-gray-50">
                             <strong class="text-gray-800">{{ $assignment->title }}</strong>
                             <span class="text-sm text-gray-600 mt-1 sm:mt-0">
-                                Échéance : {{ $assignment->due_date->format('d/m/Y') }}
+                                {{-- Échéance : {{ $assignment->due_date->format('d/m/Y') }} --}}
                             </span>
                         </li>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </ul>
             @endif
         </div>
@@ -71,7 +71,7 @@
         <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-gray-700 animate-fade-in">Mes Ressources Pédagogiques</h2>
         <div class="bg-white shadow-lg rounded-lg p-4 sm:p-6 animate-fade-in-up">
             <ul class="space-y-3">
-                @foreach ($resources as $resource)
+                {{-- @foreach ($resources as $resource) --}}
                     <li class="border-b py-2 transition-all duration-300 hover:bg-gray-50">
                         <a
                             href="{{ $resource->link }}"
@@ -80,7 +80,7 @@
                             {{ $resource->title }}
                         </a>
                     </li>
-                @endforeach
+                {{-- @endforeach --}}
             </ul>
         </div>
     </section>
