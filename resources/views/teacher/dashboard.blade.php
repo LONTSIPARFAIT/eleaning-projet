@@ -70,14 +70,14 @@
         <div class="mt-8">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Gestion des Devoirs</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
-                <a href="{{ route('assignments.create') }}"
+                {{-- <a href="{{ route('assignments.create') }}" --}}
                     class="text-red-500 hover:text-red-600 hover:underline font-semibold transition-colors duration-200">Créer
                     un Nouveau Devoir</a>
                 <ul class="mt-4 space-y-3">
                     @forelse ($assignments ?? [] as $assignment)
                         <li class="border-b border-red-300 py-2 transition-all duration-300 hover:bg-red-100">
-                            <span class="text-gray-700">{{ $assignment->title }} - Échéance :
-                                {{ $assignment->due_date->format('d/m/Y') }}</span>
+                            {{-- <span class="text-gray-700">{{ $assignment->title }} - Échéance : --}}
+                                {{-- {{ $assignment->due_date->format('d/m/Y') }}</span> --}}
                         </li>
                     @empty
                         <li class="text-gray-700 py-2">
