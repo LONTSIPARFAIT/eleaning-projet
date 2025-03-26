@@ -5,8 +5,17 @@
 @section('content')
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-gradient-to-br from-blue-50 to-orange-100"
         x-data="{ activeSection: 'cours' }">
+        
+        <!-- Bloc Enseignant : Lien pour créer un cours -->
+        <div class="bg-orange-50 shadow-lg rounded-xl p-6 mb-6 border border-blue-200 scroll-reveal flex justify-between items-center">
+            <h4 class="text-blue-900 text-2xl font-bold">Enseignant</h4>
+            <a href="{{ route('cours.create') }}" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
+                Créer un nouveau cours
+            </a>
+        </div>
+
         <!-- Header -->
-        <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-8 border-l-4 border-red-500">
+        <div class="animate-slide-in-down bg-white rounded-lg shadow-xl p-6 mb-8 border-l-4 border-red-500 scroll-reveal">
             <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">Tableau de Bord de l'Enseignant</h1>
             <p class="text-lg sm:text-xl text-blue-700">
                 Bienvenue, <span class="font-bold text-orange-600">{{ Auth::user()->name ?? 'Enseignant' }}</span> !
@@ -15,7 +24,7 @@
         </div>
 
         <!-- Statistiques -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 scroll-reveal">
             <div
                 class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 animate-slide-in-up border border-blue-200">
                 <h3 class="text-lg font-bold text-blue-900 mb-2">Mes Cours</h3>
@@ -39,7 +48,7 @@
         </div>
 
         <!-- Derniers Cours Créés -->
-        <div class="mt-8">
+        <div class="mt-8 scroll-reveal">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Derniers Cours Créés</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <table class="w-full text-left">
@@ -66,7 +75,7 @@
         </div>
 
         <!-- Gestion des Devoirs -->
-        <div class="mt-8">
+        <div class="mt-8 scroll-reveal">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Gestion des Devoirs</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <a href=""
@@ -87,7 +96,7 @@
         </div>
 
         <!-- Messages et Notifications -->
-        <div class="mt-8">
+        <div class="mt-8 scroll-reveal">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Messages & Notifications</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <p class="text-gray-700">Nouveaux messages des étudiants : <span class="font-bold text-red-600">{{ $newMessagesCount ?? 3 }}</span></p>
@@ -98,7 +107,7 @@
         </div>
 
         <!-- Calendrier Scolaire -->
-        <div class="mt-8">
+        <div class="mt-8 scroll-reveal">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Calendrier Scolaire</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <a href=""
@@ -118,35 +127,58 @@
                 opacity: 0;
                 transform: translateY(-30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
         @keyframes slideInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
         .animate-slide-in-down {
             animation: slideInDown 0.6s ease-out;
         }
-
         .animate-slide-in-up {
             animation: slideInUp 0.6s ease-out;
         }
-
         .animate-fade-in {
             animation: slideInUp 0.8s ease-out;
         }
     </style>
+
+    <script>
+        // Animation au scroll avec répétition (comme pour l'admin)
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
 @endsection
