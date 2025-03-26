@@ -49,7 +49,7 @@
     <section class="mt-8">
         <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-gray-700 animate-fade-in">Devoirs à Rendre</h2>
         <div class="bg-white shadow-lg rounded-lg p-4 sm:p-6 animate-fade-in-up">
-            @if($assignments->isEmpty())
+            {{-- @if($assignments->isEmpty()) --}}
                 <p class="mt-4 text-gray-500">Aucun devoir à rendre pour le moment.</p>
             @else
                 <ul class="space-y-3">
@@ -73,11 +73,12 @@
             <ul class="space-y-3">
                 {{-- @foreach ($resources as $resource) --}}
                     <li class="border-b py-2 transition-all duration-300 hover:bg-gray-50">
+                        {{-- {{ $resource->link }} --}}
                         <a
-                            href="{{ $resource->link }}"
+                            href=""
                             class="text-teal-600 hover:text-teal-800 hover:underline"
                         >
-                            {{ $resource->title }}
+                            {{-- {{ $resource->title }} --}}qsqs
                         </a>
                     </li>
                 {{-- @endforeach --}}
