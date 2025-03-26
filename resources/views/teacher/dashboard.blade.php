@@ -69,7 +69,8 @@
         <div class="mt-8">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Gestion des Devoirs</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
-                <a href="{{ route('teacher.assignments.create') }}"
+                <a href=""
+                {{-- {{ route('teacher.assignments.create') }} --}}
                     class="text-red-500 hover:text-red-600 hover:underline font-semibold transition-colors duration-200">Créer un Nouveau Devoir</a>
                 <ul class="mt-4 space-y-3">
                     @forelse ($teacherAssignments ?? [] as $assignment)
@@ -90,7 +91,8 @@
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Messages & Notifications</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
                 <p class="text-gray-700">Nouveaux messages des étudiants : <span class="font-bold text-red-600">{{ $newMessagesCount ?? 3 }}</span></p>
-                <a href="{{ route('teacher.messages') }}"
+                <a href=""
+                {{-- {{ route('teacher.messages') }} --}}
                     class="text-red-500 hover:text-red-600 hover:underline transition-colors duration-200 mt-2 inline-block">Voir tous les messages</a>
             </div>
         </div>
@@ -99,7 +101,7 @@
         <div class="mt-8">
             <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-blue-800 animate-fade-in">Calendrier Scolaire</h2>
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 animate-slide-in-up border border-blue-200">
-                <a href="{{ route('teacher.calendar') }}"
+                <a href=""
                     class="text-red-500 hover:text-red-600 hover:underline transition-colors duration-200">Voir le Calendrier</a>
             </div>
         </div>
