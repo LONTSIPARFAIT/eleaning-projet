@@ -76,10 +76,30 @@
     <div class="relative h-screen mx-auto max-w-7xl bg-center bg-cover animate-fade-in" style="background-image: url('/img/home1.jpg');">
         <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
         <div class="relative flex flex-col justify-center items-start h-full text-left px-6 sm:px-12">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 animate-slide-in-left"
-                x-data="{ texts: ['Bienvenue sur CFPC-Learning', 'Apprenez à votre rythme !'], currentTextIndex: 0, displayed: '', async animate() { while (true) { let text = this.texts[this.currentTextIndex]; for (let i = 0; i <= text.length; i++) { this.displayed = text.slice(0, i); await new Promise(resolve => setTimeout(resolve, 80)); } await new Promise(resolve => setTimeout(resolve, 2000)); this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length; } } }"
+            <h1 class="relative text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
+                x-data="{
+                    texts: ['Bienvenue sur CFPC-Learning', 'Apprenez, progressez, réussissez !'],
+                    currentTextIndex: 0,
+                    displayed: '',
+                    async animate() {
+                        while (true) {
+                            let currentText = this.texts[this.currentTextIndex];
+                            for (let i = 1; i <= currentText.length; i++) {
+                                this.displayed = currentText.slice(0, i);
+                                await new Promise(resolve => setTimeout(resolve, 100));
+                            }
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                            for (let i = currentText.length; i >= 0; i--) {
+                                this.displayed = currentText.slice(0, i);
+                                await new Promise(resolve => setTimeout(resolve, 100));
+                            }
+                            await new Promise(resolve => setTimeout(resolve, 1500));
+                            this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+                        }
+                    }
+                }"
                 x-init="animate()">
-                <span class="opacity-0">Apprenez à votre rythme !</span>
+                <span class="opacity-0">Apprenez, progressez, réussissez !</span>
                 <span class="absolute top-0 left-0" x-text="displayed"></span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mb-8 animate-slide-in-left animation-delay-300">Rejoignez une plateforme d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
@@ -94,7 +114,7 @@
     <section id="cours" class="py-16 mx-auto max-w-7xl">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12 animate-fade-in">Cours Populaires</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            @forelse ($cours->take(7) as $cour)
+            @forelse ($cours->take(6) as $cour)
                 <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-slide-in-up border border-orange-200">
                     <h3 class="text-xl font-semibold text-red-600">{{ $cour->title }}</h3>
                     <p class="mt-2 text-gray-700 line-clamp-2">{{ $cour->description }}</p>
