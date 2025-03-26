@@ -66,7 +66,8 @@
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900">Nombre d'étudiants</h3>
                                 <p class="text-3xl font-bold text-red-600">{{ $studentCount }}</p>
-                                <a href="{{ route('admin.students.index') }}" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir tous les étudiants</a>
+                                {{-- {{ route('admin.students.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir tous les étudiants</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,8 @@
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900">Nombre d'enseignants</h3>
                                 <p class="text-3xl font-bold text-red-600">{{ $teacherCount }}</p>
-                                <a href="{{ route('admin.teachers.index') }}" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir tous les enseignants</a>
+                                {{-- {{ route('admin.teachers.index') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir tous les enseignants</a>
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,8 @@
                             <div>
                                 <h3 class="text-lg font-semibold text-blue-900">Revenus</h3>
                                 <p class="text-3xl font-bold text-red-600">330 €</p>
-                                <a href="{{ route('admin.reports') }}" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir les rapports</a>
+                                {{-- {{ route('admin.reports') }} --}}
+                                <a href="" class="text-red-500 hover:text-red-600 font-medium transition duration-300">Voir les rapports</a>
                             </div>
                         </div>
                     </div>
