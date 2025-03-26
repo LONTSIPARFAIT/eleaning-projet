@@ -94,7 +94,7 @@
     <section id="cours" class="py-16 mx-auto max-w-7xl">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12 animate-fade-in">Cours Populaires</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            @forelse ($cours->take(6) as $cour)
+            @forelse ($cours->take(7) as $cour)
                 <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-slide-in-up border border-orange-200">
                     <h3 class="text-xl font-semibold text-red-600">{{ $cour->title }}</h3>
                     <p class="mt-2 text-gray-700 line-clamp-2">{{ $cour->description }}</p>
