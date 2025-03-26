@@ -89,6 +89,10 @@
     <section class="mt-8">
         <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-gray-700 animate-fade-in">Calendrier Scolaire</h2>
         <div class="bg-white shadow-lg rounded-lg p-4 sm:p-6 animate-fade-in-up">
+            {{-- <a
+                href="{{ route('calendar') }}"
+                class="text-teal-600 hover:text-teal-800 hover:underline transition-colors duration-200"
+            > --}}
             <a
                 href="{{ route('calendar') }}"
                 class="text-teal-600 hover:text-teal-800 hover:underline transition-colors duration-200"
