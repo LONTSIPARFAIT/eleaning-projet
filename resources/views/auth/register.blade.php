@@ -55,7 +55,7 @@
         <!-- Champ pour la photo de profil -->
         <div class="mt-4">
             <x-input-label for="profile_photo" :value="__('Photo de Profil')" />
-            <x-text-input id="profile_photo" class="block mt-1 w-full bg-red-500" type="file" name="profile_photo" accept="image/*" />
+            <x-text-input id="profile_photo" class="block mt-1 w-full " type="file" name="profile_photo" accept="image/*" />
             <x-input-error :messages="$errors->get('profile_photo')" class="mt-2" />
         </div>
 
