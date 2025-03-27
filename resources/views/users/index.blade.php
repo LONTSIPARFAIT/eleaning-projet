@@ -128,9 +128,9 @@
         });
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     // Animation au scroll avec répétition
     document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('.scroll-reveal');
