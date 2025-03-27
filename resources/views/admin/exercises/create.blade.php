@@ -10,7 +10,7 @@
             Ajouter un Exercice
         </h1>
 
-        <form action="{{ route('exercises.store') }}" method="POST" class="space-y-6">
+        <form action="" method="POST" class="space-y-6">
             {{-- {{ route('admin.exercises.store') }} --}}
             @csrf
             <input type="hidden" name="cours_id" value="{{ $cours_id }}">
