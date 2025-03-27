@@ -97,7 +97,8 @@
                 <a href="{{ route('quizzes.create', ['lesson_id' => $cour->id]) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
                     Ajouter un questionnaire
                 </a>
-                <a href="{{ route('cours.quizzes.index', $cour->id) }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                <a href="" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                    {{-- {{ route('cours.quizzes.index', $cour->id) }} --}}
                     Voir tous les questionnaires
                 </a>
             </div>
