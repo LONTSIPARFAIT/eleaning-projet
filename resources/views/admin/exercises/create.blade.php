@@ -22,7 +22,7 @@
         </div>
         
         <div class="mb-6">
-            <label for="duration" class="block text-lg font-medium text-gray-700 mb-2">Durée (en minutes)</label>
+            <label for="duration" class="block text-lg font-medium text-gray-700 mb-2">Durée (en heure)</label>
             <input type="number" name="duration" id="duration" class="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
         </div>
         
