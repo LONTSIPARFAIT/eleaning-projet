@@ -284,6 +284,7 @@
             }, { threshold: 0.2 });
 
             elements.forEach(element => observer.observe(element));
+            document.documentElement.classList.add('dark'); // Force le mode sombre
         });
     </script>
 </body>
