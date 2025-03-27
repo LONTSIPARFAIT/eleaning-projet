@@ -67,7 +67,7 @@
 
         {{-- @if ($cours->hasPages()) --}}
             <div class="mt-6 scroll-reveal">
-                {{ $cours->links('pagination::tailwind') }}
+                {{-- {{ $cours->links('pagination::tailwind') }} --}}
             </div>
         {{-- @endif --}}
     </div>
