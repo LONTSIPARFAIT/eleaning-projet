@@ -5,8 +5,8 @@
 @section('content')
 <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-orange-100 px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
     <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 max-w-md w-full text-gray-600 scroll-reveal border border-blue-200">
-        <h1 class="text-3xl font-bold mb-6 text-center text-blue-800 animate-fade-in-down flex items-center justify-center gap-2">
-            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        <h1 class="text-2xl font-bold mb-6 text-center text-blue-800 animate-fade-in-down flex items-center justify-center gap-2">
+            {{-- <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> --}}
             Information de l'Utilisateur
         </h1>
 
