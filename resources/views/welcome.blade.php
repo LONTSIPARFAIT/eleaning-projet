@@ -97,6 +97,11 @@
         </div>
     </nav>
 
+    <!-- Test visuel simple -->
+    <div class="pt-20 text-center">
+        <p x-text="'Mode actuel : ' + (darkMode ? 'Sombre' : 'Clair')" class="text-2xl text-blue-900 dark:text-orange-400"></p>
+    </div>
+
     <!-- Section Héros -->
     <div class="relative h-screen mx-auto max-w-7xl bg-center bg-cover" style="background-image: url('/img/home1.jpg');">
         <div class="absolute inset-0 bg-black opacity-40 dark:opacity-60 rounded-lg"></div>
