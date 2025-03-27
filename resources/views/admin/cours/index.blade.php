@@ -42,9 +42,9 @@
                                         <form action="{{ route('cours.destroy', $cour) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200" onclick="return confirm('Voulez-vous vraiment supprimer ce cours ?')">
+                                            {{-- <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200" onclick="return confirm('Voulez-vous vraiment supprimer ce cours ?')">
                                                 Supprimer
-                                            </button>
+                                            </button> --}}
                                         </form>
                                     </div>
                                 </td>
