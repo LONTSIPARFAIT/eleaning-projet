@@ -102,6 +102,33 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+    function confirmDelete(event, button) {
+        event.preventDefault(); // Empêche la soumission immédiate du formulaire
+        Swal.fire({
+            title: 'Êtes-vous sûr ?',
+            text: "Vous êtes sur le point de supprimer cet utilisateur. Cette action est irréversible !",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#ef4444', // Rouge Tailwind red-500
+            cancelButtonColor: '#3b82f6', // Bleu Tailwind blue-500
+            confirmButtonText: 'Oui, supprimer',
+            cancelButtonText: 'Annuler',
+            customClass: {
+                popup: 'rounded-xl',
+                title: 'text-blue-900 font-bold',
+                content: 'text-gray-700',
+                confirmButton: 'shadow-md transition duration-200',
+                cancelButton: 'shadow-md transition duration-200'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                button.closest('form').submit(); // Soumet le formulaire si confirmé
+            }
+        });
+    }
+</script>
+
+<script>
     // Animation au scroll avec répétition
     document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('.scroll-reveal');
