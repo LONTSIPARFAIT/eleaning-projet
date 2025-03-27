@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+
+svg {
+    display: inline-block;
+    stroke: currentColor;
+    fill: none;
+}
