@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Alpine.js CDN -->
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
@@ -48,18 +51,18 @@
                 @if (Route::has('login'))
                     @auth
                         @if (auth()->user()->role === 'student')
-                            <a href="{{ route('student.dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300">Dashboard Étudiant</a>
+                            <a href="{{ route('student.dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300"><i class="fas fa-user-graduate mr-2"></i>Dashboard Étudiant</a>
                         @elseif (auth()->user()->role === 'teacher')
-                            <a href="{{ route('teacher.dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300">Dashboard Enseignant</a>
+                            <a href="{{ route('teacher.dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300"><i class="fas fa-chalkboard-teacher mr-2"></i>Dashboard Enseignant</a>
                         @elseif (auth()->user()->role === 'admin')
-                            <a href="{{ route('dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300">Dashboard Admin</a>
+                            <a href="{{ route('dashboard') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300"><i class="fas fa-user-shield mr-2"></i>Dashboard Admin</a>
                         @else
-                            <a href="{{ route('home') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300">Dashboard</a>
+                            <a href="{{ route('home') }}" class="font-semibold text-white hover:text-orange-300 transition duration-300"><i class="fas fa-home mr-2"></i>Dashboard</a>
                         @endif
                     @else
-                        <a href="{{ route('login') }}" class="font-semibold bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300 shadow-md">Connexion</a>
+                        <a href="{{ route('login') }}" class="font-semibold bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300 shadow-md"><i class="fas fa-sign-in-alt mr-2"></i>Connexion</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-semibold bg-white text-red-600 py-2 px-6 rounded-lg hover:bg-orange-100 transition duration-300 shadow-md">Inscription</a>
+                            <a href="{{ route('register') }}" class="font-semibold bg-white text-red-600 py-2 px-6 rounded-lg hover:bg-orange-100 transition duration-300 shadow-md"><i class="fas fa-user-plus mr-2"></i>Inscription</a>
                         @endif
                     @endauth
                 @endif
@@ -117,15 +120,15 @@
             </h1>
             <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mb-8">Rejoignez une plateforme d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#cours" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">Découvrir les Cours</a>
-                <a href="{{ route('register') }}" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">S'inscrire</a>
+                <a href="#cours" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300"><i class="fas fa-book-open mr-2"></i>Découvrir les Cours</a>
+                <a href="{{ route('register') }}" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300"><i class="fas fa-user-plus mr-2"></i>S'inscrire</a>
             </div>
         </div>
     </div>
 
     <!-- Section Cours Populaires -->
     <section id="cours" class="py-16 mx-auto max-w-7xl scroll-reveal">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Cours Populaires</h2>
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12"><i class="fas fa-graduation-cap mr-2"></i>Cours Populaires</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($cours->take(6) as $cour)
                 <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-orange-200">
@@ -135,7 +138,7 @@
                     <p class="mt-2 text-gray-600">Prix : {{ $cour->price }} €</p>
                     <form action="{{ route('cours.subscribe', $cour->id) }}" method="POST" class="mt-4">
                         @csrf
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">S'abonner</button>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"><i class="fas fa-plus-circle mr-2"></i>S'abonner</button>
                     </form>
                 </div>
             @empty
@@ -152,19 +155,19 @@
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Pourquoi choisir CFPC-Learning ?</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <h3 class="text-xl font-semibold text-red-600">Flexibilité</h3>
+                <h3 class="text-xl font-semibold text-red-600"><i class="fas fa-clock mr-2"></i>Flexibilité</h3>
                 <p class="mt-2 text-gray-700">Apprenez à votre rythme, où et quand vous voulez.</p>
             </div>
             <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <h3 class="text-xl font-semibold text-red-600">Interactivité</h3>
+                <h3 class="text-xl font-semibold text-red-600"><i class="fas fa-users mr-2"></i>Interactivité</h3>
                 <p class="mt-2 text-gray-700">Échangez avec des enseignants et d'autres apprenants.</p>
             </div>
             <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <h3 class="text-xl font-semibold text-red-600">Certifications</h3>
+                <h3 class="text-xl font-semibold text-red-600"><i class="fas fa-certificate mr-2"></i>Certifications</h3>
                 <p class="mt-2 text-gray-700">Obtenez des certificats reconnus à la fin des cours.</p>
             </div>
             <div class="bg-white shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <h3 class="text-xl font-semibold text-red-600">Support</h3>
+                <h3 class="text-xl font-semibold text-red-600"><i class="fas fa-headset mr-2"></i>Support</h3>
                 <p class="mt-2 text-gray-700">Bénéficiez d’un accompagnement personnalisé.</p>
             </div>
         </div>
@@ -172,7 +175,7 @@
 
     <!-- Section À propos -->
     <section id="about" class="py-16 mx-auto max-w-7xl scroll-reveal">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">À propos de nous</h2>
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12"><i class="fas fa-info-circle mr-2"></i>À propos de nous</h2>
         <div class="bg-white shadow-lg rounded-xl p-6 max-w-4xl mx-auto">
             <p class="text-gray-700 text-lg">CFPC-Learning est une plateforme dédiée à l’éducation en ligne, conçue pour offrir des cours de qualité à tous, quel que soit leur niveau ou leur emploi du temps. Notre mission est de rendre l’apprentissage accessible, interactif et efficace grâce à une équipe d’enseignants passionnés et des outils modernes.</p>
             <p class="mt-4 text-gray-700 text-lg">Rejoignez-nous pour développer vos compétences et atteindre vos objectifs avec une expérience d’apprentissage personnalisée.</p>
@@ -181,7 +184,7 @@
 
     <!-- Section Témoignages -->
     <section id="testimonials" class="py-16 mx-auto max-w-7xl scroll-reveal">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Témoignages</h2>
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12"><i class="fas fa-quote-left mr-2"></i>Témoignages</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <p class="italic text-gray-700">"Une plateforme intuitive et motivante !"</p>
@@ -200,32 +203,32 @@
 
     <!-- Section Contact -->
     <section id="contact" class="py-16 mx-auto max-w-7xl scroll-reveal">
-        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12">Contactez-nous</h2>
+        <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 mb-12"><i class="fas fa-envelope mr-2"></i>Contactez-nous</h2>
         <div class="bg-white shadow-lg rounded-xl p-6 max-w-2xl mx-auto">
             <form action="#" method="POST" class="space-y-6">
                 @csrf
                 <div>
-                    <label for="name" class="block text-gray-700 font-semibold">Nom</label>
+                    <label for="name" class="block text-gray-700 font-semibold"><i class="fas fa-user mr-2"></i>Nom</label>
                     <input type="text" id="name" name="name" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                    <label for="email" class="block text-gray-700 font-semibold"><i class="fas fa-envelope mr-2"></i>Email</label>
                     <input type="email" id="email" name="email" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
                 </div>
                 <div>
-                    <label for="message" class="block text-gray-700 font-semibold">Message</label>
+                    <label for="message" class="block text-gray-700 font-semibold"><i class="fas fa-comment mr-2"></i>Message</label>
                     <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-orange-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required></textarea>
                 </div>
-                <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg shadow-lg transition duration-300">Envoyer</button>
+                <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg shadow-lg transition duration-300"><i class="fas fa-paper-plane mr-2"></i>Envoyer</button>
             </form>
         </div>
     </section>
 
     <!-- Section Appel à l'Action -->
     <section class="py-16 bg-gradient-to-r from-red-500 to-red-700 text-center mx-auto max-w-7xl scroll-reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Commencez votre aventure d’apprentissage</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6"><i class="fas fa-rocket mr-2"></i>Commencez votre aventure d’apprentissage</h2>
         <p class="text-lg text-gray-200 mb-8">Inscrivez-vous dès maintenant et accédez à des cours de qualité.</p>
-        <a href="{{ route('register') }}" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">S'inscrire Maintenant</a>
+        <a href="{{ route('register') }}" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300"><i class="fas fa-user-plus mr-2"></i>S'inscrire Maintenant</a>
     </section>
 
     <!-- Footer -->
