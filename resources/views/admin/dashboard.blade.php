@@ -2,7 +2,7 @@
     <!-- En-tête avec dégradé rouge -->
     <x-slot name="header">
         <h2 class="font-bold text-2xl text-white leading-tight bg-gradient-to-r from-red-600 to-red-800 p-4 rounded-lg shadow-md animate-fade-in-down">
-            <i class="fas fa-user-shield mr-2"></i>{{ __('Tableau de Bord Admin') }}
+            {{ __('Tableau de Bord Admin') }}
         </h2>
     </x-slot>
 
@@ -12,9 +12,9 @@
 
             <!-- Bloc Admin : liens d'action -->
             <div class="bg-orange-50 shadow-lg rounded-xl p-6 mb-6 border border-blue-200 scroll-reveal flex justify-between items-center">
-                <h4 class="text-blue-900 text-2xl font-bold"><i class="fas fa-user-cog mr-2"></i>Admin</h4>
+                <h4 class="text-blue-900 text-2xl font-bold">Admin</h4>
                 <a href="{{ route('cours.create') }}" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg shadow-md transition duration-300 ease-in-out">
-                    <i class="fas fa-plus-circle mr-2"></i>Créer un nouveau cours
+                    Créer un nouveau cours
                 </a>
             </div>
 
@@ -23,7 +23,7 @@
                 <!-- Colonne gauche : Statistiques -->
                 <div class="lg:col-span-2 scroll-reveal">
                     <div class="bg-white shadow-lg rounded-xl p-6 border border-orange-200">
-                        <h2 class="text-xl font-semibold text-blue-800 mb-6"><i class="fas fa-chart-bar mr-2"></i>Statistiques</h2>
+                        <h2 class="text-xl font-semibold text-blue-800 mb-6">Statistiques</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -31,7 +31,7 @@
                                     Utilisateurs
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $userCount }}</p>
-                                <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir tous les utilisateurs</a>
+                                <a href="{{ route('users.index') }}" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les utilisateurs</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -39,7 +39,7 @@
                                     Cours
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $coursCount }}</p>
-                                <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir tous les cours</a>
+                                <a href="{{ route('cours.index') }}" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les cours</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -48,7 +48,7 @@
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">4</p>
                                 {{-- {{ route('admin.orders.index') }} --}}
-                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir toutes les commandes</a>
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir toutes les commandes</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -57,7 +57,7 @@
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $studentCount }}</p>
                                 {{-- {{ route('admin.students.index') }} --}}
-                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir tous les étudiants</a>
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les étudiants</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -66,7 +66,7 @@
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">{{ $teacherCount }}</p>
                                 {{-- {{ route('admin.teachers.index') }} --}}
-                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir tous les enseignants</a>
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir tous les enseignants</a>
                             </div>
                             <div class="bg-orange-50 rounded-lg p-4 border border-blue-200 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 flex items-center gap-2">
@@ -75,7 +75,7 @@
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 mt-2">330 €</p>
                                 {{-- {{ route('admin.reports') }} --}}
-                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300"><i class="fas fa-eye mr-1"></i>Voir les rapports</a>
+                                <a href="" class="text-red-500 hover:text-red-600 text-sm transition duration-300">Voir les rapports</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="space-y-6">
                     <!-- Statistiques d'Activité -->
                     <div class="bg-white shadow-lg rounded-xl p-6 border border-orange-200 scroll-reveal">
-                        <h2 class="text-xl font-semibold text-blue-800 mb-4"><i class="fas fa-chart-line mr-2"></i>Activité Récente</h2>
+                        <h2 class="text-xl font-semibold text-blue-800 mb-4">Activité Récente</h2>
                         <div class="space-y-4">
                             <div>
                                 <h3 class="text-lg font-semibold text-red-600 flex items-center gap-2">
@@ -106,25 +106,25 @@
 
                     <!-- Paramètres Système -->
                     <div class="bg-white shadow-lg rounded-xl p-6 border border-orange-200 scroll-reveal">
-                        <h2 class="text-xl font-semibold text-blue-800 mb-4"><i class="fas fa-cogs mr-2"></i>Paramètres</h2>
+                        <h2 class="text-xl font-semibold text-blue-800 mb-4">Paramètres</h2>
                         <p class="text-gray-700 mb-4">Options de configuration globale.</p>
                         {{-- {{ route('admin.settings') }} --}}
-                        <a href="" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-md transition duration-300"><i class="fas fa-tools mr-2"></i>Modifier les Paramètres</a>
+                        <a href="" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">Modifier les Paramètres</a>
                     </div>
                 </div>
             </div>
 
             <!-- Tableau des derniers utilisateurs -->
             <div class="mt-6 bg-white shadow-lg rounded-xl p-6 border border-orange-200 scroll-reveal">
-                <h2 class="text-xl font-semibold text-blue-800 mb-4"><i class="fas fa-users mr-2"></i>Derniers Utilisateurs Inscrits</h2>
+                <h2 class="text-xl font-semibold text-blue-800 mb-4">Derniers Utilisateurs Inscrits</h2>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead class="bg-red-600 text-white">
                             <tr>
-                                <th class="py-3 px-4 text-sm font-medium rounded-tl-lg"><i class="fas fa-user mr-1"></i>Nom</th>
-                                <th class="py-3 px-4 text-sm font-medium"><i class="fas fa-envelope mr-1"></i>Email</th>
-                                <th class="py-3 px-4 text-sm font-medium"><i class="fas fa-calendar-alt mr-1"></i>Date</th>
-                                <th class="py-3 px-4 text-sm font-medium rounded-tr-lg"><i class="fas fa-user-tag mr-1"></i>Rôle</th>
+                                <th class="py-3 px-4 text-sm font-medium rounded-tl-lg">Nom</th>
+                                <th class="py-3 px-4 text-sm font-medium">Email</th>
+                                <th class="py-3 px-4 text-sm font-medium">Date</th>
+                                <th class="py-3 px-4 text-sm font-medium rounded-tr-lg">Rôle</th>
                             </tr>
                         </thead>
                         <tbody class="bg-orange-50 divide-y divide-blue-200">
