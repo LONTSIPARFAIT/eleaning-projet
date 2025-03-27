@@ -15,6 +15,7 @@ class CoursController extends Controller
      */
     public function index():View
     {
+        // $cours = Cour::all();
         $cours = Cour::paginate(15);
         return view('admin.cours.index', compact('cours'));
     }
