@@ -24,7 +24,7 @@
                     <th class="py-3 px-4 text-left text-sm font-semibold">Nom</th>
                     <th class="py-3 px-4 text-left text-sm font-semibold">Email</th>
                     <th class="py-3 px-4 text-left text-sm font-semibold">Rôle</th>
-                    <th class="py-3 px-4 text-left text-sm font-semibold">Gestion de rôle</th>
+                    <th class="py-3 px-4 text-left text-center text-sm font-semibold">Gestion de rôle</th>
                     <th class="py-3 px-4 text-left text-center text-sm font-semibold">Actions</th>
                 </tr>
             </thead>
