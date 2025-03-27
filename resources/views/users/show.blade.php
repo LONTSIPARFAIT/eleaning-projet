@@ -13,7 +13,7 @@
         <!-- Photo de profil ou icône par défaut -->
         <div class="mb-6 flex justify-center animate-fade-in-up">
             @if ($user->profile_photo_path)
-                <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Photo de Profil" class="rounded-full w-32 h-32 object-cover shadow-md transition duration-300 hover:scale-105" />
+                <img src="{{ asset('storage/profile_photos/' . $user->profile_photo_path) }}" alt="Photo de Profil" class="rounded-full w-32 h-32 object-cover shadow-md transition duration-300 hover:scale-105" />
             @else
                 <svg class="h-16 w-16 rounded-full text-gray-400 bg-orange-100 p-2 shadow-md" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14.5c-3.5 0-6.5-2.5-6.5-6s3-6 6.5-6 6.5 2.5 6.5 6-3 6-6.5 6zm0 0c3.5 0 6.5 1.5 6.5 4.5v1H5v-1c0-3 3-4.5 6.5-4.5z" />
