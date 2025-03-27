@@ -23,7 +23,7 @@
                 <tr>
                     <th class="py-3 px-4 text-left text-sm font-semibold">Nom</th>
                     <th class="py-3 px-4 text-left text-sm font-semibold">Email</th>
-                    <th class="py-3 px-4 text-left text-sm font-semibold">Rôle</th>
+                    <th class="py-3 px-4 text-left text-center text-sm font-semibold">Rôle</th>
                     <th class="py-3 px-4 text-left text-center text-sm font-semibold">Gestion de rôle</th>
                     <th class="py-3 px-4 text-left text-center text-sm font-semibold">Actions</th>
                 </tr>
@@ -59,7 +59,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-red-500 hover:text-red-700 font-semibold transition duration-200 flex items-center gap-1" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a2 2 0 00-2 2h8a2 2 0 00-2-2m-6 0V5m6 2H5m14 0h-3"></path></svg>
+                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a2 2 0 00-2 2h8a2 2 0 00-2-2m-6 0V5m6 2H5m14 0h-3"></path></svg>
                                         Supprimer
                                     </button>
                                 </form>
