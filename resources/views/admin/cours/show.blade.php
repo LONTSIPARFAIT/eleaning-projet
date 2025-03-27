@@ -163,3 +163,8 @@
     });
 </script>
 @endsection
+
+
+{{-- <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce cours ?')">
+    Supprimer
+</button> --}}
