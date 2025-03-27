@@ -6,8 +6,12 @@
 <div class="min-h-screen bg-gradient-to-br from-blue-50 to-orange-100 py-8 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center mb-6 scroll-reveal">
-            <h1 class="text-3xl font-bold text-blue-800 animate-fade-in-down">Liste des cours</h1>
-            <a href="{{ route('cours.create') }}" class="mt-4 md:mt-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+            <h1 class="text-3xl font-bold text-blue-800 animate-fade-in-down flex items-center gap-2">
+                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                Liste des cours
+            </h1>
+            <a href="{{ route('cours.create') }}" class="mt-4 md:mt-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 Créer un nouveau cours
             </a>
         </div>
@@ -33,18 +37,17 @@
                                 <td class="px-4 py-3 text-sm text-gray-700">{{ number_format($cour->price, 2) }} €</td>
                                 <td class="px-4 py-3 text-sm">
                                     <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                                        <a href="{{ route('cours.show', $cour) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200">
+                                        <a href="{{ route('cours.show', $cour) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200 flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M19 12a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                             Voir
                                         </a>
-                                        <a href="{{ route('cours.edit', $cour) }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200">
+                                        <a href="{{ route('cours.edit', $cour) }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200 flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                                             Modifier
                                         </a>
                                         <form action="{{ route('cours.destroy', $cour) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
-                                            {{-- <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-200" onclick="return confirm('Voulez-vous vraiment supprimer ce cours ?')">
-                                                Supprimer
-                                            </button> --}}
                                             <button type="submit" class="text-red-500 hover:text-red-700 font-semibold transition duration-200 flex items-center gap-1" onclick="confirmDelete(event, this)">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a2 2 0 00-2 2h8a2 2 0 00-2-2m-6 0V5m6 2H5m14 0h-3"></path></svg>
                                                 Supprimer
@@ -63,7 +66,8 @@
             </div>
 
             <div class="mt-6 flex justify-center scroll-reveal">
-                <a href="{{ route('dashboard') }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                <a href="{{ route('dashboard') }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Retour au tableau de bord
                 </a>
             </div>
@@ -106,7 +110,7 @@
         event.preventDefault(); // Empêche la soumission immédiate du formulaire
         Swal.fire({
             title: 'Êtes-vous sûr ?',
-            text: "Vous êtes sur le point de supprimer cet utilisateur. Cette action est irréversible !",
+            text: "Vous êtes sur le point de supprimer ce cours. Cette action est irréversible !",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#ef4444', // Rouge Tailwind red-500
