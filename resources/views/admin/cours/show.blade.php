@@ -196,6 +196,7 @@
                         Ajouter un questionnaire
                     </a>
                     <a href=""
+                    {{-- {{ route('cours.quizzes.index', $cour->id) }} --}}
                         class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
