@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: document.documentElement.classList.contains('dark') }" :class="{ 'dark': darkMode }">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || false }" :class="{ 'dark': darkMode }">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased bg-gradient-to-br from-blue-50 to-orange-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 px-4">
+<body class="antialiased bg-gradient-to-br from-blue-50 to-orange-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 px-4 transition-colors duration-300">
 
     <!-- Navbar -->
     <nav x-data="{ visible: false, mobileOpen: false }"
@@ -67,11 +67,11 @@
                     @endauth
                 @endif
                 <!-- Dark Mode Toggle -->
-                <button @click="darkMode = !darkMode; document.documentElement.classList.toggle('dark')" class="p-2 rounded-md text-white hover:text-orange-300 dark:hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out">
+                <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" class="p-2 rounded-md text-white hover:text-orange-300 dark:hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out">
                     <span x-show="!darkMode">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </span>
-                    <span x-show="darkMode" class="hidden bg-white">
+                    <span x-show="darkMode" class="hidden" x-cloak>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </span>
                 </button>
@@ -273,7 +273,7 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     } else {
-                        entry.target.classList.remove('visible'); // Retire la classe pour réanimer au retour
+                        entry.target.classList.remove('visible');
                     }
                 });
             }, { threshold: 0.2 });
