@@ -1,4 +1,4 @@
-{{-- essaye de fire avec une autre mehode pour eviter les confusion --}}
+{{-- essaye de faire avec une autre mehode pour eviter les confusion --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || false }" :class="{ 'dark': darkMode }">
 <head>
