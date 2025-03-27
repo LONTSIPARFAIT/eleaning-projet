@@ -69,7 +69,7 @@
             <div class="mt-6 scroll-reveal">
                 {{ $cours->links('pagination::tailwind') }}
             </div>
-        {{-- @endif --}}
+        @endif
     </div>
 </div>
 
