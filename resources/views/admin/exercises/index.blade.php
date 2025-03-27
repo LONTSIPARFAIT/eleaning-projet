@@ -13,7 +13,7 @@
         @foreach ($lessons as $lesson)
         <li class="p-4 border rounded mb-4">
             <h3 class="font-bold text-lg">{{ $exercise->title }}</h3>
-            <p class="text-gray-600">Durée : {{ $exercise->duration }} minutes</p>
+            <p class="text-gray-600">Durée : {{ $exercise->duration }} heures</p>
             <a href="{{ route('exercise.show', $exercise->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
             <a href="" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Éditer</a>
             <form action="" method="POST" class="inline">

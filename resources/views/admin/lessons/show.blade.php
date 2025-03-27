@@ -12,7 +12,7 @@
                 {{ $lesson->title }}
             </h1>
             <p class="text-gray-600 mb-2">{{ $lesson->description }}</p>
-            <p class="text-gray-600 mb-4">Durée : {{ $lesson->duration }} minutes</p>
+            <p class="text-gray-600 mb-4">Durée : {{ $lesson->duration }} heures</p>
 
             <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
                 <a href="{{ route('lessons.edit', $lesson) }}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center gap-2">
