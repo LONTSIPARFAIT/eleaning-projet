@@ -10,7 +10,8 @@
             Créer une nouvelle leçon
         </h1>
 
-        <form action="{{ route('lessons.store') }}" method="POST" class="space-y-6">
+        <form action="" method="POST" class="space-y-6">
+            {{-- {{ route('lessons.store') }} --}}
             @csrf
             <div class="animate-fade-in-up">
                 <label for="title" class="block text-blue-900 font-semibold flex items-center gap-2 text-sm sm:text-base">
