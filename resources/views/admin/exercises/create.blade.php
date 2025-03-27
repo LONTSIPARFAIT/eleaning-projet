@@ -6,7 +6,8 @@
 <div class="container mx-auto p-8">
     <h1 class="text-3xl font-extrabold text-gray-800 mb-6">Ajouter un Exercice</h1>
 
-    <form action="{{ route('admin.exercises.store') }}" method="POST" class="bg-white shadow-lg rounded-lg p-6">
+    <form action="" method="POST" class="bg-white shadow-lg rounded-lg p-6">
+        {{-- {{ route('admin.exercises.store') }} --}}
         @csrf
         <input type="hidden" name="cours_id" value="{{ $cours_id }}">
         
