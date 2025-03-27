@@ -55,6 +55,7 @@
             <x-input-error :messages="$errors->get('date_de_naissance')" class="mt-2 text-red-600" />
             <x-input-error :messages="$errors->get('lieu_de_naissance')" class="mt-2 text-red-600" />
         </div>
+        
         <!-- Sexe -->
         <div class="mt-4">
             <x-input-label for="sexe" :value="__('Sexe')" class="text-blue-900 font-semibold flex items-center gap-2">
