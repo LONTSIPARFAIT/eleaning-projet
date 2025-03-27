@@ -106,6 +106,7 @@
 
                     <!-- Paramètres Système -->
                     <div class="bg-white shadow-lg rounded-xl p-6 border border-orange-200 scroll-reveal">
+                        <i class="fas fa-star">ssds</i>
                         <h2 class="text-xl font-semibold text-blue-800 mb-4"><i class="fas fa-cogs mr-2"></i>Paramètres</h2>
                         <p class="text-gray-700 mb-4">Options de configuration globale.</p>
                         {{-- {{ route('admin.settings') }} --}}
