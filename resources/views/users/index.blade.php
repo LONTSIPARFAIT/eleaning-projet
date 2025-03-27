@@ -4,10 +4,14 @@
 
 @section('content')
 <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-orange-100 min-h-screen">
-    <h1 class="text-3xl font-bold mb-6 text-blue-900 animate-fade-in-down">Tous les utilisateurs</h1>
+    <h1 class="text-3xl font-bold mb-6 text-blue-900 animate-fade-in-down flex items-center gap-2">
+        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 1.857h10M9 5a4 4 0 11-8 0 4 4 0 018 0zM15 5a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        Tous les utilisateurs
+    </h1>
 
     <div class="flex justify-end mb-6 scroll-reveal">
-        <a href="{{ route('users.create') }}" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+        <a href="{{ route('users.create') }}" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
             Ajouter un utilisateur
         </a>
     </div>
@@ -43,12 +47,19 @@
                         </td>
                         <td class="py-3 px-4 text-sm">
                             <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-                                <a href="{{ route('users.show', $user->id) }}" class="text-blue-500 hover:text-blue-700 font-semibold transition duration-200">Voir</a>
-                                <a href="{{ route('users.edit', $user->id) }}" class="text-green-500 hover:text-green-700 font-semibold transition duration-200">Modifier</a>
+                                <a href="{{ route('users.show', $user->id) }}" class="text-blue-500 hover:text-blue-700 font-semibold transition duration-200 flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M19 12a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    Voir
+                                </a>
+                                <a href="{{ route('users.edit', $user->id) }}" class="text-green-500 hover:text-green-700 font-semibold transition duration-200 flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                    Modifier
+                                </a>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-500 hover:text-red-700 font-semibold transition duration-200" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                                    <button type="submit" class="text-red-500 hover:text-red-700 font-semibold transition duration-200 flex items-center gap-1" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a2 2 0 00-2 2h8a2 2 0 00-2-2m-6 0V5m6 2H5m14 0h-3"></path></svg>
                                         Supprimer
                                     </button>
                                 </form>
