@@ -279,7 +279,6 @@
             }, { threshold: 0.2 });
 
             elements.forEach(element => observer.observe(element));
-            window.Alpine
         });
     </script>
 </body>
