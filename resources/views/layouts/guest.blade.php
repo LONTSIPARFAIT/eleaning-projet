@@ -18,10 +18,10 @@
     <body class="font-sans text-gray-900 dark:text-white antialiased bg-gradient-to-br from-blue-50 to-orange-100 dark:bg-gray-900 min-h-screen">
         <div class="flex flex-col items-center pt-6 sm:pt-12">
             <!-- Logo -->
-            <div class="mb-6 scroll-reveal">
+            <div class="mb-1 scroll-reveal">
                 <a href="/" class="flex items-center gap-2">
                     <x-application-logo class="w-16 h-16 fill-current text-red-600" />
-                    <span class="text-2xl font-bold text-blue-900 dark:text-white">{{ config('app.name', 'Laravel') }}</span>
+                    {{-- <span class="text-2xl font-bold text-blue-900 dark:text-white">{{ config('app.name', 'Laravel') }}</span> --}}
                 </a>
             </div>
 
