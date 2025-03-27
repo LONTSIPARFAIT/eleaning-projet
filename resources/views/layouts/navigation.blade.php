@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow-md">
+<nav x-data="{ open: false }" class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-100 to-orange-100 dark:from-gray-900 dark:to-gray-800 border-b border-blue-200 dark:border-orange-600 shadow-md">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <div class="flex justify-between h-20 sm:h-24 items-center">
@@ -99,7 +99,7 @@
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-red-600 dark:text-red-400 hover:text-blue-800 dark:hover:text-orange-500 hover:bg-orange-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-orange-100 dark:focus:bg-gray-700 focus:text-blue-800 dark:focus:text-orange-500 transition duration-150 ease-in-out">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-red-600 dark:text-red-400 hover:text-blue-800 dark:hover:text-orange-500 hover:bg-orange-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-orange-200 dark:focus:bg-gray-700 focus:text-blue-800 dark:focus:text-orange-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden bg-white dark:bg-gray-800 border-t border-blue-200 dark:border-orange-600">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden bg-gradient-to-r from-blue-100 to-orange-100 dark:from-gray-900 dark:to-gray-800 border-t border-blue-200 dark:border-orange-600">
         <div class="pt-2 pb-3 space-y-1">
             @if (Route::has('login'))
                 @auth
@@ -177,3 +177,6 @@
         </div>
     </div>
 </nav>
+
+<!-- Espace pour éviter que le contenu ne soit caché sous la nav fixe -->
+<div class="h-20 sm:h-24"></div>
