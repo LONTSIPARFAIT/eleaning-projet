@@ -70,10 +70,25 @@
                 <div class="max-w-xl">
                     <h3 class="text-xl font-semibold text-blue-800 dark:text-orange-400 mb-4">
                         {{ __('Supprimer le Compte') }}</h3>
-                    @include('profile.partials.delete-user-form')
+                    <section class="space-y-6">
+                        <header>
+                            <h2 class="text-xl font-bold text-blue-500 dark:text-blue-400 animate-fade-in-down">
+                                {{ __('Supprimer Votre Compte') }}
+                            </h2>
+                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                                {{ __('Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Avant de supprimer votre compte, veuillez télécharger toutes les données ou informations que vous souhaitez conserver.') }}
+                            </p>
+                        </header>
+
+                        <x-danger-button x-data=""
+                            x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
+                            class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white transition duration-300 ease-in-out shadow-md animate-fade-in-up">{{ __('Supprimer Le Compte') }}</x-danger-button>
+                    </section>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <style>
