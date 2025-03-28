@@ -31,7 +31,7 @@
         <div
             class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-x-auto scroll-reveal border border-blue-200 dark:border-gray-700">
             <table class="min-w-full table-auto divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-red-600 dark:text-orange-500 dark:text-orange-500 dark:bg-gray-900 text-white">
+                <thead class="bg-red-600 dark:font-semibold dark:text-orange-500 dark:bg-gray-900 text-white">
                     <tr>
                         <th class="py-3 px-4 text-left text-sm font-semibold">Nom</th>
                         <th class="py-3 px-4 text-left text-sm font-semibold">Email</th>
