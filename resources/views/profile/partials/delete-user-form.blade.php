@@ -66,6 +66,51 @@
         </div>
     </div>
 
+    <!-- Scripts globaux -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmDeleteAccount(event, form) {
+            event.preventDefault(); // Empêche la soumission immédiate
+            Swal.fire({
+                title: '{{ __('Êtes-vous sûr ?') }}',
+                text: "{{ __('Vous êtes sur le point de supprimer votre compte. Cette action est irréversible !') }}",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ef4444', // Rouge Tailwind red-500
+                cancelButtonColor: '#3b82f6', // Bleu Tailwind blue-500
+                confirmButtonText: '{{ __('Oui, supprimer') }}',
+                cancelButtonText: '{{ __('Annuler') }}',
+                customClass: {
+                    popup: 'rounded-xl',
+                    title: 'text-blue-900 dark:text-orange-400 font-bold',
+                    content: 'text-gray-700 dark:text-gray-300',
+                    confirmButton: 'shadow-md transition duration-200',
+                    cancelButton: 'shadow-md transition duration-200'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit(); // Soumet le formulaire si confirmé
+                }
+            });
+        }
+
+        // Animation au scroll avec répétition
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+
     <style>
         /* Animations personnalisées */
         @keyframes fadeInUp {
@@ -90,22 +135,4 @@
             animation: fadeInUp 0.6s ease-out;
         }
     </style>
-
-    <script>
-        // Animation au scroll avec répétition
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.scroll-reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            elements.forEach(element => observer.observe(element));
-        });
-    </script>
 </x-app-layout>
