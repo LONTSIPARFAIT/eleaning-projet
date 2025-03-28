@@ -1,6 +1,6 @@
 <nav x-data="{ open: false, darkMode: document.documentElement.classList.contains('dark') }" class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-100 to-orange-100 dark:from-gray-900 dark:to-gray-800 border-b border-blue-200 dark:border-orange-600 shadow-md">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto my-2 px-2 sm:px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto my-1 px-2 sm:px-4 lg:px-8">
         <div class="flex justify-between h-20 sm:h-24 items-center">
             <div class="flex">
                 <!-- Logo -->
