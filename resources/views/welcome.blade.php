@@ -30,7 +30,7 @@
         class="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-800 dark:from-gray-800 dark:to-gray-700 p-4 shadow-xl z-50 transition duration-300 transform border-b-2 border-orange-400 dark:border-orange-600">
         <div class="container mx-auto flex justify-between items-center px-4">
             <a href="/" class="transition transform hover:scale-105">
-                <img src="/img/logo1.jpg" alt="CFPC-Learning"
+                <img src="/img/logo11.png" alt="CFPC-Learning"
                     class="h-14 w-20 rounded-lg shadow-md border border-orange-300 dark:border-orange-500">
             </a>
             <div class="hidden md:flex space-x-10 text-lg font-semibold">
