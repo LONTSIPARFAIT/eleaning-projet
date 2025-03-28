@@ -44,7 +44,7 @@
                     @foreach ($users as $user)
                         <tr
                             class="hover:bg-orange-50 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 transition duration-200">
-                            <td class="py-3 px-4 text-sm text-gray-700 dark:text-gray-300">{{ $user->name }}</td>
+                            <td class="py-3 px-4 text-sm text-gray-700 dark:text-orange-300">{{ $user->name }}</td>
                             <td class="py-3 px-4 text-sm text-gray-700 dark:text-gray-300">{{ $user->email }}</td>
                             <td class="py-3 px-4 text-sm text-gray-700 dark:text-gray-300">{{ $user->role }}</td>
                             <td class="py-3 px-4 text-sm">
