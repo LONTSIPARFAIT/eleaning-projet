@@ -119,7 +119,7 @@
 
                     <x-danger-button
                         class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white transition duration-300 ease-in-out shadow-md">
-                        {{ __('Supprimer Le Compte') }}
+                        {{ __('Supprimer Le Compte') }} 
                     </x-danger-button>
                 </div>
             </form>
