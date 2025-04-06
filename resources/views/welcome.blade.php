@@ -68,7 +68,7 @@
                         @if (auth()->user()->role === 'student')
                             <a href="{{ route('student.dashboard') }}"
                                 class="font-semibold text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300"><i
-                                    class="fas fa-user-graduate mr-2"></i>Dashboard a</a>
+                                    class="fas fa-user-graduate mr-2"></i>Dashboard apprenant</a>
                         @elseif (auth()->user()->role === 'teacher')
                             <a href="{{ route('teacher.dashboard') }}"
                                 class="font-semibold text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300"><i
