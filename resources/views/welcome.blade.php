@@ -273,7 +273,7 @@
             <div
                 class="bg-orange-50 dark:bg-gray-800 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 <p class="italic text-gray-700 dark:text-gray-300">"Une plateforme intuitive et motivante !"</p>
-                <p class="mt-4 font-semibold text-red-600 dark:text-orange-400">- Marie, Étudiante</p>
+                <p class="mt-4 font-semibold text-red-600 dark:text-orange-400">- Marie, Apprenante</p>
             </div>
             <div
                 class="bg-orange-50 dark:bg-gray-800 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
