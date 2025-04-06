@@ -79,8 +79,8 @@
                     Rôle
                 </label>
                 <select name="role" id="role" class="mt-1 block w-full border-blue-300 dark:border-gray-600 focus:border-red-500 dark:focus:border-orange-500 focus:ring-red-500 dark:focus:ring-orange-500 rounded-md shadow-sm p-2 transition duration-200 bg-orange-50 dark:bg-gray-700 text-gray-900 dark:text-gray-200" required>
-                    <option value="student" {{ old('role', $user->role) == 'student' ? 'selected' : '' }}>Étudiant</option>
-                    <option value="teacher" {{ old('role', $user->role) == 'teacher' ? 'selected' : '' }}>Enseignant</option>
+                    <option value="student" {{ old('role', $user->role) == 'student' ? 'selected' : '' }}>Apprenant</option>
+                    <option value="teacher" {{ old('role', $user->role) == 'teacher' ? 'selected' : '' }}>Formateur</option>
                     <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Administrateur</option>
                 </select>
                 @error('role')
