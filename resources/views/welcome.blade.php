@@ -68,11 +68,11 @@
                         @if (auth()->user()->role === 'student')
                             <a href="{{ route('student.dashboard') }}"
                                 class="font-semibold text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300"><i
-                                    class="fas fa-user-graduate mr-2"></i>Dashboard Étudiant</a>
+                                    class="fas fa-user-graduate mr-2"></i>Dashboard a</a>
                         @elseif (auth()->user()->role === 'teacher')
                             <a href="{{ route('teacher.dashboard') }}"
                                 class="font-semibold text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300"><i
-                                    class="fas fa-chalkboard-teacher mr-2"></i>Dashboard formatuer</a>
+                                    class="fas fa-chalkboard-teacher mr-2"></i>Dashboard formateur</a>
                         @elseif (auth()->user()->role === 'admin')
                             <a href="{{ route('dashboard') }}"
                                 class="font-semibold text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300"><i
