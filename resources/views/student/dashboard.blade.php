@@ -9,7 +9,7 @@
     <div class="animate-slide-in-down bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 mb-6 border-l-4 border-red-500 dark:border-orange-500 scroll-reveal">
         <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-900 dark:text-orange-400 flex items-center gap-2">
             <svg class="w-8 h-8 text-red-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-            Tableau de Bord de l'a
+            Tableau de Bord de l'ap
         </h1>
         <p class="text-lg sm:text-xl text-blue-700 dark:text-gray-300">
             Bienvenue,
