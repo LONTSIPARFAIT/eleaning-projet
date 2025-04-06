@@ -116,7 +116,7 @@
                         class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 transition duration-300 ease-in-out">
                         {{ __('Annuler') }}
                     </x-secondary-button>
- 
+
                     <x-danger-button
                         class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white transition duration-300 ease-in-out shadow-md">
                         {{ __('Supprimer Le Compte') }}
