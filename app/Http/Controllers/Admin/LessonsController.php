@@ -45,7 +45,7 @@ class LessonsController extends Controller
     public function show($id)
     {
         $lesson = Lesson::with('quizzes')->findOrFail($id);
-        return view('lessons.index', compact('lesson'));
+        return view('lessons.show', compact('lesson'));
     }
 
     public function edit(Lesson $lesson)
