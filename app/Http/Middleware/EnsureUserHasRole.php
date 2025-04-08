@@ -15,9 +15,9 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // if (auth()->check() && auth()->user()->role->name !== $role) {
-        //     return redirect('/'); // Redirige si l'utilisateur n'a pas le rôle requis
-        // }
+        if (auth()->check() && auth()->user()->role->name !== $role) {
+            return redirect('/'); // Redirige si l'utilisateur n'a pas le rôle requis
+        }
         return $next($request);
     }
 }
