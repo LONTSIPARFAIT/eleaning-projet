@@ -58,7 +58,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('lessons')->group(function () {
         Route::get('/', [LessonsController::class, 'index'])->name('lessons.index');
         Route::get('/create', [LessonsController::class, 'create'])->name('lessons.create');
-        Route::get('/{id}', [LessonsController::class, 'show'])->name('lessons.show');
+        Route::get('/{lesson}', [LessonsController::class, 'edit'])->name('lessons.edit');
         Route::get('/{id}', [LessonsController::class, 'show'])->name('lessons.show');
         Route::get('/cours/{cours_id}', [LessonsController::class, 'index'])->name('cours.lessons.index');
     });
