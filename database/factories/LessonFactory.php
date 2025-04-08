@@ -24,7 +24,7 @@ class LessonFactory extends Factory
             'description' => $this->faker->paragraphs(asText: true),
             'duration' => $this->faker->randomDigit,
             'cour_id' => $cours->random()->id,
-            'lesson_id' => $lesson_id->random()->id,
+            // 'lesson_id' => $lesson_id->random()->id,
             'created_at' => $created_at ,
             'updated_at' => $created_at ,
         ];
