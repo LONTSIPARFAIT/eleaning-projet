@@ -54,9 +54,12 @@
                                     @method('PUT')
                                     <select name="role" onchange="this.form.submit()"
                                         class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md w-full text-sm border-blue-300 dark:border-gray-600 focus:border-red-500 dark:focus:border-orange-500 focus:ring-red-500 dark:focus:ring-orange-500 transition duration-200">
-                                        <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Apprenant</option>
-                                        <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Formateur</option>
-                                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Administrateur</option>
+                                        <option value="student" {{ $user->role == 'student' ? 'selected' : '' }}>Apprenant
+                                        </option>
+                                        <option value="teacher" {{ $user->role == 'teacher' ? 'selected' : '' }}>Formateur
+                                        </option>
+                                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Administrateur
+                                        </option>
                                     </select>
                                 </form>
                             </td>
