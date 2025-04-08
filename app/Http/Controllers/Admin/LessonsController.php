@@ -51,7 +51,7 @@ class LessonsController extends Controller
     public function edit(Lesson $lesson)
     {
         $cours = Cour::all();
-        return view('lessons.edit', compact('lesson', 'cours'));
+        return view('admin.lessons.edit', compact('lesson', 'cours'));
     }
 
     public function update(Request $request, Lesson $lesson)
