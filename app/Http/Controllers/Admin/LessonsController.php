@@ -48,11 +48,11 @@ class LessonsController extends Controller
         return view('admin.lessons.show', compact('lesson'));
     }
 
-    public function edit(Lesson $lesson)
-    {
-        $cours = Cour::all();
-        return view('admin.lessons.edit', compact('lesson', 'cours'));
-    }
+    // public function edit(Lesson $lesson)
+    // {
+    //     $cours = Cour::all();
+    //     return view('admin.lessons.edit', compact('lesson', 'cours'));
+    // }
 
     public function update(Request $request, Lesson $lesson)
     {
