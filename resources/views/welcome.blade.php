@@ -89,7 +89,7 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
                                 class="font-semibold bg-white dark:bg-gray-800 text-red-600 dark:text-orange-400 py-2 px-6 rounded-lg hover:bg-orange-100 dark:hover:bg-gray-700 transition duration-300 shadow-md"><i
-                                    class="fas fa-user-plus mr-2"></i>Inscription</a>
+                                  class="fas fa-user-plus mr-2"></i>Inscription</a>
                         @endif
                     @endauth
                 @endif
