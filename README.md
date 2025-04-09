@@ -44,7 +44,7 @@ php artisan migrate --seed
 5. Compilez les assets front-end :
 npm run dev
 
-Lancez le serveur de développement :
+6. Lancez le serveur de développement :
 php artisan serve
 
 Routes principales
