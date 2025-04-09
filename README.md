@@ -52,6 +52,7 @@ php artisan migrate --seed
 npm run dev
 
 6. Lancez le serveur de développement :
+ ```bash
 php artisan serve
 ```
 
