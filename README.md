@@ -48,7 +48,6 @@ npm run dev
 php artisan serve
 
 Routes principales
-
 Page d'accueil : /
 Tableau de bord étudiant : /student/dashboard
 Tableau de bord enseignant : /teacher/dashboard
