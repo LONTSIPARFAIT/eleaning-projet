@@ -34,6 +34,6 @@ Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne 
 composer install
 npm install
 
-Configurez le fichier .env :
+3. Configurez le fichier .env :
 cp .env.example .env
 php artisan key:generate
