@@ -45,6 +45,7 @@ php artisan migrate --seed
 npm run dev
 
 Lancez le serveur de développement :
+php artisan serve
 
 Routes principales
 Page d'accueil : /
