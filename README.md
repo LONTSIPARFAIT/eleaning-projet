@@ -42,3 +42,4 @@ php artisan key:generate
 php artisan migrate --seed
 
 5. Compilez les assets front-end :
+npm run dev
