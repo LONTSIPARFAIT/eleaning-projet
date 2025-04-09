@@ -41,4 +41,4 @@ php artisan key:generate
 4. Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
 php artisan migrate --seed
 
-Compilez les assets front-end :
+5. Compilez les assets front-end :
