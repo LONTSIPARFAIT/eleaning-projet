@@ -30,7 +30,7 @@ Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne 
    ```bash
    git clone https://github.com/votre-utilisateur/elearning.git
    cd elearning
-   
+
 2. Installez les dépendances PHP et JavaScript :
  ```bash
 composer install
@@ -53,6 +53,7 @@ npm run dev
 
 6. Lancez le serveur de développement :
 php artisan serve
+```
 
 Routes principales
 Page d'accueil : /
