@@ -43,3 +43,17 @@ php artisan migrate --seed
 
 5. Compilez les assets front-end :
 npm run dev
+
+Routes principales
+Page d'accueil : /
+Tableau de bord étudiant : /student/dashboard
+Tableau de bord enseignant : /teacher/dashboard
+Tableau de bord administrateur : /admin/dashboard
+Gestion des cours : /admin/cours
+Gestion des leçons : /admin/lessons
+Gestion des exercices : /admin/exercises
+Technologies utilisées
+Backend : Laravel 10
+Frontend : Blade, Tailwind CSS, Alpine.js
+Base de données : MySQL
+Build tools : Vite
