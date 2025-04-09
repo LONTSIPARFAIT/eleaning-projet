@@ -44,6 +44,8 @@ php artisan migrate --seed
 5. Compilez les assets front-end :
 npm run dev
 
+Lancez le serveur de développement :
+
 Routes principales
 Page d'accueil : /
 Tableau de bord étudiant : /student/dashboard
