@@ -49,6 +49,7 @@ php artisan migrate --seed
 ```
 
 5. Compilez les assets front-end :
+ ```bash
 npm run dev
 
 6. Lancez le serveur de développement :
