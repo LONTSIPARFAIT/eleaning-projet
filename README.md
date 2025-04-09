@@ -1,3 +1,7 @@
+Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne développée avec le framework Laravel. Ce projet offre des fonctionnalités pour les étudiants, enseignants et administrateurs, permettant la gestion des cours, leçons, exercices et quiz.
+
+## Fonctionnalités
+
 **Gestion des utilisateurs** :
    - Inscription et connexion des utilisateurs.
    - Gestion des rôles : étudiant, enseignant, administrateur.
