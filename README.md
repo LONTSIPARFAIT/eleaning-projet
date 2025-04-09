@@ -43,7 +43,9 @@ php artisan key:generate
 ```
 
 4. Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
+ ```bash
 php artisan migrate --seed
+```
 
 5. Compilez les assets front-end :
 npm run dev
