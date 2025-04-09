@@ -35,3 +35,5 @@ composer install
 npm install
 
 Configurez le fichier .env :
+cp .env.example .env
+php artisan key:generate
