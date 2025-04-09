@@ -38,4 +38,4 @@ npm install
 cp .env.example .env
 php artisan key:generate
 
-Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
+4. Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
