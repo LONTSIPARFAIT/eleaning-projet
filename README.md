@@ -1,28 +1,28 @@
-# Elearning Project
+**Gestion des utilisateurs** :
+   - Inscription et connexion des utilisateurs.
+   - Gestion des rôles : étudiant, enseignant, administrateur.
+   - Mise à jour du profil et gestion des photos de profil.
 
-Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne développée avec le framework Laravel. Ce projet offre des fonctionnalités pour les étudiants, enseignants et administrateurs, permettant la gestion des cours, leçons, exercices et quiz.
+2. **Gestion des cours** :
+   - Création, modification et suppression des cours par les enseignants.
+   - Abonnement des étudiants aux cours.
+   - Affichage des détails des cours, y compris les leçons et exercices associés.
 
-## Fonctionnalités
+3. **Gestion des leçons** :
+   - Ajout, édition et suppression des leçons associées à un cours.
+   - Affichage des leçons pour les étudiants.
 
-- **Gestion des utilisateurs** : Inscription, connexion, gestion des rôles (étudiant, enseignant, administrateur).
-- **Gestion des cours** : Création, modification, suppression et abonnement aux cours.
-- **Gestion des leçons** : Ajout, édition et affichage des leçons associées aux cours.
-- **Gestion des exercices** : Création, édition et suppression des exercices pour les cours.
-- **Quiz interactifs** : Création de quiz et soumission des réponses.
-- **Tableau de bord** : Différents tableaux de bord pour les étudiants, enseignants et administrateurs.
+4. **Gestion des exercices** :
+   - Création et gestion des exercices pour les cours.
+   - Évaluation des exercices soumis par les étudiants.
 
-# Elearning Project
+5. **Quiz interactifs** :
+   - Création de quiz pour les leçons.
+   - Soumission des réponses par les étudiants et évaluation automatique.
 
-Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne développée avec le framework Laravel. Ce projet offre des fonctionnalités pour les étudiants, enseignants et administrateurs, permettant la gestion des cours, leçons, exercices et quiz.
-
-## Fonctionnalités
-
-- **Gestion des utilisateurs** : Inscription, connexion, gestion des rôles (étudiant, enseignant, administrateur).
-- **Gestion des cours** : Création, modification, suppression et abonnement aux cours.
-- **Gestion des leçons** : Ajout, édition et affichage des leçons associées aux cours.
-- **Gestion des exercices** : Création, édition et suppression des exercices pour les cours.
-- **Quiz interactifs** : Création de quiz et soumission des réponses.
-- **Tableau de bord** : Différents tableaux de bord pour les étudiants, enseignants et administrateurs.
+6. **Tableaux de bord** :
+   - Tableau de bord personnalisé pour chaque rôle (étudiant, enseignant, administrateur).
+   - Statistiques et gestion des ressources pédagogiques.
 
 ## Installation
 
@@ -30,51 +30,56 @@ Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne 
    ```bash
    git clone https://github.com/votre-utilisateur/elearning.git
    cd elearning
+   ```
 
 2. Installez les dépendances PHP et JavaScript :
- ```bash
-composer install
-npm install`
-```
+   ```bash
+   composer install
+   npm install
+   ```
 
-3. Configurez le fichier .env :
- ```bash
-cp .env.example .env
-php artisan key:generate
-```
+3. Configurez le fichier `.env` :
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-4. Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
- ```bash
-php artisan migrate --seed
-```
+4. Configurez votre base de données dans le fichier `.env`, puis exécutez les migrations :
+   ```bash
+   php artisan migrate --seed
+   ```
 
 5. Compilez les assets front-end :
- ```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 6. Lancez le serveur de développement :
- ```bash
-php artisan serve
-```
+   ```bash
+   php artisan serve
+   ```
 
-Routes principales
-Page d'accueil : /
-Tableau de bord étudiant : /student/dashboard
-Tableau de bord enseignant : /teacher/dashboard
-Tableau de bord administrateur : /admin/dashboard
-Gestion des cours : /admin/cours
-Gestion des leçons : /admin/lessons
-Gestion des exercices : /admin/exercises
+## Routes principales
 
-Technologies utilisées
-Backend : Laravel 10
-Frontend : Blade, Tailwind CSS, Alpine.js
-Base de données : MySQL
-Build tools : Vite
+- **Page d'accueil** : `/`
+- **Tableau de bord étudiant** : `/student/dashboard`
+- **Tableau de bord enseignant** : `/teacher/dashboard`
+- **Tableau de bord administrateur** : `/admin/dashboard`
+- **Gestion des cours** : `/admin/cours`
+- **Gestion des leçons** : `/admin/lessons`
+- **Gestion des exercices** : `/admin/exercises`
 
-Contribution
+## Technologies utilisées
+
+- **Backend** : Laravel 10
+- **Frontend** : Blade, Tailwind CSS, Alpine.js
+- **Base de données** : MySQL
+- **Build tools** : Vite
+
+## Contribution
+
 Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
 
-Licence
-Ce projet est sous licence MIT.
+## Licence
+
+Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT).
