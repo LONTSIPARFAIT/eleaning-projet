@@ -60,3 +60,9 @@ Backend : Laravel 10
 Frontend : Blade, Tailwind CSS, Alpine.js
 Base de données : MySQL
 Build tools : Vite
+
+Contribution
+Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
+
+Licence
+Ce projet est sous licence MIT.
