@@ -31,10 +31,12 @@ Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne 
    git clone https://github.com/votre-utilisateur/elearning.git
    cd elearning
 2. Installez les dépendances PHP et JavaScript :
+ ```bash
 composer install
 npm install
 
 3. Configurez le fichier .env :
+ ```bash
 cp .env.example .env
 php artisan key:generate
 
