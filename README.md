@@ -37,8 +37,10 @@ npm install`
 ```
 
 3. Configurez le fichier .env :
+ ```bash
 cp .env.example .env
 php artisan key:generate
+```
 
 4. Configurez votre base de données dans le fichier .env, puis exécutez les migrations :
 php artisan migrate --seed
