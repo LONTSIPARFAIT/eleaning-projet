@@ -84,7 +84,7 @@ Bienvenue dans le projet **Elearning**, une plateforme d'apprentissage en ligne 
 
 ## Contribution
 
-Les co sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
+Les c sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
 
 ## Licence
 
