@@ -37,7 +37,7 @@
                                 <th class="px-4 py-3 text-sm font-semibold">Titre</th>
                                 <th class="px-4 py-3 text-sm font-semibold">Description</th>
                                 <th class="px-4 py-3 text-sm font-semibold">Durée</th>
-                                <th class="px-4 py-3 text-sm font-semibold">Prix</th>
+                                {{-- <th class="px-4 py-3 text-sm font-semibold">Prix</th> --}}
                                 <th class="px-4 py-3 text-sm font-semibold">Actions</th>
                             </tr>
                         </thead>
