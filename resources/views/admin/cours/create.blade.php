@@ -55,7 +55,7 @@
                 @enderror
             </div>
 
-            <div class="animate-fade-in-up">
+            {{-- <div class="animate-fade-in-up">
                 <label for="price" class="block text-blue-900 font-semibold">Prix (€)</label>
                 <input
                     type="number"
@@ -70,7 +70,7 @@
                 @error('price')
                     <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up">
                 <button

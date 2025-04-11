@@ -77,6 +77,7 @@
                                                 class="inline-block">
                                                 @csrf
                                                 @method('DELETE')
+                                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="return confirm('Êtes-vous sûr?')">Supprimer</button>
                                                 <button type="submit"
                                                     class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-semibold transition duration-200 flex items-center gap-1"
                                                     onclick="confirmDelete(event, this)">
