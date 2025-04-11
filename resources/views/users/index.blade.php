@@ -88,6 +88,8 @@
                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
+
+                                        
                                         <button type="submit"
                                             class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-semibold transition duration-200 flex items-center gap-1"
                                             onclick="confirmDelete(event, this)">
