@@ -49,8 +49,8 @@
                                         {{ Str::limit($cour->description, 50) }}</td>
                                     <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">{{ $cour->duration }}
                                         minutes</td>
-                                    <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
-                                        {{ number_format($cour->price, 2) }} €</td>
+                                    {{-- <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+                                        {{ number_format($cour->price, 2) }} €</td> --}}
                                     <td class="px-4 py-3 text-sm">
                                         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                                             <a href="{{ route('cours.show', $cour) }}"
