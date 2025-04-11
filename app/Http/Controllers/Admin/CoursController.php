@@ -38,7 +38,7 @@ class CoursController extends Controller
             'description' => 'required|string',
             'duration' => 'required|integer',
             // 'price' => 'required|numeric|min:0',
-            // 'price' => 'numeric|min:0',
+            // 'price' => 'required|numeric|min:0',
         ]);
 
         $currentDateTime = date('Y-m-d H:i:s'); // ou now()
@@ -47,7 +47,7 @@ class CoursController extends Controller
             'title' => $validatedData['title'],
             'description' => $validatedData['description'],
             'duration' => $validatedData['duration'],
-            // 'price' => $validatedData['price'],
+            'price' => $validatedData['price'],
             'updated_at' => $currentDateTime,
             'created_at' => $currentDateTime,
         ]);
