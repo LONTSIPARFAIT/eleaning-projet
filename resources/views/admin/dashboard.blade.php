@@ -80,7 +80,7 @@
                             <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 dark:text-orange-400 flex items-center gap-2">
                                     <svg class="w-6 h-6 text-red-500 dark:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                                    Formateir
+                                    Formateur
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 dark:text-orange-400 mt-2">{{ $teacherCount }}</p>
                                 <a href="" class="text-red-500 dark:text-orange-500 hover:text-red-600 dark:hover:text-orange-600 text-sm transition duration-300">
