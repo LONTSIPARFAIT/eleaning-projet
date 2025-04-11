@@ -198,7 +198,7 @@
                     class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-orange-200 dark:border-orange-600">
                     <h3 class="text-xl font-semibold text-red-600 dark:text-orange-400">{{ $cour->title }}</h3>
                     <p class="mt-2 text-gray-700 dark:text-gray-300 line-clamp-2">{{ $cour->description }}</p>
-                    <p class="mt-2 text-gray-600 dark:text-gray-400">Durée : {{ $cour->duration }} min</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">Durée : {{ $cour->duration }} heure</p>
                     {{-- <p class="mt-2 text-gray-600 dark:text-gray-400">Prix : {{ $cour->price }} €</p> --}}
                     <form action="{{ route('cours.subscribe', $cour->id) }}" method="POST" class="mt-4">
                         @csrf

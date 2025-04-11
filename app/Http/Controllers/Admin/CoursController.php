@@ -37,6 +37,7 @@ class CoursController extends Controller
             'title' => 'required|string|min:3',
             'description' => 'required|string',
             'duration' => 'required|integer',
+            // 'price' => 'required|numeric|min:0',
             'price' => 'required|numeric|min:0',
         ]);
 
