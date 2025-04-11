@@ -299,7 +299,7 @@
                     <label for="name" class="block text-gray-700 dark:text-gray-300 font-semibold"><i
                             class="fas fa-user mr-2"></i>Nom</label>
                     <input type="text" id="name" name="name"
-                        class="w-full mt-2 p-3  border border-orange-200 dark:border-orange-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:focus:ring-orange-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
+                        class="w-full mt-2 p-3 border border-orange-200 dark:border-orange-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:focus:ring-orange-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200"
                         required>
                 </div>
                 <div>
