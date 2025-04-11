@@ -55,7 +55,7 @@
                                     Voir tous les cours
                                 </a>
                             </div>
-                            <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
+                            {{-- <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 dark:text-orange-400 flex items-center gap-2">
                                     <svg class="w-6 h-6 text-red-500 dark:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18l-2 13H5L3 3zm4 18a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                                     Commandes
@@ -65,7 +65,7 @@
                                     <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                                     Voir toutes les commandes
                                 </a>
-                            </div>
+                            </div> --}}
                             <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 dark:text-orange-400 flex items-center gap-2">
                                     <svg class="w-6 h-6 text-red-500 dark:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -80,7 +80,7 @@
                             <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 dark:text-orange-400 flex items-center gap-2">
                                     <svg class="w-6 h-6 text-red-500 dark:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                                    Enseignants
+                                    Formateir
                                 </h3>
                                 <p class="text-2xl font-bold text-red-600 dark:text-orange-400 mt-2">{{ $teacherCount }}</p>
                                 <a href="" class="text-red-500 dark:text-orange-500 hover:text-red-600 dark:hover:text-orange-600 text-sm transition duration-300">
@@ -88,7 +88,7 @@
                                     Voir tous les enseignants
                                 </a>
                             </div>
-                            <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
+                            {{-- <div class="bg-orange-50 dark:bg-gray-700 rounded-lg p-4 border border-blue-200 dark:border-orange-600 hover:scale-105 transition-all duration-300">
                                 <h3 class="text-lg font-semibold text-blue-900 dark:text-orange-400 flex items-center gap-2">
                                     <svg class="w-6 h-6 text-red-500 dark:text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Revenus
@@ -98,7 +98,7 @@
                                     <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                                     Voir les rapports
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
