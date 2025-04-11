@@ -48,7 +48,7 @@
                                     <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
                                         {{ Str::limit($cour->description, 50) }}</td>
                                     <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">{{ $cour->duration }}
-                                        minutes</td>
+                                        Heures</td>
                                     {{-- <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
                                         {{ number_format($cour->price, 2) }} €</td> --}}
                                     <td class="px-4 py-3 text-sm">
