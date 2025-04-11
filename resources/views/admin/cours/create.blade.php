@@ -40,7 +40,7 @@
             </div>
 
             <div class="animate-fade-in-up">
-                <label for="duration" class="block text-blue-900 font-semibold">Durée (minutes)</label>
+                <label for="duration" class="block text-blue-900 font-semibold">Durée (Heures)</label>
                 <input
                     type="number"
                     min="0"
