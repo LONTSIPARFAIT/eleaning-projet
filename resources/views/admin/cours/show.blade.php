@@ -18,7 +18,7 @@
                 </h1>
                 <p class="text-gray-600 mb-2">{{ $cour->description }}</p>
                 <p class="text-gray-600 mb-2">Durée : {{ $cour->duration }} minutes</p>
-                <p class="text-gray-600 mb-4">Prix : {{ number_format($cour->price, 2) }} €</p>
+                {{-- <p class="text-gray-600 mb-4">Prix : {{ number_format($cour->price, 2) }} €</p> --}}
 
                 <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
                     <a href="{{ route('cours.edit', $cour) }}"
