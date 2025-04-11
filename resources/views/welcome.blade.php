@@ -199,7 +199,7 @@
                     <h3 class="text-xl font-semibold text-red-600 dark:text-orange-400">{{ $cour->title }}</h3>
                     <p class="mt-2 text-gray-700 dark:text-gray-300 line-clamp-2">{{ $cour->description }}</p>
                     <p class="mt-2 text-gray-600 dark:text-gray-400">Durée : {{ $cour->duration }} min</p>
-                    <p class="mt-2 text-gray-600 dark:text-gray-400">Prix : {{ $cour->price }} €</p>
+                    {{-- <p class="mt-2 text-gray-600 dark:text-gray-400">Prix : {{ $cour->price }} €</p> --}}
                     <form action="{{ route('cours.subscribe', $cour->id) }}" method="POST" class="mt-4">
                         @csrf
                         <button type="submit"
