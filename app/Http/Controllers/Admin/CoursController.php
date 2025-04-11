@@ -47,7 +47,7 @@ class CoursController extends Controller
             'title' => $validatedData['title'],
             'description' => $validatedData['description'],
             'duration' => $validatedData['duration'],
-            'price' => $validatedData['price'],
+            // 'price' => $validatedData['price'],
             'updated_at' => $currentDateTime,
             'created_at' => $currentDateTime,
         ]);
