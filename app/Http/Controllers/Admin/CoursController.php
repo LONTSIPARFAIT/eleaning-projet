@@ -38,7 +38,7 @@ class CoursController extends Controller
             'description' => 'required|string',
             'duration' => 'required|integer',
             // 'price' => 'required|numeric|min:0',
-            'price' => 'numeric|min:0',
+            // 'price' => 'numeric|min:0',
         ]);
 
         $currentDateTime = date('Y-m-d H:i:s'); // ou now()
