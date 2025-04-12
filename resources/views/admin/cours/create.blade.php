@@ -7,7 +7,7 @@
     <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 max-w-lg w-full scroll-reveal border border-blue-200">
         <h1 class="text-3xl font-bold text-blue-800 text-center mb-6 animate-fade-in-down">Créer un Nouveau Cours</h1>
 
-        <form action="{{ route('cours.sto') }}" method="POST" class="space-y-6">
+        <form action="{{ route('cours.st') }}" method="POST" class="space-y-6">
             @csrf
 
             <div class="animate-fade-in-up">
