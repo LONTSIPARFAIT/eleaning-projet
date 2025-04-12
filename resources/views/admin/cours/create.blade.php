@@ -17,7 +17,7 @@
                     class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200 @error('title') border-red-500 @enderror"
                     id="title"
                     name="title"
-                    value="{{ old('title') }}"
+                    value="{{ old('t') }}"
                     required
                 >
                 @error('title')
@@ -38,7 +38,6 @@
                     <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
-
             <div class="animate-fade-in-up">
                 <label for="duration" class="block text-blue-900 font-semibold">Durée (Heures)</label>
                 <input
