@@ -90,7 +90,7 @@
     </div>
 </div>
 
-<style>
+{{-- <style>
     /* Animations personnalisées */
     @keyframes fadeInUp {
         0% { opacity: 0; transform: translateY(20px); }
@@ -113,7 +113,7 @@
     .animate-fade-in-up {
         animation: fadeInUp 0.6s ease-out;
     }
-</style>
+</style> --}}
 
 <script>
     // Animation au scroll avec répétition
