@@ -115,7 +115,7 @@
     }
 </style> --}}
 
-{{-- <script>
+<script>
     // Animation au scroll avec répétition
     document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('.scroll-reveal');
@@ -131,5 +131,5 @@
 
         elements.forEach(element => observer.observe(element));
     });
-</script> --}}
+</script>
 @endsection
