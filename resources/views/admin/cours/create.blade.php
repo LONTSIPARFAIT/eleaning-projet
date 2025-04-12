@@ -17,7 +17,7 @@
                     class="mt-1 block w-full border-blue-300 focus:border-red-500 focus:ring-red-500 rounded-md shadow-sm p-2 transition duration-200 @error('title') border-red-500 @enderror"
                     id="title"
                     name="title"
-                    value="{{ old('titl') }}"
+                    value="{{ old('title') }}"
                     required
                 >
                 @error('title')
