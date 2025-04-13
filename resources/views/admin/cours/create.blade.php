@@ -38,7 +38,7 @@
                     <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                 @enderror
             </div>
-
+ 
             <div class="animate-fade-in-up">
                 <label for="duration" class="block text-blue-900 font-semibold">Durée (Heures)</label>
                 <input
