@@ -204,7 +204,7 @@
                         @csrf
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-600 dark:bg-orange-500 dark:hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"><i
-                                class="fas fa-plus-circle mr-2"></i>S'abonner</button>
+                            class="fas fa-plus-circle mr-2"></i>S'abonner</button>
                     </form>
                 </div>
             @empty
