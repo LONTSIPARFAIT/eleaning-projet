@@ -179,7 +179,8 @@
                 d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#cours"
-                    class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300"><i
+                    class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
+                    <i
                         class="fas fa-book-open mr-2"></i>Découvrir les Cours</a>
                 <a href="{{ route('register') }}"
                     class="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
