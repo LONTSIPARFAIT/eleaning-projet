@@ -176,7 +176,7 @@
                 <span class="absolute top-0 left-0" x-text="displayed"></span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-200 dark:text-gray-300 max-w-2xl mb-8">Rejoignez une plateforme
-    d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
+d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#cours"
                     class="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
