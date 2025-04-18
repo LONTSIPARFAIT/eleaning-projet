@@ -208,7 +208,7 @@
                     </form>
                 </div>
             @empty
-                <p class="text-center text-gray-600 dark:text-gray-400 col-span-full">Aucun cours disponible pour lemoment.</p>
+                <p class="text-center text-gray-600 dark:text-gray-400 col-span-full">Aucun cours disponible pour le moment.</p>
             @endforelse
         </div>
         <div class="mt-8 text-center">
