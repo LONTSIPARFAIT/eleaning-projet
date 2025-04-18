@@ -191,7 +191,7 @@
     <!-- Section Cours Populaires -->
     <section id="cours" class="py-16 mx-auto max-w-7xl scroll-reveal">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 dark:text-orange-400 mb-12"><i
-                class="fas fa-graduation-cap mr-2"></i>Cour</h2>
+                class="fas fa-graduation-cap mr-2"></i>Cours</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($cours->take(6) as $cour)
                 <div
