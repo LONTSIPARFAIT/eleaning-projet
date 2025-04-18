@@ -183,7 +183,7 @@
                         class="fas fa-book-open mr-2"></i>Découvrir les Cours</a>
                 <a href="{{ route('register') }}"
                     class="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
-                    <iclass="fas fa-user-plus mr-2"></i>S'inscrire</a>
+                    <i class="fas fa-user-plus mr-2"></i>S'inscrire</a>
             </div>
         </div>
     </div>
