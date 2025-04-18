@@ -33,8 +33,8 @@
             <a href="/" class="transition transform hover:scale-105">
                 <img src="/img/logo1.jpg" alt="CFPC-Learning"
                     class="h-14 w-20 rounded-lg shadow-md border border-orange-300 dark:border-orange-500">
-                <img src="/img/logo11.png" alt="CFPC-Learning"
-                    class="h-14 w-20 rounded-lg shadow-md border border-orange-300 dark:border-orange-500">
+                {{-- <img src="/img/logo11.png" alt="CFPC-Learning"
+                    class="h-14 w-20 rounded-lg shadow-md border border-orange-300 dark:border-orange-500"> --}}
             </a>
             <div class="hidden md:flex space-x-10 text-lg font-semibold">
                 <a href="/"
