@@ -45,7 +45,7 @@
                 </a>
                 <a href="#cours"
                     class="text-white hover:text-orange-300 dark:hover:text-orange-400 transition duration-300 relative group">
-                    Nos Co
+                    Nos C
                     <span
                         class="absolute left-0 bottom-0 w-0 h-1 bg-orange-400 dark:bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
