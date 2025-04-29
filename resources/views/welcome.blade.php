@@ -171,7 +171,7 @@
                     }
                 }
             }"
-                x-init="animate()">
+                x-init="animate()">z
                 <span class="opacity-0">Apprenez, progressez, réussissez</span>
                 <span class="absolute top-0 left-0" x-text="displayed"></span>
             </h1>
