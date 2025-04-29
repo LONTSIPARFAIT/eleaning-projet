@@ -172,7 +172,7 @@
                 }
             }"
                 x-init="animate()">
-                <span class="opacity-0">Apprenez, progr</span>
+                <span class="opacity-0">Apprenez, prog</span>
                 <span class="absolute top-0 left-0" x-text="displayed"></span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-200 dark:text-gray-300 max-w-2xl mb-8">Rejoignez une plateforme d'apprentissage en ligne conçue pour tous les niveaux, avec des cours interactifs et flexibles.</p>
