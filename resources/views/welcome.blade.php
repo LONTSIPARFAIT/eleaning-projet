@@ -249,7 +249,7 @@
         </div>
     </section>
 
-    <!-- Section -->
+    <!-- Section-->
     <section id="about" class="py-16 mx-auto max-w-7xl scroll-reveal">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 dark:text-orange-400 mb-12"><i
                 class="fas fa-info-circle mr-2"></i>À propos de nous</h2>
