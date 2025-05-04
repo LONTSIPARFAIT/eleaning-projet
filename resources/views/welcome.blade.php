@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <!-- Section Fonction-->
+    <!-- Section Fonctio-->
     <section id="features" class="py-16 mx-auto max-w-7xl bg-orange-50 dark:bg-gray-900 scroll-reveal">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 dark:text-orange-400 mb-12">Pourquoi
             choisir CFPC-Learning ?</h2>
