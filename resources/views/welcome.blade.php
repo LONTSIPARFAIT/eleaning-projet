@@ -287,7 +287,7 @@
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="py-16 mx-auto  max-w-7xl scroll-reveal">
+    <section id="contact" class="py-16 mx-auto max-w-7xl scroll-reveal">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 dark:text-orange-400 mb-12"><i
                 class="fas fa-envelope mr-2"></i>Contactez-nous</h2>
         <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 max-w-2xl mx-auto">
