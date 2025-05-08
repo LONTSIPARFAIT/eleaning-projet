@@ -30,7 +30,7 @@ class QuizController extends Controller
         return view('quizzes.show', compact('quiz'));
     }
 
-    public function submit(Request $re $id)
+    public function submit(Request $req $id)
     {
         $quiz = Quiz::with('questions.answers')->findOrFail($id);
         $score = 0;
