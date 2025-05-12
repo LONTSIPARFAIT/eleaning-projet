@@ -286,7 +286,7 @@
         </div>
     </section>
 
-    <!-- Section Con-->
+    <!-- Section Co-->
     <section id="contact" class="py-16 mx-auto max-w-7xl scroll-reveal">
         <h2 class="text-center text-3xl sm:text-4xl font-bold text-blue-900 dark:text-orange-400 mb-12"><i
                 class="fas fa-envelope mr-2"></i>Contactez-nous</h2>
