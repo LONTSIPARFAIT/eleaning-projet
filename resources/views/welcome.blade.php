@@ -321,7 +321,7 @@
         </div>
     </section>
 
-    <!-- Section Appel  l'Action -->
+    <!-- Section Appel à l'Action -->
     <section
         class="py-16 bg-gradient-to-r from-red-500 to-red-700 dark:from-gray-800 dark:to-gray-700 text-center mx-auto max-w-7xl scroll-reveal">
         <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6"><i class="fas fa-rocket mr-2"></i>Commencez votre
