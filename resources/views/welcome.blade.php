@@ -333,7 +333,7 @@
                 class="fas fa-user-plus mr-2"></i>S'inscrire Maintenant</a>
     </section>
 
-    <!-- Foter -->
+    <!-- Footer -->
     <footer class="bg-blue-900 dark:bg-gray-900 text-white p-6 text-center scroll-reveal">
         <p class="text-gray-200 dark:text-gray-300">© {{ date('Y') }} CFPC-Learning - Tous droits réservés</p>
         <div class="mt-2 space-x-4">
